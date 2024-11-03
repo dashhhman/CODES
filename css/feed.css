@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+    margin:  0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body{
+    display: flex;
+    
+}
+
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-image: radial-gradient(circle, #0b0c10, #121419, #171b21, #1b212a, #1f2833);
+
+
+}
+
+.sidebar:hover {
+    width: 350px;
+    transition: 0.5s;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+    
+}
+
+.logo img {
+    width: 230px;
+    margin-top: -85px;
+    margin-left: -30px;
+}
+
+.mainmenu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+
+}
+
+.mainmenu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+
+}
+.mainmenu li:hover, 
+.active {
+    background: #45a293;
+
+}
+.mainmenu a{
+    color: #66fcf1;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mainmenu a span {
+    overflow: hidden;
+}
+
+.mainmenu a i {
+    font-size: 1.2rem;
+}
+.logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.maincontent {
+    position: relative;
+    background: rgb(11,12,16);
+    background: radial-gradient(circle, rgba(11,12,16,1) 0%, rgba(69,162,158,1) 0%, rgba(31,40,51,1) 78%, rgba(31,40,51,1) 96%);
+    width: 100%;
+    padding: 1rem;
+}
+
+.header img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 12px#00000035;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.2px solid #ffffff75;
+    backdrop-filter: blur(1px);
+    border-radius: 20px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.headertitle{
+    color:#66fcf1;
+}
+
+.container {
+    box-shadow: 5px 5px 12px#00000035;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.2px solid #ffffff75;
+    backdrop-filter: blur(1px);
+    padding: 2rem;
+    border-radius: 10px;
+
+}
+
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.maintitle {
+    color: #66fcf1;
+    padding-bottom: 10px;
+    font-size:20px;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+
+}
+.tablehead {
+    background-color: #016764;
+    color: #fff;
+    border: 1px thin white;
+    
+}
+tr {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    
+}
+
+tr .act {
+    padding: 15px;
+    text-align: right;
+    
+}
+
+td{
+    background: #016764;
+    color: white;
+    padding: 15px;
+}
+
+tr .acts {
+    padding: 1px;
+    text-align: left;
+    
+}
+
+.tablehey .but {
+    color: #fff;
+    background:  #001E1E;
+    /*background: rgb(131, 1, 1);*/
+    font-size: 14px;    
+    width: 10px;
+    height: 10px;
+    padding: 3px 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+
+.but:hover {
+    border: 2px solid #fff;
+    color: white;
+    background: red;
+    transition: all 0.4s ease-in-out;
+    
+    
+}
+
+.tablehey .buts {
+    color: #fff;
+    background:  #001E1E;
+    /*background: rgb(131, 1, 1);*/
+    font-size: 14px;    
+    width: 10px;
+    height: 10px;
+    padding: 3px 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+
+.buts:hover {
+    border: 2px solid white;
+    color: #fff;
+    background: green;
+    transition: all 0.4s ease-in-out;
+    
+    
+}
+
+.dbtitle {
+    background:  #001E1E;
+    color: #fff;
+    padding: 15px 15px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.adds {
+    color: black;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 7px;
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    cursor: pointer;
+    border: 1px solid #016764;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.adds:hover,
+.adds:focus {
+    color: white;
+    background-color: green;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 7px;
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    cursor: pointer;
+    border: 1px solid #016764;
+    transition: 0.2s ease-in-out;
+
+}
+
+.scrollable-table {
+    max-height: 530px; /* Adjust based on your preference */
+    overflow-y: auto;
+}
+
+.tablehey .scrollable-table {
+    display: block;
+    max-height: 470px; /* Adjust based on your row height */
+    overflow-y: scroll;
+    
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc( 101.3% - 1em ) /* scrollbar width */
+}
+
+.scrollable-table {
+    background-color: #016764;
+}
+
+
+.buts {
+    background-color: #f0f0f0; /* Default background */
+    color: black; /* Default text color */
+}
+
+.buts:hover {
+    background-color: #c8c8c8; /* Hover background */
+}
+
+.buts:active {
+    background-color: #a8a8a8; /* Active background */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+    transition: 0.5s ease;
+}
+
+
+ 

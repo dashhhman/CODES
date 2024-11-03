@@ -1,0 +1,91 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/ADMINBG.jpg') no-repeat;
+}
+
+:root {
+    --transparent-color: rgba(255, 255, 255, .2);
+}
+
+.glassmorphism {
+    width: 400px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    padding: 30px 40px;
+    padding-top: -100px;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px#00000035;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.5px solid #ffffff75;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.glassmorphism h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.glassmorphism .tbox {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.tbox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid var(--transparent-color);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.tbox input::placeholder {
+    color: #fff;
+    padding-left: 10px;
+}
+
+.glassmorphism .but {
+    width: 100%;
+    height: 45px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(244, 242, 242) 0%, rgb(106, 117, 119) 100%);
+    backdrop-filter: blur(4px);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #393939;
+    font-weight: 600;
+    
+}
+
+.logos .img {
+    width: 50px;
+    height: 10px;
+    margin-top: -85px;
+    margin-left: -30px;
+    justify-content: center;
+    display: flex;
+}

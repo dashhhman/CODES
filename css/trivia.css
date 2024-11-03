@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    background-color: #c55039;
+    background-image: url('images/bg.jpg'); /* Background image */
+    background-size: cover; 
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Fix the banner image */
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    width: 95%;
+    margin: auto;
+    padding: -50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    padding-left: 10px;
+    width: 190px;
+    cursor: pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;   
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #b4bdbc;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.admin-logo {
+    width: 50px;
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+header li img {
+    width: 220px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    float: left;
+    margin-top: -100px;
+    margin-right: 10px;
+}
+
+header li .loghey {
+    color: #66fcf1;
+    border: 2px solid;
+    background: rgb(2,1,8);
+    border-radius: 10px;
+    border-color: floralwhite;
+    text-decoration: none;
+    padding: 4px 15px;
+}
+
+header li .loghey:hover {
+    color: rgb(2,1,8);
+    border: 2px solid;
+    background: floralwhite;
+    border-radius: 10px;
+    border-color: #66fcf1;
+    text-decoration: none;
+    padding: 4px 15px;
+}
+
+.logo-text {
+    font-weight: solid;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;   
+}
+
+.maincon {
+    height: 100vh;
+    overflow-y: hidden; /* Prevent scrolling */
+}
+
+.glassmorphism h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    letter-spacing: 2px; 
+    line-height: 1.3;
+    text-transform: uppercase; 
+    font-size: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto; /* Allow the box to grow and shrink as needed */
+    min-width: 90px; /* Increased minimum width */
+    height: 90px; /* Increased height */
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes moveElement {
+    5% {
+        transform: translateY(5);
+    }
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+.glassmorphism {
+    width: 85%;
+    box-shadow: 15px 15px 12px #00000035;
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    top: calc(50% + 58px); 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    padding: 8px;
+    height: calc(60% - -30px);   
+    background: transparent;
+}

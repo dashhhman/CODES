@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    color: #0b0c10;
+    display: flex;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #66fcf1;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-image: radial-gradient(circle, #0b0c10, #121419, #171b21, #1b212a, #1f2833);
+}
+
+.sidebar:hover {
+    width: 350px;
+    transition: 0.5s;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.logo img {
+    width: 230px;
+    margin-top: -85px;
+    margin-left: -30px;
+}
+
+.mainmenu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.mainmenu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.mainmenu li:hover,
+.active {
+    background: #45a293;
+}
+
+.mainmenu a {
+    color: #66fcf1;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mainmenu a span {
+    overflow: hidden;
+}
+
+.mainmenu a i {
+    font-size: 1.2rem;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.maincontent {
+    background: rgb(11, 12, 16);
+    background: radial-gradient(circle, rgba(11, 12, 16, 1) 0%, rgba(69, 162, 158, 1) 0%, rgba(31, 40, 51, 1) 78%, rgba(31, 40, 51, 1) 96%);
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.glassmorphism2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 12px #00000035;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.2px solid #ffffff75;
+    backdrop-filter: blur(1px);
+    border-radius: 20px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.headertitle {
+    color: #66fcf1;
+    font-size: 20px;
+}
+
+.glassmorphism {
+    height: -200px;
+    padding: 2rem;
+    box-shadow: 5px 5px 12px #00000035;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.2px solid #ffffff75;
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+}
+
+.con {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 10px 15 px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.maintitle {
+    color: #66fcf1;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.totaldialectscard,
+.totaldialectscard2,
+.totaldialectscard3 {
+    border-radius: 20px;
+    padding: 1.2rem;
+    width: 360px; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    background-color: rgba(249, 249, 249, 0.848);
+}
+
+.totaldialectscard:hover,
+.totaldialectscard2:hover,
+.totaldialectscard3:hover {
+    transform: translateY(-5px);
+}
+
+.headcard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.total {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.totaldia {
+    margin-left: 25%; /* Adjusted margin */
+    font-size: 200px;
+    font-weight: 200;
+}
+
+.totaldia2 {
+    margin-left: 155%; /* Adjusted margin */
+    font-size: 200px;
+    font-weight: 200;
+}
+
+.totaldia3 {
+    margin-left: 155%; /* Adjusted margin */
+    font-size: 200px;
+    font-weight: 200;
+}
+
+.dialectlabel {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #0b0c10;
+}
+
+.con a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Additional Styles */
+
+.maincontent .container .con .totaldialectscard {
+    width: 300px;
+    /* Adjusted width */
+    height: 200px;
+    /* Adjusted height */
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.glassmorphism1 {
+    box-shadow: 5px 5px 12px #00000035;
+    border-top: 2px solid #ffffff75;
+    border-left: 2px solid #ffffff75;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 20px;
+    /* Match padding with other cards */
+    margin-top: 20px;
+    /* Match margin top with other cards */
+    width: 100%;
+}
+
+.glassmorphism1 h3 {
+    color: #66fcf1;
+    /* Match color with other headings */
+    font-size: 20px;
+    /* Match font size with other headings */
+    margin-bottom: 10px;
+    /* Match margin bottom with other headings */
+    margin-left: 18px;
+}
+
+.glassmorphism1 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.glassmorphism1 ul li {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #66fcf1;
+    /* Match background color with other elements */
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 5px;
+    /* Match margin bottom with other cards */
+}
+
+.glassmorphism1 ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar:hover {
+        width: 200px;
+    }
+
+    .logo img {
+        width: 180px;
+        margin-top: -50px;
+    }
+
+    .mainmenu a {
+        font-size: 12px;
+    }
+
+    .totaldia,
+    .totaldia2,
+    .totaldia3 {
+        font-size: 100px;
+    }
+
+    .dialectlabel {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .sidebar:hover {
+        width: 150px;
+    }
+
+    .logo img {
+        width: 140px;
+        margin-top: -40px;
+    }
+
+    .mainmenu a {
+        font-size: 10px;
+    }
+
+    .totaldia,
+    .totaldia2,
+    .totaldia3 {
+        font-size: 80px;
+    }
+
+    .dialectlabel {
+        font-size: 14px;
+    }
+}

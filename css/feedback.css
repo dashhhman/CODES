@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+
+
+body {
+    background-color: #c55039;
+    background-image: url('../images/bg.jpg'); /* Background image */
+    background-size: cover; 
+    padding: 0%;
+    margin: 0;
+    overflow: hidden; 
+    text-align: right;
+    height: 100vh;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none; /* Hidden by default */
+}
+
+.modal-content {
+    margin-bottom: 15px;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-close-btn {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
+    background-size:cover;
+    background-position: center;
+}
+.navbar{
+    
+    width: 95%;
+    margin: auto;
+    padding: -50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 10px;
+    width: 190px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style:none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;   
+}
+.navbar ul li ::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #b4bdbc;
+    position: absolute;
+    left: 0;
+    bottom:-10px;
+    transition: 0.5s;
+}
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+.logo-text {
+    font-weight: solid;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;   
+}
+.maincon {
+    height: 100vh;
+    overflow-y: auto;
+}
+.glassmorphism h1{
+    text-align: center;
+    margin-bottom: 1px;
+    color: #ffffff;
+    letter-spacing: 2px; 
+    line-height: 1.1;
+    text-transform: uppercase; 
+    font-size: 18px;
+}
+
+.glassmorphism {
+    width: 85%;
+    box-shadow: 15px 15px 12px #00000035;
+    backdrop-filter: blur(-1px);
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    top: calc(50% + 58px); 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    padding: 8px;
+    height: calc(60% - -30px);   
+    background: brown;
+}
+
+.translator h2 {
+    text-align: left;
+    padding-top: 2px;
+    margin-left: 1%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #ffffff; 
+    font-style: inherit; 
+}
+.translator .box,
+.translator .box2 {
+    height: 65px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add space between the two boxes */
+    position: relative; /* Add relative positioning to .box */
+    margin-left: 20px;
+    width: calc(100% - 40px);
+    
+}
+
+.translator .box2 {
+    margin-left: 20px; /* Add spacing between the boxes */
+    height: 65px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add space between the two boxes */
+    position: relative; /* Add relative positioning to .box */
+    margin-left: 20px;
+    width: calc(100% - 40px);
+    color: #ffffff;
+
+}
+
+.translator .contranslated {
+    margin-top: 20px;
+    margin-bottom: -25px;
+    height: 225px; /* Adjust the height as needed */
+    position: absolute; /* Adjusted to absolute positioning */
+    bottom: 100px; /* Adjusted to align to the bottom */
+    left: 50%; /* Adjusted to center horizontally */
+    transform: translateX(-50%); /* Adjusted to center horizontally */
+    width: calc(100% - 20px); /* Adjusted the width to be 100% - 40px padding */
+    padding: 20px; /* Added padding for better appearance */   
+}
+.translator .box .mess ,
+.translator .box2 .mess2,
+.translator .contranslated .mess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98%;  
+}
+
+.translator .box textarea.textmess,
+.translator .box2 textarea.textmess2,
+.translator .contranslated textarea.translated {
+    width: calc(98% - 30px);
+    height: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    resize: none;
+    margin: 0;
+    background: #ffffff;
+    color: #ffffff;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.5px solid #ffffff75;
+    overflow: hidden; 
+    font-weight: bold;
+    color: #000 ;
+}
+.submit-btn {
+    padding: 6px 0;
+    text-align: center;
+    margin: 15px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    bottom: 8.5px;
+    width: 10%;
+    left: 46%;
+    transform: translateX(-50%);    
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
+}
+span{
+    background:#009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom:0;
+    z-index:-1;
+    transition: 0.5s;
+}

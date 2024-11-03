@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+html, body {
+    overflow: hidden; /* Disable scrolling */
+    height: 100%; /* Ensure the body takes full height */
+}
+
+body {
+    background-color: #c55039;
+    background-image: url('images/bg.jpg'); /* Background image */
+    background-size: cover; 
+    padding: 0%;
+    margin: 0;
+    text-align: right;
+    height: 100%; /* Ensure the body takes full height */
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix the banner image */
+}
+.navbar { 
+    width: 95%;
+    margin: auto;
+    padding: -50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    padding-left: 10px;
+    width: 190px;
+    cursor: pointer;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;   
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #b4bdbc;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+.select1 {
+    padding: 8px;
+    padding-top: 5px;
+    font-size: 21px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+    width: 500px;
+    margin: 0 auto; /* Center the select element */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0,0,0,0.3) 0px 3px 7px -3px;
+    position: relative; /* Add position relative */
+    top: -40px; /* Adjust this value to move the select element higher */
+
+}
+
+/* Style for the second select element */
+.select2 {
+    padding: 8px;
+    padding-top: 5px;
+    font-size: 21px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+    width: 500px;
+    margin: 0 auto; /* Center the select element */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0,0,0,0.3) 0px 3px 7px -3px;
+    position: relative; /* Add position relative */
+    top: 150px; /* Adjust this value to move the select element lower */
+    margin-right: -50px;
+}
+
+option {
+    background-color: #888;
+    text-align: center;
+    font-weight: 500;
+}
+
+.select1:hover, .select1:focus,
+.select2:hover, .select2:focus {
+    border-color: #a6a6a6;
+    outline: none;
+}
+
+header li img {
+    width: 220px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    float: left;
+    margin-top: -100px;
+    margin-right: 10px; /* Adjusted margin for spacing */
+}
+header ul #log a {
+    color: #c55039;
+    background-color: floralwhite;
+    border-radius: 15px;
+    border-color: #f99245;
+    border-width: thin;
+    position: relative;
+    padding-right: 10px;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header ul #log a:hover {
+    border-width: thick;
+    color: #fff;
+    background-color: #a85421; 
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.logo-text {
+    font-weight: solid;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;   
+}
+.maincon {
+    height: 100vh;
+    overflow-y: auto;
+}
+.glassmorphism h1 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: white;
+    letter-spacing: 2px; 
+    line-height: 1.2;
+    text-transform: uppercase; 
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.glassmorphism {
+    width: 85%;
+    box-shadow: 15px 15px 12px #00000035;
+    backdrop-filter: blur(-1px);
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    top: calc(50% + 58px); 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    padding: 8px;
+    height: calc(60% - -30px);   
+    background: brown;
+}
+
+.translator .item {
+    width: auto; /* Ayusin ang lapad kung kinakailangan */
+    height: 50px;
+    list-style: none;
+    padding: 0 20px;
+    position: absolute; /* I-set ang position sa absolute */
+    top: 120px; /* I-set ang top sa 20px para malapit sa taas */
+    right: 0; /* I-set sa pinakagitna ng kanan */ 
+    margin-right: 2%;
+}
+.translator .box,
+.translator .box2 {
+    height: 135px; /* Adjust the height as needed */
+    margin-bottom: 102px; /* Add space between the two boxes */
+    position: relative; /* Add relative positioning to .box */
+    width: calc(50% - 5px); /* Each box takes 50% width with 5px spacing */
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.translator .box2 {
+    margin-left: 50px; /* Add spacing between the boxes */
+}
+
+.translator .contranslated {
+    height: 230px; /* Adjust the height as needed */
+    position: absolute; /* Adjusted to absolute positioning */
+    bottom: 15px; /* Adjusted to align to the bottom */
+    left: 50%; /* Adjusted to center horizontally */
+    transform: translateX(-50%); /* Adjusted to center horizontally */
+    width: calc(100% - 0px); /* Adjusted the width to be 100% - 40px padding */
+    padding: 20px; /* Added padding for better appearance */
+    margin-bottom: 25px;
+}
+.translator .contranslated::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px; /* Adjust the distance from the top */
+    transform: translateX(-50%);
+    width: 95%; /* Adjust width as needed */
+    height: 1.5px; /* Height of the line */
+    background-color: #a8a0a0; /* Color of the line */
+}
+
+.translator .box .mess,
+.translator .box2 .mess2,
+.translator .contranslated .mess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98%;
+}
+
+.translator .box textarea.textmess,
+.translator .box2 textarea.textmess2,
+.translator .contranslated textarea.translated {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 22px;
+    resize: none;
+    margin: 0;
+    background: #ffffff;
+    border-top: 1px solid #ffffff75;
+    border-left: 1.5px solid #ffffff75;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.submit-btn {
+    padding: 6px 0;
+    text-align: center;
+    margin: 15px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 610px;
+    bottom: 8.5px;
+    width: 12%;
+    left: 46%;
+    transform: translateX(-50%);    
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
+}
+span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.submit-btn:hover span {
+    width: 100%;
+}
+.submit-btn:hover {
+    border: none;
+}
