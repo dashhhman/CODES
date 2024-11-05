@@ -150,33 +150,59 @@ if (isset($_POST['transbut'])) {
     </div>
     <script>
         const translateButton = document.getElementById('transbut');
-        translateButton.addEventListener('click', (e) => {
+        translateButton.addEventListener('click', async (e) => {
             e.preventDefault();
 
             const sentence = document.getElementById('wordhey').value;
             const sourceLanguage = document.getElementById('lang1').value;
             const targetLanguage = document.getElementById('lang2').value;
 
-            if (!sentence) return;
+            // if (!sentence) return;
 
-            const url = 'http://127.0.0.1:5000/translate';
+            // const url = 'http://127.0.0.1:5000/translate';
 
-            fetch(url, {
+            // fetch(url, {
+            //         method: 'POST',
+            //         body: JSON.stringify({
+            //             sentence,
+            //             sourceLanguage,
+            //             targetLanguage
+            //         }),
+            //         headers: {
+            //             'Content-Type': 'application/json'
+            //         }
+            //     })
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         document.getElementById('translatedhey').value = data.translated_sentence;
+            //     })
+            //     .catch(error => console.error('Error:', error));
+
+            const translateData = { text: sentence, language: sourceLanguage, translate_to: targetLanguage };
+
+            try {
+                const response = await fetch('https://speech.pythonanywhere.com/api/translate', {
                     method: 'POST',
-                    body: JSON.stringify({
-                        sentence,
-                        sourceLanguage,
-                        targetLanguage
-                    }),
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('translatedhey').value = data.translated_sentence;
-                })
-                .catch(error => console.error('Error:', error));
+                        'Content-Type': 'application/json',
+                    },
+                        body: JSON.stringify(translateData),
+                });
+                
+                const result = await response.json();
+                if (response.ok) {
+                    // Do action on success here
+                    console.log("Success Data:", result);
+                    document.getElementById('translatedhey').value = result['response'];
+
+                } else {
+                    console.log("Error Data:", result);
+
+                }
+            } catch (error) {
+                console.error("Request failed:", error);
+            }
+
         });
 
         // Get the modal
