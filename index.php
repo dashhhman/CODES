@@ -124,7 +124,7 @@ if (isset($_POST['transbut'])) {
                                         <span class="copy2"><i class="bx bxs-copy-alt" type="solid"></i></span>
                                     </div>
                                     <div class="icon3">
-                                        <span class="copy3"><i class='bx bxs-volume-full' type="solid"></i></span>
+                                        <span class="copy3"><i  id="voice" class='bx bxs-volume-full' type="solid"></i></span>
                                     </div>
                                     <div class="icon4">
                                         <span class="copy4"><i class='bx bxs-bulb' type="solid"></i></span>
@@ -149,6 +149,23 @@ if (isset($_POST['transbut'])) {
 
     </div>
     <script>
+
+        let speech = new  SpeechSynthesisUtterance();
+
+        let voice = [];
+
+        window.speechSynthesis.onvoiceschanged = () =>{
+            voices = window.speechSynthesis.getVoices();
+            speech.voice = voices[0];
+        };
+
+        const speechVoice = document.getElementById('voice');
+        speechVoice.addEventListener("click", () =>{
+            console.log("Heppen");
+            speech.text = document.querySelector("textarea").value;
+            window.speechSynthesis.speak(speech);
+        });
+
         const translateButton = document.getElementById('transbut');
         translateButton.addEventListener('click', async (e) => {
             e.preventDefault();
@@ -194,6 +211,8 @@ if (isset($_POST['transbut'])) {
                     // Do action on success here
                     console.log("Success Data:", result);
                     document.getElementById('translatedhey').value = result['response'];
+                    speech.text = result['response'];
+                    window.speechSynthesis.speak(speech);
 
                 } else {
                     console.log("Error Data:", result);
