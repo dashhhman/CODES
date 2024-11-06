@@ -64,7 +64,6 @@ if (isset($_POST['transbut'])) {
                             <li><a href="homepage.php"><b>Home</b></a></li>
                             <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                             <li><a href="trivia.php"><b>Trivia</b></a></li>
-                            
                         </ul>
                 </div>
 
