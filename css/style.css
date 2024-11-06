@@ -19,56 +19,6 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
-.modal  {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 40px;
-    top: -100px;
-    width: 95%; /* Full width */
-    height: 90%; /* Full height */
-    overflow: auto,hidden; /* Enable scroll if needed */
-    background-color: transparent;
-    
-}
-
-
-.modal-content {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
-    -webkit-backdrop-filter: blur(11px);
-    box-shadow: 5px 5px 12px#00000035;
-    border-top: 1px solid #ffffff75;
-    border-left: 1.5px solid #ffffff75;
-    backdrop-filter: blur(4px);
-    margin: 20% auto;
-    padding: 10px;
-    width: 75%;
-    height:62%;
-    max-width: 600px;
-    max-height: 680px;
-    text-align: center;
-    position: relative;
-    border-radius: 25px;
- 
-}
-
-.close {
-    position: absolute;
-    top: 8px;
-    right: 22px;
-    color: #f3f3f3;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: rgb(122, 93, 228);
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .welcome-logo {
     width: 350px; /* Adjust as needed */
     height: auto;
@@ -246,7 +196,6 @@ header ul #log a:hover {
     padding: 8px;
     height: calc(60% - -30px);   
     background:brown;
-   
 }
 .translator .item {
     display: flex;
@@ -257,25 +206,25 @@ header ul #log a:hover {
     align-items: center;
     list-style: none;
     padding: 0 20px;
-
 }
+
 .translator .box,
 .translator .box2 {
-    height: 210px; /* Adjust the height as needed */
-    margin-bottom: 0px; /* Add space between the two boxes */
-    position: relative; /* Add relative positioning to .box */
-    width: calc(50% - 15px); /* Each box takes 50% width with 5px spacing */
-    float: left; /* Float the boxes to make them inline */
+    height: 210px;
+    margin-bottom: 0px;
+    position: relative;
+    width: calc(50% - 15px);
+    float: left;
     margin-left: 10px;
     margin-top: 25px;
-    
 }
 
 .translator .box2 {
-    margin-left: 10px; /* Add spacing between the boxes */
+    margin-left: 10px;
     margin-top: 25px;
 }
-.translator .contranslated h4{
+
+.translator .contranslated h4 {
     font-size: 15px;
     margin-left: 40px;
     margin-top: 10px;
@@ -284,17 +233,15 @@ header ul #log a:hover {
 }
 
 .translator .contranslated {
-    height: 270px; /* Adjust the height as needed */
-    position: absolute; /* Adjusted to absolute positioning */
-    bottom: 45px; /* Adjusted to align to the bottom */
-    left: 50%; /* Adjusted to center horizontally */
+    height: 270px;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
     border-top: 1px solid white;
-    transform: translateX(-50%); /* Adjusted to center horizontally */
-    width: calc(100% - 0px); /* Adjusted the width to be 100% - 40px padding */
-    padding: 20px; /* Added padding for better appearance */
-
+    transform: translateX(-50%);
+    width: calc(100% - 0px);
+    padding: 20px;
 }
-
 
 .submit-btn {
     padding: 6px 0;
@@ -311,10 +258,10 @@ header ul #log a:hover {
     bottom: 8.5px;
     width: 8%;
     left: 46%;
-    transform: translateX(-50%);    
-   
+    transform: translateX(-50%);
 }
-span{
+
+span {
     background:#009688;
     height: 100%;
     width: 0;
@@ -325,12 +272,15 @@ span{
     z-index:-1;
     transition: 0.5s;
 }
-.submit-btn:hover span{
+
+.submit-btn:hover span {
     width: 100%;
 }
-.submit-btn:hover{
+
+.submit-btn:hover {
     border: none;
 }
+
 .clear-btn {
     padding: 6px 0;
     text-align: center;
@@ -348,33 +298,25 @@ span{
     left: 17.5%;
     transform: translateX(-50%);
 }
-span{
-    background:#009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom:0;
-    z-index:-1;
-    transition: 0.5s;
-}
-.clear-btn:hover span{
+
+.clear-btn:hover span {
     width: 100%;
 }
-.clear-btn:hover{
+
+.clear-btn:hover {
     border: none;
 }
 
 .translator .contranslated::before {
     position: absolute;
     left: 50%;
-    top: 22px; /* Adjust the distance from the top */
+    top: 22px;
     transform: translateX(-50%);
-    width: 93%; /* Adjust width as needed */
-    height: 1.5px; /* Height of the line */
-    background-color: #a8a0a0; /* Color of the line */
+    width: 93%;
+    height: 1.5px;
+    background-color: #a8a0a0;
 }
+
 .translator .box .mess,
 .translator .box2 .mess2,
 .translator .contranslated .mess {
@@ -384,14 +326,12 @@ span{
     color: #ffffff;
 }
 
-
 .translator .box textarea.textmess,
-.translator .box2 textarea.textmess2{
+.translator .box2 textarea.textmess2 {
     width: calc(100% - 20px);
     height: 300px;
     border: 1px solid black;
     border-radius: 10px;
-    top: 200px;
     font-size: 25px;
     font-weight: bold;
     resize: none;
@@ -399,21 +339,19 @@ span{
     margin: 30px;
     margin-top: 0px;
     margin-bottom: 80px;
-    /*border-top: 1px solid #ffffff75;
-    border-left: 1.5px solid #ffffff75;*/
     background: white;
     color: black;
-    /*background: linear-gradient(90deg, rgba(2,1,8,1) 0%, rgba(58,81,86,1) 100%);*/
     -webkit-backdrop-filter: blur(11px);
     backdrop-filter: blur(4px);
     overflow: hidden;
-    /*background-color: rgb(2,1,8);*/
+    padding-right: 40px; /* Make space for the icon */
+    position: relative;
 }
-.translator .contranslated textarea.translated{
+
+.translator .contranslated textarea.translated {
     width: calc(100% - 20px);
     height: 150px;
     border-radius: 10px;
-    top: 200px;
     font-size: 25px;
     font-weight: bold;
     resize: none;
@@ -423,55 +361,37 @@ span{
     margin-bottom: 80px;
     border-top: 1px solid black;
     border-left: 1.5px solid #ffffff75;
-    /*background: linear-gradient(90deg, rgba(2,1,8,1) 0%, rgba(58,81,86,1) 100%);*/
+    background: white;
+    color: black;
     -webkit-backdrop-filter: blur(11px);
     backdrop-filter: blur(4px);
     overflow: hidden;
-    background: white;
-    color: black;
+    padding-right: 40px; /* Make space for the icon */
 }
+
 .translator .box .icon,
-.translator .contranslated .icon {
-    bottom: 10px;
-    right: 38px;
-    cursor: pointer;
-    font-size: 22px;
-    color: white;
-}
-
-
-.translator .box2 .icon2,
+.translator .contranslated .icon,
 .translator .box2 .icon3,
 .translator .box2 .icon4 {
     position: absolute;
-    bottom: -50px;
-    right: 40px;
+    font-size: 25px;
+    color: rgb(45, 43, 43);
     cursor: pointer;
-    font-size: 22px;
-    color: rgb(161, 161, 161);
-}
-
-.translator .box2 .icon3,
-.translator .box2 .icon4 {
-    font-size: 30px;
-}
-
-.translator .box2 .icon4,
-.translator .box2 .icon3 {
-    bottom: 0;
-    right: 0;
+    top:260px;
+    right: 15px;
+    z-index: 1;
 }
 
 .translator .box2 .icon3 {
-    bottom: -12vh;
-    right: 88%;
+    right: 100px;
+    bottom: 15px;
 }
 
 .translator .box2 .icon4 {
-    bottom: -12vh;
-    right: 82%;
+    right: 70px;
+    bottom: 15px;
 }
-/* Add styling for the switch icon */
+
 .switch {
     display: flex;
     align-items: center;
@@ -480,7 +400,6 @@ span{
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
-    
 }
 
 .switch i {
@@ -488,8 +407,7 @@ span{
     color: white;
 }
 
-/* Additional styling for the icon within .contranslated */  
-.Feedback{
+.Feedback {
     padding: 6px 0;
     text-align: center;
     margin: 15px 10px;
@@ -502,25 +420,17 @@ span{
     position: absolute;
     margin-left: -130px;
     bottom: 8.5px;
-    width: 8%;  
+    width: 8%;
 }
-span{
-    background:#009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom:0;
-    z-index:-1;
-    transition: 0.5s;
-}
-.Feedback:hover span{
+
+.Feedback:hover span {
     width: 100%;
 }
-.Feedback:hover{
+
+.Feedback:hover {
     border: none;
 }
+
 .box2 textarea,
 .contranslated textarea {
     pointer-events: none;
@@ -528,4 +438,24 @@ span{
 
 .textmess, .textmess2, .translated {
     text-align: left;
+}
+
+@media (max-width: 969px) {
+    .wrapper {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 100%;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 100%;
+        margin: 20px;
+    }
 }

@@ -119,22 +119,19 @@ if (isset($_POST['transbut'])) {
                                 
                                 <div class="mess2">
                                     <textarea maxlength="5000" name="translatedhey" id="translatedhey" class="textmess2" placeholder=""><?php if (isset($translatedText)) echo htmlspecialchars($translatedText); ?></textarea>
-                                    <!-- Copy icon -->
-                                    <div class="icon2">
-                                        <span class="copy2"><i class="bx bxs-copy-alt" type="solid"></i></span>
-                                    </div>
+                                 
                                     <div class="icon3">
                                         <span class="copy3"><i  id="voice" class='bx bxs-volume-full' type="solid"></i></span>
                                     </div>
                                     <div class="icon4">
-                                        <span class="copy4"><i class='bx bxs-bulb' type="solid"></i></span>
+                                        <span class="copy4"><i class='bx bxs-copy-alt' type="solid"></i></span>
                                     </div>
                                 </div>
                             </div>
                             
                             <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Translate</button>
                             <button onclick="clear()" class="clear-btn"><span></span>Clear</button>
-                            <button href="feedback.php" class="Feedback"><span></span>Feedback</button>
+                            <button onclick="window.location.href='feedback.php';" class="Feedback"><span></span>Feedback</button>
                     </div>
                         </div>
 
@@ -156,7 +153,7 @@ if (isset($_POST['transbut'])) {
 
         window.speechSynthesis.onvoiceschanged = () =>{
             voices = window.speechSynthesis.getVoices();
-            speech.voice = voices[0];
+            speech.voice = voices[2];
         };
 
         const speechVoice = document.getElementById('voice');
