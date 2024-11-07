@@ -160,7 +160,7 @@ if (isset($_POST['transbut'])) {
 
         const voice_but = document.getElementById('voice-but');
         voice_but.addEventListener("click", () =>{ 
-            speech.text = document.querySelector("textarea").value;
+            speech.text = document.getElementById("translatedhey").value;
             window.speechSynthesis.speak(speech);
         });
 
