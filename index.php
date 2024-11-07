@@ -236,6 +236,44 @@ if (isset($_POST['transbut'])) {
 
         });
 
+ 
+        function debounce(func, delay) {
+            let timer;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        const translateText = () => {
+            console.log("Keyboard pressed");
+            const sentence = document.getElementById('wordhey').value;
+            const sourceLanguage = document.getElementById('lang1').value;
+            const targetLanguage = document.getElementById('lang2').value;
+
+            if (!sentence) return;
+
+            const translateData = { text: sentence, language: sourceLanguage, translate_to: targetLanguage };
+            fetch('https://speech.pythonanywhere.com/api/translate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                        body: JSON.stringify(translateData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('translatedhey').value = data['response'];
+                    console.log("Translated:", data['response']);
+                }).catch(error => console.error('Error:', error));
+        };
+
+        const debouncedTranslateText = debounce(translateText, 1000); // 1000 ms = 1 second
+
+        const wordhey = document.getElementById('wordhey');
+        wordhey.addEventListener('keyup', debouncedTranslateText);
+ 
+
         // Get the modal
         var modal = document.getElementById("myModal");
 
