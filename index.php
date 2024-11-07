@@ -88,7 +88,10 @@ if (isset($_POST['transbut'])) {
                                         <option value="yakan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Yakan") echo "selected"; ?>>Yakan</option>
                                     </select>
                                 </li>
-                                <li class="switch"><i class='bx bx-transfer-alt'></i></li>
+                                <li class="switch">
+                                    <!-- <i class='bx bx-transfer-alt'></i> -->
+                                    <i ></i>
+                                </li>
                                 <li>
                                     <select class="select2" id="lang2" name="lang2">
                                         <option value="tagalog" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Tagalog") echo "selected"; ?>>Tagalog</option>
@@ -120,16 +123,16 @@ if (isset($_POST['transbut'])) {
                                     <textarea maxlength="5000" name="translatedhey" id="translatedhey" class="textmess2" placeholder=""><?php if (isset($translatedText)) echo htmlspecialchars($translatedText); ?></textarea>
                                  
                                     <div class="icon3">
-                                        <span class="copy3"><i  id="voice" class='bx bxs-volume-full' type="solid"></i></span>
+                                        <span class="copy3"><i  id="voice-but" class='bx bxs-volume-full' type="solid"></i></span>
                                     </div>
                                     <div class="icon4">
-                                        <span class="copy4"><i class='bx bxs-copy-alt' type="solid"></i></span>
+                                        <span class="copy4"><i id="copy-but" onclick="copyTextareaContent()" class='bx bxs-copy-alt' type="solid"></i></span>
                                     </div>
                                 </div>
                             </div>
                             
                             <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Translate</button>
-                            <button onclick="clear()" class="clear-btn"><span></span>Clear</button>
+                            <button onclick="clear()" id="clear-but" class="clear-btn"><span></span>Clear</button>
                             <button onclick="window.location.href='feedback.php';" class="Feedback"><span></span>Feedback</button>
                     </div>
                         </div>
@@ -155,11 +158,24 @@ if (isset($_POST['transbut'])) {
             speech.voice = voices[2];
         };
 
-        const speechVoice = document.getElementById('voice');
-        speechVoice.addEventListener("click", () =>{
-            console.log("Heppen");
+        const voice_but = document.getElementById('voice-but');
+        voice_but.addEventListener("click", () =>{ 
             speech.text = document.querySelector("textarea").value;
             window.speechSynthesis.speak(speech);
+        });
+
+ 
+        function copyTextareaContent() {
+            var textarea = document.getElementById("translatedhey");
+            textarea.select();
+            document.execCommand("copy");
+            alert("Content copied to clipboard!");
+        }
+  
+        const clear_but = document.getElementById('clear-but');
+        clear_but.addEventListener('click', () => {
+            document.querySelector('textarea').value = '';
+            document.querySelector('textarea').focus();
         });
 
         const translateButton = document.getElementById('transbut');
@@ -205,10 +221,10 @@ if (isset($_POST['transbut'])) {
                 const result = await response.json();
                 if (response.ok) {
                     // Do action on success here
-                    console.log("Success Data:", result);
+                    // console.log("Success Data:", result);
                     document.getElementById('translatedhey').value = result['response'];
-                    speech.text = result['response'];
-                    window.speechSynthesis.speak(speech);
+                    // speech.text = result['response'];
+                    // window.speechSynthesis.speak(speech);
 
                 } else {
                     console.log("Error Data:", result);
