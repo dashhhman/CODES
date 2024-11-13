@@ -15,7 +15,7 @@
                             <li><a href="homepage.php"><b>Home</b></a></li>
                             <li><a href="index.php"><b>Translator</b></a></li>
                             <li><a href="addtodictionary.php"><b>Add Dictionary</b></a></li>
-                            <li><a href="trivia.php"><b>Trivia</b></a></li>
+                            <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
                                   
                         </ul>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-require_once('config/connect.php');
+require_once('../config/config.php');
 
 $sql = "select count(*) as total_feedback from feedback";
 $result = mysqli_query($conn, $sql);
@@ -15,7 +15,6 @@ $total_pro = $row['total_pro'];
 ?>
 
 <?php
-require_once('config/connect.php');
 
 $sqlw = "SELECT recent FROM history ORDER BY recent ASC LIMIT 4"; 
 $resultw = mysqli_query($conn, $sqlw);
@@ -27,7 +26,7 @@ $resultw = mysqli_query($conn, $sqlw);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="images/WEBLOGO.png"/>
-    <link rel="stylesheet" href="css/homestyle.css">
+    <link rel="stylesheet" href="../css/homestyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>Dashboard</title>
     <link rel="website icon" type="png" href="images/WEBLOGO.png"/>
@@ -37,7 +36,7 @@ $resultw = mysqli_query($conn, $sqlw);
 <nav>
     <div class="sidebar">
         <div class="logo">
-            <img src="images/FINFINFIN.png" alt="logo">
+            <img src="../images/FINFINFIN.png" alt="logo">
             <h1></h1>
         </div>
         <ul class="mainmenu">
@@ -58,14 +57,20 @@ $resultw = mysqli_query($conn, $sqlw);
                 <span class="nav-item">Translation Request</span>
             </a>
             </li>
-          
+            
+            <li><a href="adminlanguage.php" class="languages">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Languages</span>
+            </a>
+            </li>
+
             <li><a href="feedbackadmin.php   ">
                 <i class="fas fa-star"></i>
                 <span class="nav-item">Feedback</span>
             </a>
             </li>
 
-            <li><a href="index.php" class="logout">
+            <li><a href="logout.php" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Logout</span>
             </a>

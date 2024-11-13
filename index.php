@@ -63,7 +63,7 @@ if (isset($_POST['transbut'])) {
                         <ul>
                             <li><a href="homepage.php"><b>Home</b></a></li>
                             <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                            <li><a href="trivia.php"><b>Trivia</b></a></li>
+                            <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
                         </ul>
                 </div>
 
@@ -169,7 +169,6 @@ if (isset($_POST['transbut'])) {
             var textarea = document.getElementById("translatedhey");
             textarea.select();
             document.execCommand("copy");
-            alert("Content copied to clipboard!");
         }
   
         const clear_but = document.getElementById('clear-but');

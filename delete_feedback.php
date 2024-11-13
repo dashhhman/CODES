@@ -1,5 +1,5 @@
 <?php
-require_once('config/connect.php');
+require_once('config/config.php');
 
 // Get the ID from the URL
 $Word = $_GET['Word'];
@@ -12,7 +12,7 @@ mysqli_stmt_execute($stmt);
 
 // Redirect back to the manage translation page or handle errors
 if (mysqli_stmt_affected_rows($stmt) > 0) {
-    header('Location: mantrans.php'); // Redirect back to the management page
+    header('Location: feedbackadmin.php'); // Redirect back to the management page
 } else {
     echo "Error deleting record: " . mysqli_error($conn);
 }

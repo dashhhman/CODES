@@ -1,6 +1,7 @@
 
 <?php
-include_once ('config/config.php');
+include_once ('config/connect.php');
+
   $Word=$_POST["words"];
   $Language2=$_POST["langwan"];
   $Translated=$_POST["translated"];

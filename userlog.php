@@ -11,12 +11,9 @@ if (isset($_POST['submit'])) {
     $count = mysqli_num_rows($result);  
 
     if ($count == 1) {
-        if ($row['acc_type'] == 'admin') {
-            echo  '<script>
-                        alert("Successfully logged in as Admin!");
-                        window.location.href = "dashboard.php";
-                    </script>';
-            exit;
+        if ($row['acc_type'] == 'user') {
+            header("Location: home.php");
+            exit; // Always use exit after header to stop script execution
         } else {
             echo  '<script>
                         alert("You do not have access to this area!");

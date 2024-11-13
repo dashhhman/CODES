@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    color: #0b0c10;
+    display: flex;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #66fcf1;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-image: radial-gradient(circle, #0b0c10, #121419, #171b21, #1b212a, #1f2833);
+}
+
+.sidebar:hover {
+    width: 350px;
+    transition: 0.5s;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.logo img {
+    width: 230px;
+    margin-top: -85px;
+    margin-left: -30px;
+}
+
+.mainmenu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.mainmenu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.mainmenu li:hover,
+.active {
+    background: #45a293;
+}
+
+.mainmenu a {
+    color: #66fcf1;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mainmenu a span {
+    overflow: hidden;
+}
+
+.mainmenu a i {
+    font-size: 1.2rem;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar:hover {
+        width: 200px;
+    }
+
+    .logo img {
+        width: 180px;
+        margin-top: -50px;
+    }
+
+    .mainmenu a {
+        font-size: 12px;
+    }
+
+    .totaldia,
+    .totaldia2,
+    .totaldia3, 
+    .totaldia4{
+        font-size: 100px;
+    }
+
+    .dialectlabel {
+        font-size: 16px;
+    }
+}

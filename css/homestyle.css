@@ -123,52 +123,93 @@ body::-webkit-scrollbar {
     color: #66fcf1;
     font-size: 20px;
 }
-
 .glassmorphism {
-    height: -200px;
+    height: 600px;
     padding: 2rem;
     box-shadow: 5px 5px 12px #00000035;
     border-top: 1px solid #ffffff75;
     border-left: 1.2px solid #ffffff75;
     backdrop-filter: blur(1px);
     border-radius: 10px;
-}
-
-.con {
-    display: flex;
-    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden; /* This will clip the lines within the glassmorphism container */
+    display: flex; /* Enable flexbox layout for glassmorphism */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+  }
+  
+  .con {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1rem;
-    padding: 10px 15 px;
-    text-align: center;
-    margin-left: 100px;
-}
-
-.maintitle {
+    padding: 10px 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px; 
+  }
+  
+  .maintitle {
     color: #66fcf1;
     padding-bottom: 10px;
-    font-size: 20px;
+    font-size: 40px;
+    /* Remove margin-left to center the title within its grid cell */
+    position: relative; 
+    width: 100%;
+    text-align: center;
+    display: inline-block; 
+  }
+ .maintitle::before,
+ .maintitle::after {
+  content: "";
+  position: absolute;
+  top:150%;
+  transform: translateY(-50%); /* Vertically center the lines */
+  height: 2px;
+  margin-bottom: 50px;
+  background-color: #66fcf1; 
 }
 
+.maintitle::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 0; /* Align to the left edge of the container */
+    transform: translateY(-50%); /* Vertically center */
+    width: 400px; /* Adjust length as needed */
+    background-color: #66fcf1;
+  }
+  
+  .maintitle::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    right: 0; /* Align to the right edge of the container */
+    transform: translateY(-50%); /* Vertically center */
+    width: 400px; /* Adjust length as needed */
+    background-color: #66fcf1;
+  }
 .totaldialectscard,
 .totaldialectscard2,
-.totaldialectscard3 {
+.totaldialectscard3,
+.totaldialectscard4 {
     border-radius: 20px;
-    padding: 1.2rem;
-    width: 360px; 
-    height: 300px;
+    padding: 1rem; 
+    height: 200px; /* Further reduced height */ 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 10px;
+    align-items: center;
     transition: all 0.5s ease-in-out;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #000000;
     background-color: rgba(249, 249, 249, 0.848);
+    width: 600px;
 }
 
 .totaldialectscard:hover,
 .totaldialectscard2:hover,
-.totaldialectscard3:hover {
+.totaldialectscard3:hover,
+.totaldialectscard4:hover{
     transform: translateY(-5px);
 }
 
@@ -178,33 +219,23 @@ body::-webkit-scrollbar {
     align-items: center;
     margin-bottom: 2px;
 }
-
 .total {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
+    align-items: center; /* Center horizontally */
 }
 
-.totaldia {
-    margin-left: 25%; /* Adjusted margin */
-    font-size: 200px;
+.totaldia, 
+.totaldia2, 
+.totaldia3, 
+.totaldia4 {
+    font-size: 120px; /* Further reduced font size */
     font-weight: 200;
 }
 
-.totaldia2 {
-    margin-left: 155%; /* Adjusted margin */
-    font-size: 200px;
-    font-weight: 200;
-}
-
-.totaldia3 {
-    margin-left: 155%; /* Adjusted margin */
-    font-size: 200px;
-    font-weight: 200;
-}
 
 .dialectlabel {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
     color: #0b0c10;
@@ -293,7 +324,8 @@ body::-webkit-scrollbar {
 
     .totaldia,
     .totaldia2,
-    .totaldia3 {
+    .totaldia3, 
+    .totaldia4{
         font-size: 100px;
     }
 
@@ -322,7 +354,8 @@ body::-webkit-scrollbar {
 
     .totaldia,
     .totaldia2,
-    .totaldia3 {
+    .totaldia3,
+    .totaldia4{
         font-size: 80px;
     }
 

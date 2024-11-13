@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+body {
+    background-color: #c55039, url;
+    background-image: url('images/bg.jpg'); /* Background image */
+    background-size: cover; 
+    padding: 0%;
+    margin: 0;
+    overflow: auto; 
+    text-align: right;
+    height: 60vh;
+    
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.welcome-logo {
+    width: 350px; /* Adjust as needed */
+    height: auto;
+    color: black;
+    animation: moveText 0.4s infinite alternate; 
+}
+
+.welcome-text {
+    font-weight: solid; 
+    margin-top: -28px;
+    font-size: 30px;
+    font-weight:500;
+    animation: moveText 2s infinite alternate; 
+    color: white;
+}
+@keyframes moveText {
+    0% {
+        transform: translateY();
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
+    background-size:cover;
+    background-position: center;
+}
+.navbar{
+    
+    width: 95%;
+    margin: auto;
+    padding: -50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    padding-left: 10px;
+    width: 190px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style:none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; 
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;   
+}
+.navbar ul li ::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #b4bdbc;
+    position: absolute;
+    left: 0;
+    bottom:-10px;
+    transition: 0.5s;
+}
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+
+
+header li img {
+    width: 220px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    float: left;
+    margin-top: -100px;
+    margin-right: 10px; /* Adjusted margin for spacing */
+}
+header ul #log a {
+    color: #c55039;
+    background-color: floralwhite;
+    border-radius: 15px;
+    border-color: #f99245;
+    border-width: thin;
+    position: relative;
+    padding-right: 10px;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header ul #log a:hover {
+    border-width: thick;
+    color: #fff;
+    background-color: #a85421; 
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.logo-text {
+    font-weight: solid;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;   
+}
+
+
+@media (max-width: 500px) {
+    .glassmorphism {
+        width: 95%;
+        height: 80%;
+    }
+
+    .select1, .select2 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .submit-btn, .clear-btn, .Feedback {
+        width: 100%; /* Full width for buttons */
+    }
+}
+
+@media (max-width: 500px) {
+    .glassmorphism {
+        width: 95%;
+        height: 80%;
+    }
+
+    .select1, .select2 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .submit-btn, .clear-btn, .Feedback {
+        width: 100%; /* Full width for buttons */
+    }
+}

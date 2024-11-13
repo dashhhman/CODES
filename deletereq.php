@@ -1,12 +1,12 @@
 <?php
-require_once('config/connect.php');
+require_once('config/config.php');
 
 // Get the ID from the URL
 $Word = $_GET['Word'];
 $Status = $_GET['Status'];
 
 // Prepare the delete statement to prevent SQL injection
-$stmt = mysqli_prepare($conn, "DELETE FROM translation WHERE Word = ? AND Status=?");
+$stmt = mysqli_prepare($conn, "DELETE FROM translation WHERE Word = ? AND Status = ?");
 mysqli_stmt_bind_param($stmt, "ss", $Word, $Status);
 mysqli_stmt_execute($stmt);
 
