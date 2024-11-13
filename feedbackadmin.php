@@ -278,8 +278,10 @@ $result = mysqli_query($conn, $sql);
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>   
 </div>
+<script>
+    
+</script>
 
 </body>

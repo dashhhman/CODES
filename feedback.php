@@ -38,14 +38,14 @@
                         <div class="box">
                             <h2>Name:</h2>
                             <div class="mess">
-                                <textarea maxlength="5000" name="fname"class="textmess" placeholder="Enter Youre Name.."></textarea>
+                                <textarea maxlength="5000" name="fname"class="textmess" placeholder="Enter Your Name.."></textarea>
                                 <!-- Copy icon -->
                             </div>
                         </div>
                         <div class="box2">
                             <h2>Email:</h2>
                             <div class="mess2">  
-                                <textarea maxlength="5000" name= "ems"class="textmess2" placeholder="Enter Youre Email Address.."></textarea>
+                                <textarea maxlength="5000" name= "ems"class="textmess2" placeholder="Enter Your Email Address.."></textarea>
                                 <div class="icon2">   
                                 </div>
                             </div>

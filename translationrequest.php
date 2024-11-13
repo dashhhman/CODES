@@ -277,9 +277,10 @@ $result = mysqli_query($conn, $sql);
                               <td><?php echo $row['Translated'];?></td>
                               <td><?php echo $row['Language2'];?></td>
                               <td><?php echo $row['Descriptions'];?></td>
-                              <td class="acts"><a href="update.php?Word=<?php echo urlencode($row['Word']); 
-                              ?>&Translated=<?php echo urlencode($row['Translated']); 
-                              ?>" class="buts">Accept</a>
+                              <td class="acts">
+    <a href="accept_add_to_dictionary.php?Word=<?php echo urlencode($row['Word']); ?>&Translated=<?php echo urlencode($row['Translated']); ?>" 
+       class="accept-button" data-word="<?php echo $row['Word']; ?>" data-translation="<?php echo $row['Translated']; ?>">Accept</a>
+</td>
                               <td><a href="#" onclick="confirmDelete('<?php echo $row['Word']; ?>', '<?php echo $row['Status']; ?>')" class="but">Delete</a></td>
                       </tr>
                           <?php
@@ -303,25 +304,25 @@ $result = mysqli_query($conn, $sql);
 }
 
 
-              document.querySelectorAll('.buts').forEach(button => {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent the default link behavior
-                    const url = this.href; // Get the href attribute of the clicked link
+           document.querySelectorAll('.accept-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const url = this.href;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    this.textContent = 'Accepted';
+                    this.style.backgroundColor = "#4CAF50";
+                    this.classList.remove('accept-button');
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+});
 
-                    fetch(url)
-                    .then(response => {
-                        if(response.ok) {
-                            return response.json(); // Assuming the server responds with JSON
-                        }
-                        throw new Error('Network response was not ok.');
-                    })
-                    .then(json => {
-                        this.textContent = 'Accepted'; // Change button text to Accepted
-                        this.style.backgroundColor = "#4CAF50"; // Change background color to green
-                        this.classList.remove('buts'); // Optionally remove the class if no further changes are allowed
-                    })
-                    .catch(error => console.error('Error:', error));
-                });
-            });
   </script>
 </body>

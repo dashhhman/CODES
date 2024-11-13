@@ -1,22 +1,35 @@
 <?php
 require_once('config/config.php');
 
-// Get the ID from the URL
-$Word = $_GET['Word'];
-$Status = $_GET['Status'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-// Prepare the delete statement to prevent SQL injection
-$stmt = mysqli_prepare($conn, "DELETE FROM translation WHERE Word = ? AND Status=?");
-mysqli_stmt_bind_param($stmt, "ss", $Word, $Status);
-mysqli_stmt_execute($stmt);
+    // Fetch feedback data
+    $sqlFetch = "SELECT Fullname, Email, Concern FROM feedback WHERE id = $id";
+    $resultFetch = mysqli_query($conn, $sqlFetch);
 
-// Redirect back to the manage translation page or handle errors
-if (mysqli_stmt_affected_rows($stmt) > 0) {
-    header('Location: feedbackadmin.php'); // Redirect back to the management page
+    if ($resultFetch && mysqli_num_rows($resultFetch) > 0) {
+        $row = mysqli_fetch_assoc($resultFetch);
+
+        // Insert data into delete_feedback
+        $fullname = $row['Fullname'];
+        $email = $row['Email'];
+        $concern = $row['Concern'];
+        
+        $sqlInsert = "INSERT INTO delete_feedback (Fullname, Email, Concern) VALUES ('$fullname', '$email', '$concern')";
+        mysqli_query($conn, $sqlInsert);
+
+        // Delete the original feedback
+        $sqlDelete = "DELETE FROM feedback WHERE id = $id";
+        mysqli_query($conn, $sqlDelete);
+
+        // Redirect back to the main feedback page
+        header("Location: feedbackadmin.php");
+        exit();
+    } else {
+        echo "Feedback not found.";
+    }
 } else {
-    echo "Error deleting record: " . mysqli_error($conn);
+    echo "Invalid request.";
 }
-
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
 ?>

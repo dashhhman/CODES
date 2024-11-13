@@ -109,6 +109,7 @@
     line-height: 1.2;
     text-transform: uppercase; 
     font-size: 25px;
+    
 }
 
 .circle-row {
@@ -133,11 +134,11 @@
 }
 
 .circle:hover {
-    background-color: #a00000;
+    background-color: green;
+}
+.circle p {
+  margin: 0;
+  font-size: 20px;
 }
 
-.circle p {
-    margin: 0;
-    font-size: 20px;
-}
 </style>
