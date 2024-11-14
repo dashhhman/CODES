@@ -151,13 +151,25 @@ if (isset($_POST['transbut'])) {
 
         let speech = new  SpeechSynthesisUtterance();
 
-        let voice = [];
+        let voice = []; 
 
         window.speechSynthesis.onvoiceschanged = () =>{
             voices = window.speechSynthesis.getVoices();
-            speech.voice = voices[2];
         };
 
+        setTimeout(() => {
+            var selectedGender = localStorage.getItem('selectedGender');
+            console.log("HELLO : ", selectedGender);
+            if (selectedGender === 'female') {
+                speech.voice = voices[2];
+            } else if (selectedGender === 'male') {
+                speech.voice = voices[0];
+            } else {
+                speech.voice = voices[2];
+            }
+
+            
+        }, 1000);
         const voice_but = document.getElementById('voice-but');
         voice_but.addEventListener("click", () =>{ 
             speech.text = document.getElementById("translatedhey").value;
@@ -220,7 +232,7 @@ if (isset($_POST['transbut'])) {
                 const result = await response.json();
                 if (response.ok) {
                     // Do action on success here
-                    // console.log("Success Data:", result);
+                    console.log("Success Data:", result);
                     document.getElementById('translatedhey').value = result['response'];
                     // speech.text = result['response'];
                     // window.speechSynthesis.speak(speech);
