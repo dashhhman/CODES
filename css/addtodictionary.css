@@ -6,32 +6,27 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
 }
 
+
 html, body {
-    overflow: hidden; /* Disable scrolling */
-    height: 100%; /* Ensure the body takes full height */
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
     background-color: #c55039;
-    background-image: url('images/bg.jpg'); /* Background image */
-    background-size: cover; 
-    padding: 0%;
-    margin: 0;
+    background-image: url('../images/bg.jpg'); /* Background image */
+    background-size: cover;
     text-align: right;
-    height: 100%; /* Ensure the body takes full height */
 }
-body::-webkit-scrollbar {
-    display: none;
-}
-.banner {
+.banner{
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
-    background-size: cover;
+    background-size:cover;
     background-position: center;
-    background-attachment: fixed; /* Fix the banner image */
 }
-.navbar { 
+.navbar{
+    
     width: 95%;
     margin: auto;
     padding: -50px 0px;
@@ -39,48 +34,54 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: space-between;
 }
-.logo {
+.logo{
     padding-left: 10px;
     width: 190px;
     cursor: pointer;
 }
-.navbar ul li {
-    list-style: none;
+.navbar ul li{
+    list-style:none;
     display: inline-block;
     margin: 0 20px;
-    position: relative;
+    position: relative; 
 }
-.navbar ul li a {
+.navbar ul li a{
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;   
 }
-.navbar ul li::after {
+.navbar ul li ::after{
     content: '';
     height: 3px;
     width: 0;
     background: #b4bdbc;
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom:-10px;
     transition: 0.5s;
 }
-.navbar ul li a:hover::after {
+.navbar ul li a:hover::after{
     width: 100%;
 }
+.logo-text {
+    font-weight: solid;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;   
+}
+
 .select1 {
     padding: 8px;
     padding-top: 5px;
     font-size: 21px;
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 4px solid black; /* Black border */
+    border-radius: 15px;
     font-weight: bold;
     color: #000;
     background-color: #fff;
     cursor: pointer;
     width: 500px;
     margin: 0 auto; /* Center the select element */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0,0,0,0.3) 0px 3px 7px -3px;
     position: relative; /* Add position relative */
     top: -40px; /* Adjust this value to move the select element higher */
 
@@ -91,15 +92,14 @@ body::-webkit-scrollbar {
     padding: 8px;
     padding-top: 5px;
     font-size: 21px;
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 4px solid black; /* Black border */
+    border-radius: 15px;
     font-weight: bold;
     color: #000;
     background-color: #fff;
     cursor: pointer;
     width: 500px;
     margin: 0 auto; /* Center the select element */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0,0,0,0.3) 0px 3px 7px -3px;
     position: relative; /* Add position relative */
     top: 150px; /* Adjust this value to move the select element lower */
     margin-right: -50px;
@@ -111,11 +111,6 @@ option {
     font-weight: 500;
 }
 
-.select1:hover, .select1:focus,
-.select2:hover, .select2:focus {
-    border-color: #a6a6a6;
-    outline: none;
-}
 
 header li img {
     width: 220px;
@@ -125,31 +120,7 @@ header li img {
     margin-top: -100px;
     margin-right: 10px; /* Adjusted margin for spacing */
 }
-header ul #log a {
-    color: #c55039;
-    background-color: floralwhite;
-    border-radius: 15px;
-    border-color: #f99245;
-    border-width: thin;
-    position: relative;
-    padding-right: 10px;
-    transform: translateX(-50%);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
 
-header ul #log a:hover {
-    border-width: thick;
-    color: #fff;
-    background-color: #a85421; 
-    transform: translateX(-50%) translateY(-5px);
-}
-
-.logo-text {
-    font-weight: solid;
-    font-size: 40px;
-    color: #ffffff;
-    float: left;   
-}
 .maincon {
     height: 100vh;
     overflow-y: auto;
@@ -170,7 +141,7 @@ header ul #log a:hover {
     width: 85%;
     box-shadow: 15px 15px 12px #00000035;
     backdrop-filter: blur(-1px);
-    border-radius: 5px;
+    border-radius: 15px;
     overflow: hidden;
     position: absolute;
     height: 50%;
@@ -181,8 +152,25 @@ header ul #log a:hover {
     padding: 8px;
     height: calc(60% - -30px);   
     background: brown;
+    border: 4px solid black; /* Black border */   
 }
 
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 4px solid black; /* Black border */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #555;
+}
 .translator .item {
     width: auto; /* Ayusin ang lapad kung kinakailangan */
     height: 50px;
@@ -201,6 +189,7 @@ header ul #log a:hover {
     width: calc(50% - 5px); /* Each box takes 50% width with 5px spacing */
     margin-left: 50px;
     margin-top: 40px;
+    
 }
 
 .translator .box2 {

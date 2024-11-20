@@ -6,7 +6,7 @@
     <link rel="website icon" type="png" href="images/WEBLOGO.png"/>
     <link rel="stylesheet" href="css/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <title>Manage Questions</title>
+    <title>Quiz's Questionnaire</title>
     <style>
 
         body{
@@ -265,7 +265,6 @@
                             <th>Wrong Answer 3</th>
                             <th>Category</th>
                             <th>Level</th>
-                            <th>Image</th> 
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -290,7 +289,7 @@
                                 echo "<td>" . $row["Wrong_Answer3"] . "</td>";
                                 echo "<td>" . $row["category"] . "</td>";
                                 echo "<td>" . $row["question_level"] . "</td>";
-                                echo "<td><img src='" . htmlspecialchars($row["question_image"]) . "' alt='Question Image' style='width: 100px; height: auto;'></td>"; // Display the image
+                                
                                 echo "<td><a href='edit_questioner.php?question_id=" . $row["question_id"] . "&question=" . urlencode($row["Question"]) . "&correct_answer=" . urlencode($row["Correct_answer"]) . "&wrong_answer1=" . urlencode($row["Wrong_Answer1"]) . "&wrong_answer2=" . urlencode($row["Wrong_Answer2"]) . "&wrong_answer3=" . urlencode($row["Wrong_Answer3"]) . "&question_level=" . urlencode($row["question_level"]) . "&category=" . urlencode($row["category"]) . "&question_image=" . urlencode($row["question_image"]) . "'>Edit</a> 
                         <a href='delete_question.php?id=" . $row["question_id"] . "' onclick='return confirm(\"Are you sure you want to delete this question?\");'>Delete</a>";
 
@@ -316,10 +315,10 @@
             <h2>Add New Question</h2>
             <form action="add_question_action.php" method="POST" class="form-container" enctype="multipart/form-data" onsubmit="return validateForm()">
 
-                <label for="question">Question (and Upload Image):</label>
+                <label for="question">Question:</label>
                 <div>
                     <input type="text" id="question" name="question" placeholder="Enter your question" required>
-                    <input type="file" id="image_upload" name="image_upload" accept="image/*">
+                    
                 </div>
 
                 <label for="correct_answer">Correct Answer:</label>
@@ -379,7 +378,7 @@
 
                 <!-- Display Current Image -->
                 <label>Current Image:</label>
-                <img id="edit_question_image" src="" alt="Current Question Image" style="width: 100px; height: auto; display: none;">
+                
 
                 <label for="edit_question">Question:</label>
                 <input type="text" id="edit_question" name="question" required>
@@ -432,7 +431,6 @@
 
     </main>
 </div>
-
 <script>
     function openAddModal() {
         document.getElementById('addQuestionModal').style.display = 'block';
@@ -443,24 +441,18 @@
     }
 
     function openEditModal(questionId, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, questionLevel, category, questionImage) {
-    document.getElementById("edit_question_id").value = questionId;
-    document.getElementById("edit_question").value = question;
-    document.getElementById("edit_correct_answer").value = correctAnswer;
-    document.getElementById("edit_wrong_answer1").value = wrongAnswer1;
-    document.getElementById("edit_wrong_answer2").value = wrongAnswer2;
-    document.getElementById("edit_wrong_answer3").value = wrongAnswer3;
-    document.getElementById("edit_category").value = category;
-    document.getElementById("edit_question_level").value = questionLevel;
+        document.getElementById("edit_question_id").value = questionId;
+        document.getElementById("edit_question").value = question;
+        document.getElementById("edit_correct_answer").value = correctAnswer;
+        document.getElementById("edit_wrong_answer1").value = wrongAnswer1;
+        document.getElementById("edit_wrong_answer2").value = wrongAnswer2;
+        document.getElementById("edit_wrong_answer3").value = wrongAnswer3;
+        document.getElementById("edit_category").value = category;
+        document.getElementById("edit_question_level").value = questionLevel;
 
-    // Set the image source
-    const editImageElement = document.getElementById("edit_question_image");
-    editImageElement.src = questionImage; // URL to the current question image
-    editImageElement.style.display = questionImage ? "block" : "none"; // Show image if it exists
-
-    // Open the modal
-    document.getElementById("editQuestionModal").style.display = "block";
-}
-
+        // Open the modal
+        document.getElementById("editQuestionModal").style.display = "block";
+    }
 
     function closeEditModal() {
         document.getElementById('editQuestionModal').style.display = 'none';
@@ -477,15 +469,37 @@
             closeEditModal();
         }
     }
-    function validateForm() {
-    const imageInput = document.getElementById('image_upload');
-    const questionInput = document.getElementById('question');
-    if (imageInput.files.length > 0 && questionInput.value.trim() === '') {
-        alert('Please enter a question if you upload an image.');
-        return false;
+
+    function submitAddQuestionForm() {
+        const form = document.getElementById('addQuestionForm');
+        const formData = new FormData(form);
+
+        fetch('add_question.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message or update the UI accordingly
+                alert('Question added successfully!');
+                form.reset(); // Reset the form fields
+            } else {
+                // Show error message
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error: ' + error);
+        });
     }
-    return true; 
-}
+
+    // Add an event listener to the form submit button
+    document.getElementById('addQuestionSubmitButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+        submitAddQuestionForm(); // Submit the form using AJAX
+    });
 </script>
 
 </body>

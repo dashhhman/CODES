@@ -32,7 +32,6 @@ if (isset($_POST['transbut'])) {
             $Language1 = $row['Language1'];
             $Language2 = $row['Language2'];
             $translatedText = $row['Translated'];
-            $Descript = $row['Descriptions'];
         } else {
             $translatedText = "No translate found";
             $Descript = "No description yet";

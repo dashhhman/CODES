@@ -1,6 +1,6 @@
 <?php
 require_once('config/config.php');
-$sql = "select * from feedback ";
+$sql = "SELECT * FROM feedback";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -218,7 +218,7 @@ $result = mysqli_query($conn, $sql);
           </li>
           <li><a href="manage_questioner.php   ">
             <i class="fas fa-star"></i>
-            <span class="nav-item">Manage Questioner</span>
+            <span class="nav-item">Manage Questionnaire</span>
         </a>
         </li>
           <li class="active"><a href="#">
@@ -255,33 +255,46 @@ $result = mysqli_query($conn, $sql);
                   <table class="column">
                     <thead>
                       <tr>
-                        <th> Name </th>
+                        <th> Fullname </th>
                         <th> Email </th>
                         <th> Concern </th>
-                        <th> Status </th>  
+                        <th> Action </th>
                       </tr>
-                  </thead>
-                      <tr>
-                          <?php
-                              while($row = mysqli_fetch_assoc($result)) {   
-                          ?>
-                              <td><?php echo $row['Fullname'];?></td>
-                              <td><?php echo $row['Email'];?></td>
-                              <td><?php echo $row['Concern'];?></td>
-                              <td><a href="" class=but>Accept</a>
-                      </tr>
-                          <?php
-                            }
-                          ?>
-                      
-                  </table>
+                      </thead>
+                        <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($row['Fullname']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['Email']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['Concern']); ?></td>
+                                    <td>
+                                        <a href="#" onclick="confirmAccept('<?php echo addslashes($row['Fullname']); ?>', '<?php echo addslashes($row['Concern']); ?>')" class="but">Accept</a>
+                                        <a href="#" onclick="confirmDelete('<?php echo addslashes($row['Fullname']); ?>', '<?php echo addslashes($row['Concern']); ?>')" class="but">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>   
 </div>
+
 <script>
-    
+    function confirmAccept(fullname, concern) {
+        if (confirm("Are you sure you want to accept this entry?")) {
+            window.location.href = "accept_feedback.php?Fullname=" + encodeURIComponent(fullname) + "&Concern=" + encodeURIComponent(concern);
+        }
+    }
+
+
+function confirmDelete(fullname, concern) {
+    if (confirm("Are you sure you want to delete this entry?")) {
+        window.location.href = "delete_feedback.php?Fullname=" + encodeURIComponent(fullname) + "&Concern=" + encodeURIComponent(concern);
+    }
+}
 </script>
 
 </body>
+</html>

@@ -12,16 +12,13 @@
         <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo">
                 <ul>
-                    
-            
                     <li><a href="adminlogin.php">Admin</a></li>               
                 </ul>
         </div>
 
         <div class="content">
-            <h1>WEBLINGUA</h1>
-            <p>Weblingua Translator is a cutting-edge 
-            language translation tool designed to bridge communication.  </p>
+            <img src="images/School-Logo.png" class="logo">
+            <p>Las Piñas City National Senior High School - CAA CAMPUS</p>
         
             <div>
                 <a href="about.php">

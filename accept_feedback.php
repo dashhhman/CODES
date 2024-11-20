@@ -11,8 +11,8 @@ if (isset($_GET['Fullname']) && isset($_GET['Concern'])) {
     mysqli_begin_transaction($conn);
 
     try {
-        // Copy the record into deleted_feedback table
-        $stmt_insert = mysqli_prepare($conn, "INSERT INTO deleted_feedback (Fullname, Concern) SELECT Fullname, Concern FROM feedback WHERE Fullname = ? AND Concern = ?");
+        // Copy the record into accepted_add_to_dictionary table
+        $stmt_insert = mysqli_prepare($conn, "INSERT INTO accepted_feedback (Fullname, Concern) SELECT Fullname, Concern FROM feedback WHERE Fullname = ? AND Concern = ?");
         
         // Bind the correct parameters
         mysqli_stmt_bind_param($stmt_insert, "ss", $Fullname, $Concern);
@@ -44,7 +44,7 @@ if (isset($_GET['Fullname']) && isset($_GET['Concern'])) {
         } else {
             // Rollback transaction if insert fails
             mysqli_rollback($conn);
-            echo "Error inserting record into deleted_feedback: " . mysqli_error($conn);
+            echo "Error inserting record into accepted_feedback: " . mysqli_error($conn);
         }
 
         // Close the insert statement

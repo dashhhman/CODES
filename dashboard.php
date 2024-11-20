@@ -259,7 +259,7 @@ $resultw = mysqli_query($conn, $sqlw);
                         
                     </div>
                 </div>
-                <span class="dialectlabel">LEADERBOARD</span>
+                <span class="dialectlabel">TOTAL OF QUIZ TAKER</span>
             </div>
             </a>
         </div>

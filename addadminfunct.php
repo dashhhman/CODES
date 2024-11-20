@@ -13,7 +13,7 @@ include_once ('config/connect.php');
     VALUES ('$Word','$Language1','$Translated','$Language2','$Descriptions','Accepted')";
 
     mysqli_query($conn,$query);
-    header("location: addadmin.php");
+    header("location: addadmin  .php");
     exit;
     
 

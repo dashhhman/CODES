@@ -1,6 +1,6 @@
 <?php
 require_once('config/config.php');
-$sql = "select * from translation where Status='Pending'";
+$sql = "SELECT * FROM add_to_dictionary";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -198,131 +198,90 @@ $result = mysqli_query($conn, $sql);
         }
     </style>
 <body>
-  
-
 <nav>
-      <div class="sidebar">
+    <div class="sidebar">
         <div class="logo">
-          <img src="images/FINFINFIN.png" alt="logo">
-          <h1></h1>
+            <img src="images/FINFINFIN.png" alt="logo">
+            <h1></h1>
         </div>
         <ul class="mainmenu">
-          <li ><a href="dashboard.php" >
-            <i class="fas fa-user"></i>
-            <span class="nav-item">Dashboard</span>
-          </a>
-          </li>
-          
-          <li class="active"><a href="translationrequest.php">
-            <i class="fas fa-tasks"></i>
-            <span class="nav-item">Translation Request</span>
-          </a>
-          </li>
-          <li><a href="manage_questioner.php   ">
+            <li><a href="dashboard.php">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Dashboard</span>
+            </a></li>
+            <li class="active"><a href="translationrequest.php">
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Translation Request</span>
+            </a></li>
+            <li><a href="manage_questioner.php">
                 <i class="fas fa-star"></i>
                 <span class="nav-item">Manage Questionnaire</span>
-            </a>
-            </li>
-          <li><a href="feedbackadmin.php">
-            <i class="fas fa-comments"></i>
-            <span class="nav-item">Feedback</span>
-          </a>
-          </li>
-
-          <li><a href="index.php" class="logout">
-            <i class="fas fa-sign-out-alt"></i>
-            <span class="nav-item">Logout</span>
-          </a>
-          </li>
+            </a></li>
+            <li><a href="feedbackadmin.php">
+                <i class="fas fa-comments"></i>
+                <span class="nav-item">Feedback</span>
+            </a></li>
+            <li><a href="index.php" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Logout</span>
+            </a></li>
         </ul>
-      </div>
-    </nav>
-
+    </div>
+</nav>
 <div class="maincontent">
     <div class="header">
         <div class="headertitle">
-            <span> Manage Proposed Translation Request</span>
-        </div>
-        <div class="userinfo">
-
+            <span>Manage Proposed Translation Request</span>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="card">
                 <div class="headcard">
-                  <h2 class="dbtitle">Translation Proposal</h2>
+                    <h2 class="dbtitle">Translation Proposal</h2>
                 </div>
-
                 <div class="tablehey">
-                  <table class="column">
-                  <thead>
-                        <tr>
-                          <th> Propose Word </th>
-                          <th> Propose Translation </th>
-                          <th> Translation </th>
-                          <th> Language Translation </th>
-                          <th> Description </th>
-                          <th class="act"> Action </th>  
-                          <th></th>  
-                        </tr>
-                    </thead>
-                      <tr>
-                          <?php
-                              while($row = mysqli_fetch_assoc($result)) {   
-                          ?>
-                              <td><?php echo $row['Word'];?></td>
-                              <td><?php echo $row['Language1'];?></td>
-                              <td><?php echo $row['Translated'];?></td>
-                              <td><?php echo $row['Language2'];?></td>
-                              <td><?php echo $row['Descriptions'];?></td>
-                              <td class="acts">
-    <a href="accept_add_to_dictionary.php?Word=<?php echo urlencode($row['Word']); ?>&Translated=<?php echo urlencode($row['Translated']); ?>" 
-       class="accept-button" data-word="<?php echo $row['Word']; ?>" data-translation="<?php echo $row['Translated']; ?>">Accept</a>
-</td>
-                              <td><a href="#" onclick="confirmDelete('<?php echo $row['Word']; ?>', '<?php echo $row['Status']; ?>')" class="but">Delete</a></td>
-                      </tr>
-                          <?php
-                            }
-                          ?>
-                      
-                  </table>
+                    <table class="column">
+                        <thead>
+                            <tr>
+                                <th>Proposed Translation Language</th>
+                                <th>Target Translation Language</th>
+                                <th>Proposed Word</th>
+                                <th>Translated Word</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($row['proposed_translation_language'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                    <td><?php echo htmlspecialchars($row['target_translation_language'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                    <td><?php echo htmlspecialchars($row['proposed_word'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                    <td><?php echo htmlspecialchars($row['translated_word'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                    <td>
+                                        <a href="#" onclick="confirmAccept('<?php echo htmlspecialchars($row['proposed_translation_language'], ENT_QUOTES, 'UTF-8'); ?>', '<?php echo htmlspecialchars($row['translated_word'], ENT_QUOTES, 'UTF-8'); ?>')" class="but">Accept</a>
+                                        <a href="#" onclick="confirmDelete('<?php echo htmlspecialchars($row['proposed_translation_language'], ENT_QUOTES, 'UTF-8'); ?>', '<?php echo htmlspecialchars($row['translated_word'], ENT_QUOTES, 'UTF-8'); ?>')" class="but">Delete</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    
-</div>
-  <script>
-      
-    
-          function confirmDelete(word, status) {
-    if (confirm("Are you sure you want to delete this entry?")) {
-        window.location.href = "deletereq.php?Word=" + word + "&Status=" + status;
+<script>
+function confirmAccept(language, word) {
+    if (confirm("Are you sure you want to accept this entry?")) {
+        window.location.href = "accept_add_to_dictionary.php?Language=" + encodeURIComponent(language) + "&Word=" + encodeURIComponent(word);
     }
 }
 
-
-           document.querySelectorAll('.accept-button').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        const url = this.href;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    this.textContent = 'Accepted';
-                    this.style.backgroundColor = "#4CAF50";
-                    this.classList.remove('accept-button');
-                } else {
-                    alert('Error: ' + data.message);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    });
-});
-
-  </script>
+function confirmDelete(language, word) {
+    if (confirm("Are you sure you want to delete this entry?")) {
+        window.location.href = "delete_add_to_dictionary.php?Language=" + encodeURIComponent(language) + "&Word=" + encodeURIComponent(word);
+    }
+}
+</script>
 </body>
+</html>

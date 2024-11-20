@@ -216,8 +216,7 @@ if (isset($_GET['question_id'])) {
                         <option value="hard" <?php if ($questionLevel === 'hard') echo 'selected'; ?>>Hard</option>
                     </select>
 
-                    <label for="edit_question_image">Upload New Image (optional):</label>
-                    <input type="file" id="edit_question_image" name="question_image" accept="image/*">
+                
 
                     <button type="submit">Update Question</button>
                 </form>

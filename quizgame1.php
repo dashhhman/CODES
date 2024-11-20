@@ -234,6 +234,7 @@ $conn->close();
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
 <script>
+  
   const startButton = document.getElementById('start-button');
   const questionContainer = document.getElementById('question-container');
   const questionText = document.getElementById('question-text');

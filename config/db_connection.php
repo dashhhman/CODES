@@ -1,10 +1,10 @@
 <?php
+// Create a connection to the database
 $servername = "localhost";
-$username = "root"; // replace with your database username
-$password = ""; // replace with your database password
-$dbname = "webling"; // replace with your database name
+$username = "root";
+$password = "";
+$dbname = "webling";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection

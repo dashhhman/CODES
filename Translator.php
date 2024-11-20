@@ -245,11 +245,11 @@ if (isset($_POST['transbut'])) {
                 
                 const result = await response.json();
                 if (response.ok) {
-                    // Do action on success here
+                    Do action on success here
                     console.log("Success Data:", result);
                     document.getElementById('translatedhey').value = result['response'];
-                    // speech.text = result['response'];
-                    // window.speechSynthesis.speak(speech);
+                    speech.text = result['response'];
+                    window.speechSynthesis.speak(speech);
 
                 } else {
                     console.log("Error Data:", result);
