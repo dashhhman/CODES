@@ -5,9 +5,9 @@ if (isset($_GET['category'])) {
     $category = $_GET['category'];
 
     if ($category == 'all') {
-        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` ORDER BY `score` DESC LIMIT 8"; // Limit to top 8
+        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` ORDER BY `category`, `score` DESC LIMIT 8";
     } else {
-        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` WHERE `category` = ? ORDER BY `score` DESC LIMIT 8"; // Limit to top 8 for specific category
+        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` WHERE `category` = ? ORDER BY `score` DESC LIMIT 8";
     }
 
     $stmt = $conn->prepare($sql);
@@ -17,19 +17,29 @@ if (isset($_GET['category'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $rank = 1; 
     $output = "";
+    $currentCategory = "";
+    $rank = 1;
 
     if ($result->num_rows > 0) {
+        $categoryRanks = []; // Array to keep track of ranks per category
+
         while ($row = $result->fetch_assoc()) {
-            $output .= "<tr>";
-            $output .= "<td>" . $rank . "</td>";
-            $output .= "<td>" . htmlspecialchars($row["username"]) . "</td>";
-            $output .= "<td>" . htmlspecialchars($row["score"]) . "</td>";
-            $output .= "<td>" . htmlspecialchars($row["category"]) . "</td>";
-            $output .= "<td>" . htmlspecialchars($row["date_play"]) . "</td>";
-            $output .= "</tr>";
-            $rank++; 
+            if (!isset($categoryRanks[$row["category"]])) {
+                $categoryRanks[$row["category"]] = 1; // Initialize rank for new category
+            }
+
+            if ($categoryRanks[$row["category"]] <= 8) { // Limit to top 8
+                $output .= "<tr>";
+                $output .= "<td>" . $categoryRanks[$row["category"]] . "</td>";
+                $output .= "<td>" . htmlspecialchars($row["username"]) . "</td>";
+                $output .= "<td>" . htmlspecialchars($row["score"]) . "</td>";
+                $output .= "<td>" . htmlspecialchars($row["category"]) . "</td>";
+                $output .= "<td>" . htmlspecialchars($row["date_play"]) . "</td>";
+                $output .= "</tr>";
+
+                $categoryRanks[$row["category"]]++; // Increment rank for category
+            }
         }
     } else {
         $output .= "<tr><td colspan='5'>No scores available for this category.</td></tr>";
@@ -39,6 +49,7 @@ if (isset($_GET['category'])) {
     exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

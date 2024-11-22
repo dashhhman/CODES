@@ -28,11 +28,12 @@
                         <h1>About Us</h1>
                         <h5>WebLingua:The Online Local Dialect Learning Platform</h5>
                         <p>The study is designed to address the difficulties in learning different dialects of the local language.
-                            The development of the “WebLingua: The Online Language Learning Platforms”, 
+                            The development of the “WebLingua: The Online Language Learning Platforms” 
                             is designed to help anyone to learn and gain knowledge from the system platforms.</p>
+                            <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>About Developers</button>  
                     </div>                 
                 </div>
-                <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>About Developers</button>  
+                
             </section>
             
                 <div class="popup">
@@ -48,11 +49,12 @@
                                         <h3>Arbel Balando</h3>
                                         <p>Collage Student</p>
                                         <div class="social-media">
-                                            <i>
-                                                <i class='bx bxl-facebook-circle'></i>
-                                                <i class='bx bxl-instagram-alt'></i>
-                                                <i class='bx bxl-gmail'></i>
-                                            </i>
+                                        <a href="https://www.facebook.com/arbelyanihh" target="_blank"> 
+                                            <i class='bx bxl-facebook-circle'></i> </a> 
+                                            <a href=https://www.instagram.com/arbelyanihh/ target="_blank">
+                                                 <i class='bx bxl-instagram-alt'></i> </a>
+                                                  <a href="mailto:@gmail.com"> 
+                                                    <i class='bx bxl-gmail'></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -62,14 +64,15 @@
                                         <img src="images/Benadera.jpg" alt="">
                                     </div>
                                     <div class="content">
-                                        <h3>Rose Marie Benadera</h3>
+                                        <h3>Rose Benadera</h3>
                                         <p>Collage Student</p>
                                         <div class="social-media">
-                                            <i>
-                                                <i class='bx bxl-facebook-circle'></i>
-                                                <i class='bx bxl-instagram-alt'></i>
-                                                <i class='bx bxl-gmail'></i>
-                                            </i>
+                                        <a href="https://www.facebook.com/ms.rosemariebenadera" target="_blank"> 
+                                            <i class='bx bxl-facebook-circle'></i> </a> 
+                                            <a href=https://www.instagram.com/ms.mariechen target="_blank">
+                                                 <i class='bx bxl-instagram-alt'></i> </a>
+                                                  <a href="mailto:bc.rosemarie.be@cvsu.edu.ph"> 
+                                                    <i class='bx bxl-gmail'></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -82,11 +85,12 @@
                                         <h3>Jaina Lopera</h3>
                                         <p>Collage Student</p>
                                         <div class="social-media">
-                                            <i>
-                                                <i class='bx bxl-facebook-circle'></i>
-                                                <i class='bx bxl-instagram-alt'></i>
-                                                <i class='bx bxl-gmail'></i>
-                                            </i>
+                                        <a href="https://www.facebook.com/haynuuhlpr" target="_blank"> 
+                                            <i class='bx bxl-facebook-circle'></i> </a> 
+                                            <a href=https://www.instagram.com/hi_ynaxoxo/ target="_blank">
+                                                 <i class='bx bxl-instagram-alt'></i> </a>
+                                                  <a href="mailto:bc.jaina.lopera@cvsu.edu.ph"> 
+                                                    <i class='bx bxl-gmail'></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -99,11 +103,12 @@
                                         <h3>Remark Maagma</h3>
                                         <p>Collage Student</p>
                                         <div class="social-media">
-                                            <i>
-                                                <i class='bx bxl-facebook-circle'></i>
-                                                <i class='bx bxl-instagram-alt'></i>
-                                                <i class='bx bxl-gmail'></i>
-                                            </i>
+                                        <a href="https://www.facebook.com/profile.php?id=100069494890332" target="_blank"> 
+                                            <i class='bx bxl-facebook-circle'></i> </a> 
+                                            <a href=https://www.instagram.com/_rmrkdm/ target="_blank">
+                                                 <i class='bx bxl-instagram-alt'></i> </a>
+                                                  <a href="mailto:bc.remark.maagma@cvsu.edu.ph"> 
+                                                    <i class='bx bxl-gmail'></i> </a>
                                         </div>
                                     </div>
                                 </div>

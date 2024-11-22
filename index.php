@@ -75,24 +75,6 @@ if (isset($_POST['transbut'])) {
                                 <li>
                                     <select class="select1" id="lang1" name="lang1">
                                         <option value="tagalog" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Tagalog") echo "selected"; ?>>Tagalog</option>
-                                        <option value="kapampangan" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Kapampangan") echo "selected"; ?>>Kapampangan</option>
-                                        <option value="pangasinense" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Pangasinense") echo "selected"; ?>>Pangasinense</option>
-                                        <option value="ilocano" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Ilocano") echo "selected"; ?>>Ilocano</option>
-                                        <option value="bicolano" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Bicolano") echo "selected"; ?>>Bicolano</option>
-                                        <option value="cebuano" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Cebuano") echo "selected"; ?>>Cebuano</option>
-                                        <option value="hiligaynon" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Hiligaynon") echo "selected"; ?>>Hiligaynon</option>
-                                        <option value="waray" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Waray") echo "selected"; ?>>Waray</option>
-                                        <option value="maranao" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Maranao") echo "selected"; ?>>Maranao</option>
-                                        <option value="kinaray-a" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Kinaray-a") echo "selected"; ?>>Kinaray-a</option>
-                                        <option value="chabacano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Chabacano") echo "selected"; ?>>Chabacano</option>
-                                        <option value="yakan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Yakan") echo "selected"; ?>>Yakan</option>
-                                        <option value="ybanag" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Ybanag") echo "selected"; ?>>Ybanag</option>
-                                        <option value="tausug" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Tausug") echo "selected"; ?>>Tausug</option>
-                                        <option value="ivatan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Ivatan") echo "selected"; ?>>Ivatan</option>
-                                        <option value="sambal" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Sambal") echo "selected"; ?>>Sambal</option>
-                                        <option value="surigaonon" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Surigaonon") echo "selected"; ?>>Surigaonon</option>
-                                        <option value="maguindanao" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Maguindanao") echo "selected"; ?>>Maguindanao</option>
-                                        <option value="aklanon" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Aklanon") echo "selected"; ?>>Aklanon</option>
                                     </select>
                                 </li>
                                 <li class="switch">
@@ -101,12 +83,11 @@ if (isset($_POST['transbut'])) {
                                 </li>
                                 <li>
                                     <select class="select2" id="lang2" name="lang2">
-                                        <option value="tagalog" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Tagalog") echo "selected"; ?>>Tagalog</option>
+                                        <option value="cebuano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Cebuano") echo "selected"; ?>>Cebuano</option>
                                         <option value="kapampangan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Kapampangan") echo "selected"; ?>>Kapampangan</option>
                                         <option value="pangasinense" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Pangasinense") echo "selected"; ?>>Pangasinense</option>
                                         <option value="ilocano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Ilocano") echo "selected"; ?>>Ilocano</option>
                                         <option value="bicolano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Bicolano") echo "selected"; ?>>Bicolano</option>
-                                        <option value="cebuano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Cebuano") echo "selected"; ?>>Cebuano</option>
                                         <option value="hiligaynon" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Hiligaynon") echo "selected"; ?>>Hiligaynon</option>
                                         <option value="waray" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Waray") echo "selected"; ?>>Waray</option>
                                         <option value="maranao" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Maranao") echo "selected"; ?>>Maranao</option>
@@ -162,17 +143,19 @@ if (isset($_POST['transbut'])) {
 
     </div>
     <script>
-
-        
     
-        // const url = 'http://127.0.0.1:5000/translate';
+        //const url = 'http://127.0.0.1:5000/translate';
         const url = 'https://speech.pythonanywhere.com/translate';
+        
 
-        let speech = new  SpeechSynthesisUtterance();
+        let speech = new SpeechSynthesisUtterance();
+        speech.volume = 5; // Set the volume to maximum
+        speech.pitch = 1.2; // Adjust the pitch, range is from 0 (lowest) to 2 (highest)
+        speech.rate = 1; // Adjust the rate, range is from 0.1 (lowest) to 10 (highest)
 
-        let voice = []; 
+        let voices = []; 
 
-        window.speechSynthesis.onvoiceschanged = () =>{
+        window.speechSynthesis.onvoiceschanged = () => {
             voices = window.speechSynthesis.getVoices();
         };
 
@@ -186,14 +169,14 @@ if (isset($_POST['transbut'])) {
             } else {
                 speech.voice = voices[2];
             }
-
-            
         }, 1000);
+
         const voice_but = document.getElementById('voice-but');
-        voice_but.addEventListener("click", () =>{ 
+        voice_but.addEventListener("click", () => { 
             speech.text = document.getElementById("translatedhey").value;
             window.speechSynthesis.speak(speech);
         });
+
 
  
         function copyTextareaContent() {

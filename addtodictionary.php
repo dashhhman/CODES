@@ -75,27 +75,10 @@
                     <li>
                         <select class="select1" name="proposed_translation_language">
                             <option value="Tagalog">Tagalog</option> 
-                            <option value="Kapampangan">Kapampangan</option>
-                            <option value="Pangasinense">Pangasinense</option>
-                            <option value="Iloko">Iloko</option>
-                            <option value="Bikol">Bikol</option>
-                            <option value="Cebuano">Cebuano</option>
-                            <option value="Hiligaynon">Hiligaynon</option>
-                            <option value="Waray">Waray</option>
-                            <option value="Tausug">Tausug</option>
-                            <option value="Maguindanaoan">Maguindanaoan</option>
-                            <option value="Maranao">Maranao</option>
-                            <option value="Chabacano">Chavacano</option>   
-                            <option value="Ybanag">Ybanag</option>
-                            <option value="Ivatan">Ivatan</option>
-                            <option value="Surigaonon">Surigaonon</option>
-                            <option value="Sambal">Sambal</option>
-                            <option value="Aklanon">Aklanon</option>
                         </select>
                     </li>
                     <li>
                         <select class="select2" name="target_translation_language">
-                            <option value="Tagalog">Tagalog</option> 
                             <option value="Kapampangan">Kapampangan</option>
                             <option value="Pangasinense">Pangasinense</option>
                             <option value="Iloko">Iloko</option>
@@ -112,7 +95,6 @@
                             <option value="Surigaonon">Surigaonon</option>
                             <option value="Sambal">Sambal</option>
                             <option value="Aklanon">Aklanon</option>
-                            <!-- Add other options -->
                         </select>
                     </li>
                 </ul>
