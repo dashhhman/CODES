@@ -46,6 +46,21 @@
             right: 10px;
         }
 
+
+        .toggle-menu {
+            display: none; /* Hidden by default */
+        }
+
+        .close-menu {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
         @media (max-width: 768px) {
             .toggle-menu {
                 display: block; /* Show menu icon on mobile */
@@ -280,6 +295,93 @@
 }
 
  
+
+
+
+
+
+
+
+
+.toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-top: -100px;
+                margin-bottom: 80px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }/* Circle Container Styles */
+
+            .circle-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                padding-bottom: 300px;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
         
         
         }   
