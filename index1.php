@@ -130,7 +130,7 @@
                     </div>
                     <div class="circle-row">
                         <a href="#triviaModal10" class="circle"><p>Maranao</p></a>
-                        <a href="#triviaModal11" class="circle"><p>Chabacano</p></a>
+                        <a href="#triviaModal11" class="circle"><p>Chavacano</p></a>
                         <a href="#triviaModal12" class="circle"><p>Ybanag</p></a>
                         <a href="#triviaModal13" class="circle"><p>Ivatan</p></a>
                         <a href="#triviaModal14" class="circle"><p>Sambal</p></a>
