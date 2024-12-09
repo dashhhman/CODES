@@ -211,7 +211,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     position: absolute; /* I-set ang position sa absolute */
     top: 120px; /* I-set ang top sa 20px para malapit sa taas */
     right: 0; /* I-set sa pinakagitna ng kanan */ 
-    margin-right: 2%;
+    margin-right: 2%; 
 }
 
 .translator .box,
@@ -400,7 +400,7 @@ span {
     }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .logo {
         margin: auto;
         width: 150px;
@@ -528,4 +528,4 @@ span {
         font-weight: bold;
         margin-top: auto;
     }
-}
+} */
