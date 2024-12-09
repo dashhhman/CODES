@@ -200,7 +200,15 @@
             z-index: 1000;
 
             }
-        
+    
+.translator .item {
+    width: 320px; /* Ayusin ang lapad kung kinakailangan */
+    height: 50px;
+    list-style: none;
+    padding: 0 20px;
+    position: absolute; /* I-set ang position sa absolute */
+    margin-right: calc(20% - 5px);
+}
   
     .select1 {
         padding: 8px;
@@ -214,8 +222,7 @@
         cursor: pointer;
         width: 320px; 
         position: relative;
-        top: 8px;
-        margin-left: 10%;
+        top: 8px;  
     }
 
     .select2 {
@@ -230,8 +237,7 @@
         cursor: pointer;
         width: 320px ; 
         position: relative;
-        top: 187px; 
-        margin-left: 10%;
+        top: 187px;  
     }      
         
  
@@ -239,21 +245,39 @@
 .translator .box2{
     height: 135px; /* Adjust the height as needed */ 
     position: relative; /* Add relative positioning to .box */
-    width: calc(110% - 5px); /* Each box takes 50% width with 5px spacing */ 
+    width: calc(100% - 5px); /* Each box takes 50% width with 5px spacing */ 
     justify-content: center; 
 }
 
 .translator .box{ 
-    margin-top: 120px; 
+    margin-top: 120px;
 }
 
-.translator .box{ 
-    margin-top: 100px; 
+.translator .box2{ 
+    margin-top: 80px; 
 }
 
 
 
-
+.submit-btn {
+    padding: 6px 0;
+    text-align: center;
+    margin: 15px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 0px;
+    bottom: 8.5px;
+    width: 200px;
+    left: 34%;
+    
+    transform: translateX(0%) translateY(40%);    
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
+}
 
  
         
