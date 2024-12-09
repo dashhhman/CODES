@@ -82,6 +82,14 @@
                
             .navbar ul.show ~ .close-menu {
                 display: block; /* Show close icon when menu is toggled */
+            }/* Circle Container Styles */
+
+            .circle-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                padding-bottom: 300px;
             }
         }   
 
