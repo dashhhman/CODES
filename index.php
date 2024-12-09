@@ -50,21 +50,101 @@ if (isset($_POST['transbut'])) {
 <head>
     <meta charset="UTF-8">
     <link rel="website icon" type="png" href="images/WEBLOGO.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>WebLingua</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 </head>
+<style>
+    .toggle-menu {
+            display: none; /* Hidden by default */
+        }
 
+        .close-menu {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-top: -100px;
+                margin-bottom: 80px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }
+        }   
+
+</style>
 <body>
     <div class="banner">
                 <div class="navbar">
                     <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-                        <ul>
-                            <li><a href="homepage.php"><b>Home</b></a></li>
-                            <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                            <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
-                        </ul>
+                    <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+                    <ul id="nav-links">
+                        <li><a href="homepage.php"><b>Home</b></a></li>
+                        <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
+                        <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                        <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>  
+                  </ul>
                 </div>
 
 
@@ -144,9 +224,7 @@ if (isset($_POST['transbut'])) {
     </div>
     <script>
     
-        //const url = 'http://127.0.0.1:5000/translate';
-        const url = 'https://speech.pythonanywhere.com/translate';
-        
+        const url = 'http://127.0.0.1:5000/translate';
 
         let speech = new SpeechSynthesisUtterance();
         speech.volume = 5; // Set the volume to maximum
@@ -293,6 +371,44 @@ if (isset($_POST['transbut'])) {
         document.querySelector('.Feedback').addEventListener('click', function() {
     window.location.href = 'feedback.php';
 });
+  
+document.getElementById("toggle-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "block";
+        });
+
+        document.getElementById("close-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.remove("show");
+
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "none";
+        });
+
+        document.querySelectorAll(".navbar ul li a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                var navLinks = document.getElementById("nav-links");
+                navLinks.classList.remove("show");
+
+                var closeMenu = document.getElementById("close-menu");
+                closeMenu.style.display = "none";
+            });
+        });
+
+        document.addEventListener("click", function(event) {
+            var navLinks = document.getElementById("nav-links");
+            var closeMenu = document.getElementById("close-menu");
+            var isClickInside = navLinks.contains(event.target) || event.target.id === "toggle-menu" || event.target.closest("#toggle-menu");
+
+            if (!isClickInside) {
+                navLinks.classList.remove("show");
+                closeMenu.style.display = "none";
+            }
+        });
+ 
     </script>
 </body>
 

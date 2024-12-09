@@ -56,99 +56,106 @@ if (isset($_GET['category'])) {
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/WEBLOGO.png" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     
     <style>
-        * {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      .toggle-menu {
+            display: none; /* Hidden by default */
         }
-        @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
 
-    .fade-in {
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    table {
-        width: 100%;
-        max-width: 1250px;
-        margin: 5px auto;
-        border-collapse: collapse;
-        background-color: #ffffff;
-        border-radius: 15px;
-        font-size: 15px;
-        font-weight: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    th, td {
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-        word-wrap: break-word;
-    }
-
-    th {
-        background-color: brown;
-        color: white;
-    }
-
-    td {
-        color: #333;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-        label {
-            color: white;
-            font-weight: 700;
+        .close-menu {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-        @media (max-width: 600px) {
-            th, td {
-                padding: 10px;
-                font-size: 0.9em;
-                font-weight: 20px;
+
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-top: -100px;
+                margin-bottom: 80px;
             }
-            .nav {
+
+            .navbar {
                 flex-direction: column;
-                gap: 10px;
+                align-items: flex-start;
             }
-        }
-        .category-container { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            margin-top: -10px;
-        }
-        .category-container select {
-            padding: 5px;
-            border: none; 
-            border-radius: 15px;
-            font-size: px;
-            margin-left: 10px;
-            width: 80px;    
-        }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }
+        }   
+
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
 <body>
-    <div class="banner">
+   <div class="banner">
         <div class="navbar">
-            <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-            <ul>
+            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
+            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+            <ul id="nav-links">
                 <li><a href="homepage.php"><b>Home</b></a></li>
                 <li><a href="index.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                 <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
             </ul>
         </div>
+
         
         <div class="category-container"> 
             <label for="select_category">Category:</label>
@@ -189,6 +196,44 @@ if (isset($_GET['category'])) {
         </table>
     </div>
     <script>
+        
+        document.getElementById("toggle-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "block";
+        });
+
+        document.getElementById("close-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.remove("show");
+
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "none";
+        });
+
+        document.querySelectorAll(".navbar ul li a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                var navLinks = document.getElementById("nav-links");
+                navLinks.classList.remove("show");
+
+                var closeMenu = document.getElementById("close-menu");
+                closeMenu.style.display = "none";
+            });
+        });
+
+        document.addEventListener("click", function(event) {
+            var navLinks = document.getElementById("nav-links");
+            var closeMenu = document.getElementById("close-menu");
+            var isClickInside = navLinks.contains(event.target) || event.target.id === "toggle-menu" || event.target.closest("#toggle-menu");
+
+            if (!isClickInside) {
+                navLinks.classList.remove("show");
+                closeMenu.style.display = "none";
+            }
+        });
+ 
     $(document).ready(function() {
         function loadLeaderboard(category) {
             $.ajax({

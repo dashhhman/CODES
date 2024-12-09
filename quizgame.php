@@ -43,6 +43,7 @@ $conn->close();
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="images/WEBLOGO.png" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/quiz.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,320 +52,23 @@ $conn->close();
      * {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
         }
-    .quiz-container {
-    text-align: center;
-    background-color: brown;
-    color: #e4e6eb;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 800px; /* Limit the maximum width */
-    width: 90%; /* Occupy a percentage of the viewport width */
-    margin: 5px auto; /* Center the container horizontally */
-    position: relative;
-    font-size: 18px;
-    border: 4px solid black; /* Black border */
-    }
-    h1 {
-      color: #e4e6eb;
-    }
-    #question-container {
-      margin-top: 30px;
-    }
-    #question-text {
-      font-size: 1.5em;
-      margin-bottom: 40px;
-    }
-    #answer-buttons button {
-      display: block;
-      width: 100%;
-      margin: 5px 0;
-      padding: 10px;
-      font-size: 1em;
-      cursor: pointer;
-      color: #e4e6eb;
-      border-radius: 15px;
-      background-color:#242526;
-      transition: background-color 0.3s, border-color 0.3s;
-      border: 1 solid white;
-    }
-    #controls-container {
-      margin-top: 20px;
-    }
-    #start-button {
-      padding: 8px 20px;
-      font-size: 1em;
-      cursor: pointer;
-      background-color: #242526;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      color: #e4e6eb;
-      border: none;
-      border-radius: 15px;
-      transition: background-color 0.3s;
-      border: 1px solid white;
-    }
-    #start-button:hover {
-      background-color:   #242526;
-    }
-    #timer-container {
-    margin-top: 10px;
-    position: relative; 
-    top: 5px;
-    font-size: 2em; 
-    font-weight: 600; 
-    color: #fff; 
-    width: 60px; 
-    height: 60px; 
-    border: 2px solid #fff; 
-    border-radius: 50%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    background-color: #1c1e21; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-    animation: pulse 1s infinite; 
-    transition: transform 0.2s; 
-}
-
-#timer-container:hover {
-    transform: scale(1.1); 
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        50% {
-            transform: scale(1.1);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-    #score-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #1c1e21;  /* Darker background for better contrast */
-    padding: 15px;  /* Increased padding for better spacing */
-    border-radius: 20px;  /* More rounded corners for a sleek look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Enhanced shadow for depth */
-    font-size: 1.2em;
-    color: #ffffff;  /* White color for better contrast */
-    border: 1px solid #ffffff;  /* Solid white border for better definition */
-    transition: transform 0.3s, background-color 0.3s;  /* Smooth transitions for interactivity */
-}
-
-#score-container:hover {
-    transform: translateY(-5px);  /* Slight lift on hover for interactivity */
-    background-color: #292b2e;  /* Slightly lighter background on hover for visual feedback */
-}
-
-#score-container span {
-    font-weight: bold;
-    color: #ffcc00;  /* Highlighted score color for better visibility */
-}
-
-    .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Remove scrolling */
-    background-color: rgba(0, 0, 0, 0.6); /* Darker background for better visibility */
-    padding-top: 40px; /* Adjust padding top */
-}
-
-.modal-content {
-    position: relative;
-    margin: 15% auto; /* Move modal higher */
-    padding: 20px; /* Increased padding for better spacing */
-    border-radius: 15px;
-    width: 80%;
-    max-width: 400px;
-    color: white;
-    background-color: #800000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    animation: slideIn 0.5s ease-out;
-}
-
-.close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover,
-.close:focus {
-    color: #FFD700;
-    text-decoration: none;
-}
-
-#submit-score {
-    background-color: #18191a;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    border: 1px solid white;
-}
-
-#username {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    font-size: 14px;
-}
-
-#submit-score:hover {
-    background-color: #DAA520;
-    transform: translateY(-2px);
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .quiz-container {
-        width: 95%;
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .quiz-container {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .quiz-container {
-        width: 100%; 
-        padding: 10px; 
-    }
-}
-
-
-.fade-in {
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-
-    .btn {
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-        background-color: #ffa500; /* Highlight color */
-        transform: scale(1.05);
-    }
-    #question-level {
-        font-size: 1.4em;
-        margin-top: 20px;
-        margin-left: 500px;
-        color: #e4e6eb;
-        opacity: 0; /* Initial state for fade-in effect */
-        transition: opacity 1s ease-in-out;
-    }
-
-    /* Animation keyframes for blinking effect */
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-
-    .blink {
-        animation: blink 1s infinite;
-    }
-
-    .btn {
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-        background-color: #ffa500; /* Highlight color */
-        transform: scale(1.05);
-    }
-    /* Animation keyframes */
-    @keyframes fadeInHighlight {
-        0% {
-            opacity: 0;
-            background-color: yellow;
-        }
-        100% {
-            opacity: 1;
-            background-color: transparent;
-        }
-    }
-
-    /* Apply animation on load */
-    .highlighted {
-        animation: fadeInHighlight 1s forwards;
-    }
+    
   </style>
 </head>
 <body>
 <div class="banner">
-  <div class="navbar">
-      <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-      <button id="back-button" onclick="location.href='index1.php'">Back to Selection</button>
-    <ul>
-      <li><a href="homepage.php"><b>Home</b></a></li>
-      <li><a href="index.php"><b>Translator</b></a></li>
-      <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>                            
-   </ul>
- </div>
+<div class="navbar">
+            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
+            <button id="back-button" onclick="location.href='index1.php'">Back to Selection</button>
+            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+            <ul id="nav-links">
+                <li><a href="index.php"><b>Home</b></a></li>
+                <li><a href="translator.php"><b>Translator</b></a></li>
+                <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
+                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
+            </ul>
+        </div>
 
  <!-- Progress Bar Placement -->
  <div id="progress-bar">
@@ -392,52 +96,223 @@ $conn->close();
 </div>
 
   <style>
-    .error-message, .success-message {
-        display: none;
-        margin-top: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        animation: popUp 0.5s, fadeOut 2s 2.5s;
-        position: fixed;
-        top: 100px;
-        width: calc(100% - 30px);
-        text-align: center;
-        max-width: 450px;
-        left: 35%;
-        z-index: 1000;
-        align-items: center;
-    }
-
-    .error-message {
-        background-color: #f8d7da;
-        color: #721c24;
-    }
-
-    .success-message {
-        background-color: #d4edda;
-        color: #155724;
-    }
-
-    @keyframes popUp {
-        0% {
-            opacity: 0;
-            transform: scale(0.5);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
+     .error-message, .success-message {
             display: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: popUp 0.5s, fadeOut 2s 2.5s;
+            position: fixed;
+            top: 100px;
+            width: calc(100% - 30px);
+            text-align: center;
+            max-width: 450px;
+            left: 35%;
+            transform: translateX(-0%);
+            z-index: 1000;
+            align-items: center;
         }
-    }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .close-menu {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-right: 30px;
+                margin-top: 60px
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }
+
+            .error-message, .success-message {
+            display: none;
+            margin-top: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: popUp 0.5s, fadeOut 2s 2.5s;
+            position: fixed;
+            top: 200px;
+            width: calc(100% - 30px);
+            text-align: center;
+            max-width: 450px;
+            left: 20%;
+            transform: translateX(-0%);
+            z-index: 1000;
+
+            }
+        }   
+
+    @media (max-width: 480px) {
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-right: 10px;
+                margin-top: -100px;
+                margin-bottom: 80px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }
+
+            .error-message, .success-message {
+            display: none;
+            margin-top: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: popUp 0.5s, fadeOut 2s 2.5s;
+            position: fixed;
+            top: 200px;
+            width: calc(100% - 30px);
+            text-align: center;
+            max-width: 450px;
+            left: 5%;
+            transform: translateX(-0%);
+            z-index: 1000;
+
+            }
+        }   
+
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
     #back-button {
     position: absolute;
     left: 30px;
@@ -727,7 +602,44 @@ submitScoreButton.addEventListener('click', () => {
         showErrorMessage('Please enter a username.');
     }
 });
+  
+document.getElementById("toggle-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
 
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "block";
+        });
+
+        document.getElementById("close-menu").addEventListener("click", function() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.remove("show");
+
+            var closeMenu = document.getElementById("close-menu");
+            closeMenu.style.display = "none";
+        });
+
+        document.querySelectorAll(".navbar ul li a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                var navLinks = document.getElementById("nav-links");
+                navLinks.classList.remove("show");
+
+                var closeMenu = document.getElementById("close-menu");
+                closeMenu.style.display = "none";
+            });
+        });
+
+        document.addEventListener("click", function(event) {
+            var navLinks = document.getElementById("nav-links");
+            var closeMenu = document.getElementById("close-menu");
+            var isClickInside = navLinks.contains(event.target) || event.target.id === "toggle-menu" || event.target.closest("#toggle-menu");
+
+            if (!isClickInside) {
+                navLinks.classList.remove("show");
+                closeMenu.style.display = "none";
+            }
+        });
+ 
 </script>
 
 </body>

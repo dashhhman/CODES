@@ -4,19 +4,99 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/WEBLOGO.png" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/trivia.css">
     <title>WebLingua</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 </head>
+<style>
+     .toggle-menu {
+            display: none; /* Hidden by default */
+        }
+
+        .close-menu {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;
+                color: #fff;
+                margin-left: auto;
+                margin-top: -100px;
+                margin-bottom: 80px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul.show {
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+             .navbar ul li a{
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;   
+            }
+            .navbar ul li ::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #b4bdbc;
+                position: absolute;
+                left: 0;
+                bottom:-10px;
+                transition: 0.5s;
+            }
+            .navbar ul li a:hover::after{
+                width: 100%;
+            }
+               
+            .navbar ul.show ~ .close-menu {
+                display: block; /* Show close icon when menu is toggled */
+            }
+        }   
+
+</style>
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-            <ul>
-                <li><a href="homepage.php"><b>Home</b></a></li>
-                <li><a href="index.php"><b>Translator</b></a></li>
+            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
+            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+            <ul id="nav-links">
+                <li><a href="index.php"><b>Home</b></a></li>
+                <li><a href="translator.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>   
+                <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
+                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span> 
             </ul>
         </div>
         
@@ -328,241 +408,6 @@
         </div>
     </div>
     
-    
-
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
-<style>
-/* Navigation Styles */
-/* Navigation Styles */
-.nav {
-    background-color: transparent;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.nav img {
-    height: 100px;
-    width: auto;
-    margin-right: 20px;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 10px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.nav a i {
-    margin-right: 5px;
-    font-size: 18px;
-}
-
-.nav a:hover {
-    color: #FFD700;
-}
-
-.nav a:last-child {
-    margin-right: 0;
-}
-
-/* Circle Container Styles */
-.circle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.circle-container h1 {
-    text-align: center;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
-    color: white;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    font-size: 25px;
-}
-
-.circle-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 15px;
-}
-
-.circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: brown;
-    border-radius: 50%;
-    height: 90px;
-    width: 190px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border: 4px solid black; /* Black border */
-}
-
-.circle:hover {
-    background-color: #FFD700; /* Change background color to gold */
-    color: black; /* Change text color to black */
-    transform: scale(1.1); /* Slightly increase the size */
-    transition: all 0.3s ease; /* Smooth transition effect */
-}
-
-.circle p {
-    margin: 0;
-    font-size: 20px;
-}
-
-/* Modal Styles */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Prevent scrolling */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.modal.show {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-.modal.hide {
-    display: block; /* Ensure the element is still shown to allow the animation to play */
-    animation: fadeOut 0.5s ease;
-}
-
-.modal-content {
-    background-color: brown;
-    margin: 15% auto;
-    padding: 20px;
-    border: 4px solid black;
-    border-radius: 15px;
-    width: 50%;
-    color: white;
-    text-align: center;
-    opacity: 1;
-    overflow: hidden; /* Prevent scrolling */
-}
-
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #FFD700;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-h2 {
-    font-size: 25px;
-    margin-bottom: 20px; /* Adds space below the heading */
-}
-
-.trivia-content {
-    display: flex;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.trivia-content .flag-image {
-    margin-top: 40px;
-    width: 200px;
-    height: 140px;
-}
-
-.trivia-content .trivia-text {
-    margin: 20px;
-    font-size: 18px;
-    line-height: 1.5;
-    border-left: 4px solid #FFD700;
-    padding-left: 10px;
-}
-
-.next-btn {
-    padding: 8px 20px;
-      font-size: 1em;
-      cursor: pointer;
-      background-color: #242526;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      color: #e4e6eb;
-      border: none;
-      border-radius: 15px;
-      transition: background-color 0.3s;
-      border: 1px solid white;
-    }
-.next-btn {
-      background-color:   #242526;
-    }
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav img {
-        margin-bottom: 10px;
-    }
-
-    .circle {
-        width: 150px;
-        height: 75px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .circle {
-        width: 120px;
-        height: 60px;
-    }
-
-    .circle-container h1 {
-        font-size: 20px;
-    }
-
-    .trivia-content .flag-image {
-        width: 150px;
-        height: 100px;
-    }
-
-    .trivia-content .trivia-text {
-        font-size: 16px;
-    }
-}
-
-</style>

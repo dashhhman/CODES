@@ -11,22 +11,19 @@
     <div class="banner">
         <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo">
-                <ul>
-                    <li><a href="adminlogin.php">Admin</a></li>               
-                </ul>
+            
         </div>
 
         <div class="content">
             <img src="images/School-Logo.png" class="logo">
-            <p>Las Piñas City National Senior High School - CAA CAMPUS</p>
-        
+            <p>Las Piñas City National Senior High School - CAA CAMPUS</p>   
             <div>
                 <a href="about.php">
                     <button type="button"><span></span> About</button>
                 </a>
                 <a href="index.php">
                     <button type="button"><span></span> Translate now</button>
-                </a>`
+                </a>
             </div>
 
         </div>

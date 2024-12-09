@@ -1,17 +1,26 @@
-*{
+/* Base Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.banner{
+/* Banner Section */
+.banner {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/School.png);
-    background-size:cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/School.png);
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    min-width: 100%;  /* Ensures it takes up at least the full width of the viewport */
+    max-width: 100%;  /* Ensures it doesn’t exceed the full width of the viewport */
+    overflow: hidden;  /* Prevents any overflow from being visible */
 }
-.navbar{
+
+
+/* Navbar Styles */
+.navbar {
     width: 85%;
     margin: auto;
     padding: 35px 0;
@@ -19,62 +28,76 @@
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.navbar .logo {
     width: 180px;
     cursor: pointer;
 }
-.navbar ul li{
-    list-style:none;
-    display: inline-block;
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
     margin: 0 20px;
     position: relative;
 }
-.navbar ul li a{
+
+.navbar ul li a {
     text-decoration: none;
     color: #fff;
-    text-transform: uppercase;   
+    text-transform: uppercase;
 }
-.navbar ul li ::after{
+
+.navbar ul li::after {
     content: '';
     height: 3px;
     width: 0;
     background: #009688;
     position: absolute;
     left: 0;
-    bottom:-10px;
-    transition: 0.5s;
+    bottom: -10px;
+    transition: width 0.5s;
 }
-.navbar ul li a:hover::after{
+
+.navbar ul li a:hover::after {
     width: 100%;
 }
-.content{
+
+/* Banner Content */
+.content {
     width: 100%;
     position: absolute;
     top: 55%;
-    transform:translateY(-50%);
+    transform: translateY(-50%);
     text-align: center;
     color: #fff;
 }
-.content h1{
+
+.content h1 {
     font-size: 40px;
     margin-top: 80px;
 }
+
 .content .logo {
-    width: 295px; /* Palitan depende sa laki na gusto mo */
-    height: 290px; /* Siguraduhing ito'y kapareho ng width upang manatiling bilog */
-    border: 3px solid rgb(87, 117, 141); /* Dito ang itim na border */
-    border-radius: 50%; /* Ginagamit ang 50% upang maging bilog */
-    object-fit: cover; /* Opsyonal: para masiguro na tama ang fit ng image */
+    width: 295px;
+    height: 295px;
+    border: 3px solid rgb(87, 117, 141);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-
-.content p{
+.content p {
     margin: 20px auto;
     font-weight: 200;
     font-size: 25px;
-    line-height: 10px;
+    line-height: 1.5;
+    word-wrap: break-word;
 }
-button{
+
+/* Button Styles */
+button {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -88,20 +111,118 @@ button{
     position: relative;
     overflow: hidden;
 }
-span{
-    background:#009688;
+
+button span {
+    background: #009688;
     height: 100%;
     width: 0;
     border-radius: 25px;
     position: absolute;
     left: 0;
-    bottom:0;
-    z-index:-1;
-    transition: 0.5s;
+    bottom: 0;
+    z-index: -1;
+    transition: width 0.5s;
 }
-button:hover span{
+
+button:hover span {
     width: 100%;
 }
-button:hover{
+
+button:hover {
     border: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .content h1 {
+        font-size: 35px;
+    }
+
+    .content .logo {
+        width: 250px;
+        height: 250px;
+    }
+
+    .content p {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        width: 90%;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content .logo {
+        width: 230px;
+        height: 230px;
+    }
+
+    .content p {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .content h1 {
+        font-size: 25px;
+    }
+
+    .content .logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .content p {
+        font-size: 18px;
+        line-height: 1.8;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .content .logo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .content p {
+        font-size: 16px;
+        line-height: 1.9;
+        margin: 8px 0;
+    }
+
+    button {
+        width: 160px;
+    }
 }
