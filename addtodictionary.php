@@ -372,7 +372,9 @@ option{
 
 
 
-.submit-btn {
+.submit-btn2 {
+ 
+    left: 46%; 
     padding: 6px 0;
     text-align: center;
     margin:0 auto;
@@ -385,8 +387,11 @@ option{
     position : relative;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
     margin-top : 16px;
+
 }
-.submit-btn span {
+
+
+.submit-btn2 span {
     background: #009688;
     height: 100%;
     width: 0;
@@ -397,14 +402,59 @@ option{
     z-index: -1;
     transition: 0.5s;
 }
-.submit-btn:hover span {
+.submit-btn2:hover span {
     width: 100%;
 }
-.submit-btn:hover {
+.submit-btn2:hover {
     border: none;
 }
 
 
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate(-50%, -300%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -300%);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+.error-message, .success-message {
+    display: none;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    width: calc(100% - 30px);
+    text-align: center;   
+    z-index: 1000;
+    opacity : 1;
+    animation: popUp 0.5s, fadeOut 2s 2.5s;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+}       
 
 
 
@@ -475,9 +525,7 @@ option{
 
 
         </form>
-
-        <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm2">
-            
+ 
             <div class="maincon2">
                 <div class="glassmorphism">
                     <h1>Add to Dictionary</h1> 
@@ -513,11 +561,10 @@ option{
                                 <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="submit-btn2" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
+                        <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
                 </div>
             </div>
-
-        </form> -->
+ 
 
     <div class="error-message"></div>
     <div class="success-message"></div>
@@ -573,7 +620,8 @@ option{
             }
         });
 
-
+        const submitBtn2 = document.getElementById("transbut2");
+        submitBtn2.addEventListener("click", validateForm2);
 
 
     });
@@ -647,45 +695,46 @@ function showSuccessMessage(message) {
 
 
 
-// function validateForm2(event) {
-//     event.preventDefault();
+function validateForm2(event) {
+    event.preventDefault();
 
+    console.log("helllo hehehee");
 
-//     let proposeWord = document.querySelector('textarea[name="proposed_word2"]').value.trim(); 
-//     let proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
-//     let translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
-//     let translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
+    let proposeWord = document.querySelector('textarea[name="proposed_word2"]').value.trim(); 
+    let proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
+    let translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
+    let translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
 
-//     if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {  
-//             showErrorMessage("All fields are required. Please fill in all fields.");  
-//             return;
-//     }
+    if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {  
+            showErrorMessage("All fields are required. Please fill in all fields.");  
+            return;
+    }
  
  
 
-//     const formData = new FormData();
-//     formData.append('proposed_word', proposeWord);
-//     formData.append('proposed_translation_language', proposeTranslation);
-//     formData.append('translated_word', translation);
-//     formData.append('target_translation_language', translationLanguage);
+    const formData = new FormData();
+    formData.append('proposed_word', proposeWord);
+    formData.append('proposed_translation_language', proposeTranslation);
+    formData.append('translated_word', translation);
+    formData.append('target_translation_language', translationLanguage);
 
-//     fetch('addtodicfunction.php', {
-//         method: 'POST',
-//         body: formData,
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         if (data.success) {
-//             showSuccessMessage(data.message);
-//             setTimeout(() => {
-//                 location.reload(); // Reload the page after success message
-//             }, 2000);
-//         } else {
-//             showErrorMessage(data.message);
-//         }
-//     })
-//     .catch(error => showErrorMessage("An error occurred: " + error));
-// }
+    fetch('addtodicfunction.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showSuccessMessage(data.message);
+            setTimeout(() => {
+                location.reload(); // Reload the page after success message
+            }, 2000);
+        } else {
+            showErrorMessage(data.message);
+        }
+    })
+    .catch(error => showErrorMessage("An error occurred: " + error));
+}
 
 
 
