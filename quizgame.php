@@ -143,6 +143,7 @@ $conn->close();
 
             .navbar ul.show {
                 left: 0;
+                z-index : 10;
             }
 
             .navbar ul li {
@@ -219,32 +220,26 @@ $conn->close();
                 color: #e4e6eb;
                 opacity: 0; /* Initial state for fade-in effect */
                 transition: opacity 1s ease-in-out;
-            }
+            } 
 
+                    
+        .modal-content {     
+            z-index: 1;
+            position: relative;
+            margin: auto; /* Center the modal */
+            padding: 20px; /* Increased padding for better spacing */
+            border-radius: 15px;
+            width: 80%; 
+            color: white;
+            background-color: #800000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
 
-            .modal-content { 
-                position: relative;
-                margin: auto; /* Center the modal */
-                padding: 20px; /* Increased padding for better spacing */
-                border-radius: 15px;
-                width: 80%; 
-                color: white;
-                background-color: #800000;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                animation: slideIn 0.5s ease-out;
-            }
-
-
-
-
-
-
-
-
+        }
 
 
         }   
@@ -385,6 +380,9 @@ $conn->close();
 } 
 
 
+
+
+
 </style>
 </head>
 <body>
@@ -395,7 +393,7 @@ $conn->close();
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
             <ul id="nav-links">
                 <li><a href="index.php"><b>Home</b></a></li>
-                <li><a href="translator.php"><b>Translator</b></a></li>
+                <li><a href="index1.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                 <li><a href="index1.php"><b>Fun Quiz</b></a></li>
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
