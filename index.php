@@ -396,13 +396,14 @@ body {
 
 .navbar{
     
-    width: 95%;
+    width: 100%;
     margin: auto;
     padding:0 ;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1;
+    position : relative;
 } 
 
 
@@ -485,7 +486,7 @@ body {
                         </div>
                         
                         <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Translate</button>
-                        <button onclick="clear()" id="clear-but" class="clear-btn"><span></span>Clear</button>
+                        <button id="clear-but" class="clear-btn"><span></span>Clear</button>
                         <button onclick="window.location.href='feedback.php';" class="Feedback"><span></span>Feedback</button>
                     </div>
                 
@@ -501,18 +502,18 @@ body {
 
 
                         <div class="boxnew">
-                            <select class="select1-2" id="lang1" name="lang1">
+                            <select class="select1-2" id="lang1-1" name="lang1">
                                 <option value="tagalog" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Tagalog") echo "selected"; ?>>Tagalog</option>
                             </select>  
                             <div class="messnew">
-                                <textarea maxlength="5000" name="wordhey" id="wordhey" class="textmess" placeholder="Write down.."><?php if (isset($Word)) echo htmlspecialchars($Word); ?></textarea>
+                                <textarea maxlength="5000" name="wordhey" id="wordhey-1" class="textmess" placeholder="Write down.."><?php if (isset($Word)) echo htmlspecialchars($Word); ?></textarea>
  
                             </div>
                         </div>
 
                         <div class="box2new">
 
-                            <select class="select2-2" id="lang2" name="lang2">
+                            <select class="select2-2" id="lang2-1" name="lang2">
                                 <option value="cebuano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Cebuano") echo "selected"; ?>>Cebuano</option>
                                 <option value="kapampangan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Kapampangan") echo "selected"; ?>>Kapampangan</option>
                                 <option value="pangasinense" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Pangasinense") echo "selected"; ?>>Pangasinense</option>
@@ -534,7 +535,7 @@ body {
                             </select> 
                             
                             <div class="mess2new">
-                                <textarea maxlength="5000" name="translatedhey" id="translatedhey" class="textmess2" placeholder=""><?php if (isset($translatedText)) echo htmlspecialchars($translatedText); ?></textarea>
+                                <textarea maxlength="5000" name="translatedhey" id="translatedhey-1" class="textmess2" placeholder=""><?php if (isset($translatedText)) echo htmlspecialchars($translatedText); ?></textarea>
                                 
                                 <div class="icons-buttons">
                                     <div class="icon3new">
@@ -549,8 +550,8 @@ body {
                         </div>
                         
                         <div class="list-actions-buttons">
-                            <button type="submit" class="submit-btn-new" id="transbut" name="transbut"><span></span>Translate</button>
-                            <button onclick="clear()" id="clear-but" class="clear-btn-new"><span></span>Clear</button>
+                            <button type="submit" class="submit-btn-new" id="transbut-1" name="transbut"><span></span>Translate</button>
+                            <button   id="clear-but-1" class="clear-btn-new"><span></span>Clear</button>
                             <button onclick="window.location.href='feedback.php';" class="Feedback-new"><span></span>Feedback</button> 
                         </div>
                     </div>
@@ -599,7 +600,11 @@ body {
 
         const voice_but = document.getElementById('voice-but');
         voice_but.addEventListener("click", () => { 
-            speech.text = document.getElementById("translatedhey").value;
+            if  (document.getElementById("translatedhey").value != ""){
+                speech.text = document.getElementById("translatedhey").value;
+            } else {
+                speech.text = document.getElementById("translatedhey-1").value; 
+            }
             window.speechSynthesis.speak(speech);
         });
 
@@ -613,8 +618,8 @@ body {
   
         const clear_but = document.getElementById('clear-but');
         clear_but.addEventListener('click', () => {
-            document.querySelector('textarea').value = '';
-            document.querySelector('textarea').focus();
+            document.getElementById('wordhey').value = ""; 
+            document.getElementById('translatedhey').value = "";
         });
 
 
@@ -682,10 +687,61 @@ body {
                 }).catch(error => console.error('Error:', error));
         };
 
+
         const debouncedTranslateText = debounce(translateText, 900); // 1000 ms = 1 second
 
         const wordhey = document.getElementById('wordhey');
         wordhey.addEventListener('keyup', debouncedTranslateText);
+
+
+
+
+
+
+
+        // Mobile view scripts
+
+        const clear_but1 = document.getElementById('clear-but-1');
+        clear_but1.addEventListener('click', () => {
+            document.getElementById('wordhey-1').value = ""; 
+            document.getElementById('translatedhey-1').value = "";
+        });
+
+        const translateButton1 = document.getElementById('transbut-1');
+        translateButton1.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            const sentence = document.getElementById('wordhey-1').value;
+            const sourceLanguage = document.getElementById('lang1-1').value;
+            const targetLanguage = document.getElementById('lang2-1').value;
+
+            if (!sentence) return;
+
+
+            fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        sentence,
+                        sourceLanguage,
+                        targetLanguage
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('translatedhey-1').value = data.translated_sentence;
+                })
+                .catch(error => console.error('Error:', error));
+
+        });
+ 
+        function copyTextareaContent() {
+            var textarea = document.getElementById("translatedhey-1");
+            textarea.select();
+            document.execCommand("copy");
+        }
  
 
         // Get the modal
