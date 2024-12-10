@@ -474,7 +474,10 @@ option{
             </div>
 
 
+        </form>
 
+        <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm2">
+            
             <div class="maincon2">
                 <div class="glassmorphism">
                     <h1>Add to Dictionary</h1> 
@@ -510,21 +513,11 @@ option{
                                 <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
+                        <button type="submit" class="submit-btn2" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-        </form>
-
-
+        </form> -->
 
     <div class="error-message"></div>
     <div class="success-message"></div>
@@ -533,7 +526,7 @@ option{
 
     <script>
               
-              document.getElementById("toggle-menu").addEventListener("click", function() {
+        document.getElementById("toggle-menu").addEventListener("click", function() {
             var navLinks = document.getElementById("nav-links");
             navLinks.classList.toggle("show");
 
@@ -570,37 +563,36 @@ option{
             }
         });
  
-  document.addEventListener("DOMContentLoaded", function() {
-    const submitBtn = document.querySelector(".submit-btn");
-    submitBtn.addEventListener("click", validateForm);
+    document.addEventListener("DOMContentLoaded", function() {
+        const submitBtn = document.querySelector(".submit-btn");
+        submitBtn.addEventListener("click", validateForm);
 
-    document.addEventListener("keydown", function(event) {
-        if (event.key === 'Enter') {
-            validateForm(event);
-        }
+        document.addEventListener("keydown", function(event) {
+            if (event.key === 'Enter') {
+                validateForm(event);
+            }
+        });
+
+
+
+
     });
-});
 
 function validateForm(event) {
     event.preventDefault();
+
 
     let proposeWord = document.querySelector('textarea[name="proposed_word"]').value.trim(); 
     let proposeTranslation = document.querySelector('select[name="proposed_translation_language"]').value.trim();
     let translation = document.querySelector('textarea[name="translated_word"]').value.trim();
     let translationLanguage = document.querySelector('select[name="target_translation_language"]').value.trim();
 
-    if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {
-        proposeWord = document.querySelector('textarea[name="proposed_word2"]').value.trim(); 
-        proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
-        translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
-        translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
-        if (!proposeWord || !proposeTranslation || !translation || !translationLanguage){
-            showErrorMessage("All fields are required. Please fill in all fields.");
-            return; 
-        }
+    if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {  
+            showErrorMessage("All fields are required. Please fill in all fields.");  
+            return;
     }
-
-    showSuccessMessage("Form has been submitted successfully!");
+ 
+ 
 
     const formData = new FormData();
     formData.append('proposed_word', proposeWord);
@@ -651,6 +643,57 @@ function showSuccessMessage(message) {
         successDiv.style.display = 'none';
     }, 2000); // Match with the fade out animation
 }
+
+
+
+
+// function validateForm2(event) {
+//     event.preventDefault();
+
+
+//     let proposeWord = document.querySelector('textarea[name="proposed_word2"]').value.trim(); 
+//     let proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
+//     let translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
+//     let translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
+
+//     if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {  
+//             showErrorMessage("All fields are required. Please fill in all fields.");  
+//             return;
+//     }
+ 
+ 
+
+//     const formData = new FormData();
+//     formData.append('proposed_word', proposeWord);
+//     formData.append('proposed_translation_language', proposeTranslation);
+//     formData.append('translated_word', translation);
+//     formData.append('target_translation_language', translationLanguage);
+
+//     fetch('addtodicfunction.php', {
+//         method: 'POST',
+//         body: formData,
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.success) {
+//             showSuccessMessage(data.message);
+//             setTimeout(() => {
+//                 location.reload(); // Reload the page after success message
+//             }, 2000);
+//         } else {
+//             showErrorMessage(data.message);
+//         }
+//     })
+//     .catch(error => showErrorMessage("An error occurred: " + error));
+// }
+
+
+
+
+
+
+
+
 
     </script>
 </body>
