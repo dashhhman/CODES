@@ -61,16 +61,34 @@
             right: 10px;
         }
 
-        @media (max-width: 768px) {
-            .toggle-menu {
-                display: block; /* Show menu icon on mobile */
-                cursor: pointer;
-                font-size: 24px;
-                color: #fff;
-                margin-left: auto;
-                margin-right: 30px;
-                margin-top: 60px
+
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
             }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+
+
+
+
+
+        @media (max-width: 768px) { 
 
             .navbar {
                 flex-direction: column;
@@ -139,16 +157,7 @@
 
             }
 
-            .toggle-menu {
-                display: block; /* Show menu icon on mobile */
-                cursor: pointer;
-                font-size: 24px;
-                color: #fff;
-                margin-left: auto;
-                margin-right: 30px;
-                margin-top: 60px
-            }
-
+ 
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
@@ -293,17 +302,8 @@
     transform: translateX(0%) translateY(40%);    
     transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
 }
-<<<<<<< HEAD
 
-    .toggle-menu {
-                display: block; /* Show menu icon on mobile */
-                cursor: pointer;
-                font-size: 24px;
-                color: #fff;
-                margin-left: auto;
-                margin-top: -100px;
-                margin-bottom: 80px;
-            }
+ 
 
             .navbar {
                 flex-direction: column;
@@ -355,18 +355,11 @@
                 display: block; /* Show close icon when menu is toggled */
             }/* Circle Container Styles */
 
-=======
 
  
 
 
-
-
-
-
-
-
-.toggle-menu {
+            .toggle-menu {
                 display: block; /* Show menu icon on mobile */
                 cursor: pointer;
                 font-size: 24px;
@@ -436,40 +429,23 @@
 
 
 
-
-
-
-
-
-
-
-
-
-        
->>>>>>> dae1b4bb3c15f9f607118a33afbf72da9014b70f
         
         }   
 
-        @keyframes popUp {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
 
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                display: none;
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>

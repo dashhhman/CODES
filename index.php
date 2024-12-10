@@ -147,6 +147,7 @@ if (isset($_POST['transbut'])) {
 
             .maincon-2{
                 display : flex;
+                height : 100svh;
             }
 
 
@@ -256,6 +257,8 @@ option{
 
 .glassmorphism{
     height : fit-content;
+    margin-top: 100px;
+    z-index: 10;
 }
 
 
@@ -365,6 +368,42 @@ option{
 }
 
 
+body {
+    background-color: #c55039, url;
+    background-image: url('images/bg.jpg'); /* Background image */
+    background-size: cover; 
+    padding: 0%;
+    margin: 0;
+    overflow: auto; 
+    text-align: right; 
+    height: 100vh;
+}
+
+
+
+ .banner {
+    width: 100%;
+    height: 130vh; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -999;
+
+}
+ 
+
+
+
+.navbar{
+    
+    width: 95%;
+    margin: auto;
+    padding:0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+} 
 
 
         }   
