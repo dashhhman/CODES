@@ -101,7 +101,7 @@
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
             <ul id="nav-links">
                 <li><a href="index.php"><b>Home</b></a></li>
-                <li><a href="translator.php"><b>Translator</b></a></li>
+                <li><a href="index.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                 <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span> 

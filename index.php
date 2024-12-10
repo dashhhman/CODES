@@ -58,7 +58,7 @@ if (isset($_POST['transbut'])) {
 
     <style>
         .toggle-menu {
-            display: none;  
+            display: none; 
         }
 
         .close-menu {
@@ -78,18 +78,16 @@ if (isset($_POST['transbut'])) {
 
 
         @media (max-width: 768px) {
-            .toggle-menu {
-                display: block;
-                cursor: pointer;
-                font-size: 24px;
-                color: #fff;
-                margin-left: auto;
-                margin-top: -100px;
-                margin-bottom: 80px;
-            }
 
+            .toggle-menu {
+                display: block; /* Show menu icon on mobile */
+                cursor: pointer;
+                font-size: 24px;  
+                margin-right : 30px;
+            }
+ 
             .navbar {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: flex-start;
             }
 
@@ -136,7 +134,69 @@ if (isset($_POST['transbut'])) {
                
             .navbar ul.show ~ .close-menu {
                 display: block; /* Show close icon when menu is toggled */
+            }/* Circle Container Styles */
+
+            .circle-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                padding-bottom: 300px;
             }
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index : 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Allow scrolling */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal.hide {
+    display: block; /* Ensure the element is still shown to allow the animation to play */
+    animation: fadeOut 0.5s ease;
+}
+
+
+.modal-content {
+    background-color: brown;
+    margin: 15% auto;
+    padding: 20px;
+    border: 4px solid black;
+    border-radius: 15px;
+    width: 90%; /* Adjusted width for smaller devices */
+    color: white;
+    text-align: center;
+    opacity: 1;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #FFD700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
 
 
             .maincon {
@@ -257,8 +317,7 @@ option{
 
 .glassmorphism{
     height : fit-content;
-    margin-top: 100px;
-    z-index: 10;
+    margin-top: 100px; 
 }
 
 
@@ -386,8 +445,7 @@ body {
     height: 130vh; 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    z-index: -999;
+    background-repeat: no-repeat; 
 
 }
  
@@ -409,6 +467,12 @@ body {
 
         }   
 
+
+
+
+
+
+
 </style>
 
 
@@ -428,6 +492,7 @@ body {
                     <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>  
                 </ul>
             </div>
+ 
 
 
             <div class="maincon">
@@ -569,7 +634,7 @@ body {
 
 
 
-
+    <script src="js/script.js"></script>
 
     <script>
     
