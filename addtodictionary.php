@@ -62,6 +62,11 @@
         }
 
 
+        .maincon2{
+            display : none;
+        } 
+
+
         @keyframes popUp {
             0% {
                 opacity: 0;
@@ -88,364 +93,324 @@
 
 
 
-        @media (max-width: 768px) { 
+@media (max-width: 768px) { 
 
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
 
-            .navbar ul {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease;
-            }
+.toggle-menu {
+    display: block; /* Show menu icon on mobile */
+    cursor: pointer;
+    font-size: 24px;  
+    margin-right : 30px;
+}
 
-            .navbar ul.show {
-                left: 0;
-            }
+.navbar {
+    flex-direction: row;
+    align-items: flex-start;
+}
 
-            .navbar ul li {
-                margin: 20px 0;
-            }
+.navbar ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+}
 
-             .navbar ul li a{
-                text-decoration: none;
-                color: #fff;
-                text-transform: uppercase;   
-            }
-            .navbar ul li ::after{
-                content: '';
-                height: 3px;
-                width: 0;
-                background: #b4bdbc;
-                position: absolute;
-                left: 0;
-                bottom:-10px;
-                transition: 0.5s;
-            }
-            .navbar ul li a:hover::after{
-                width: 100%;
-            }
-               
-            .navbar ul.show ~ .close-menu {
-                display: block; /* Show close icon when menu is toggled */
-            }
+.navbar ul.show {
+    left: 0;
+}
 
-            .error-message, .success-message {
-            display: none;
-            margin-top: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 20%;
-            transform: translateX(-0%);
-            z-index: 1000;
+.navbar ul li {
+    margin: 20px 0;
+}
 
-            }
-
- 
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .navbar ul {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease;
-            }
-
-            .navbar ul.show {
-                left: 0;
-            }
-
-            .navbar ul li {
-                margin: 20px 0;
-            }
-
-             .navbar ul li a{
-                text-decoration: none;
-                color: #fff;
-                text-transform: uppercase;   
-            }
-            .navbar ul li ::after{
-                content: '';
-                height: 3px;
-                width: 0;
-                background: #b4bdbc;
-                position: absolute;
-                left: 0;
-                bottom:-10px;
-                transition: 0.5s;
-            }
-            .navbar ul li a:hover::after{
-                width: 100%;
-            }
-               
-            .navbar ul.show ~ .close-menu {
-                display: block; /* Show close icon when menu is toggled */
-            }
-
-            .error-message, .success-message {
-            display: none;
-            margin-top: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 5%;
-            transform: translateX(-0%);
-            z-index: 1000;
-
-            }
+    .navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;   
+}
+.navbar ul li ::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #b4bdbc;
+    position: absolute;
+    left: 0;
+    bottom:-10px;
+    transition: 0.5s;
+}
+.navbar ul li a:hover::after{
+    width: 100%;
+}
     
-.translator .item {
-    width: 320px; /* Ayusin ang lapad kung kinakailangan */
-    height: 50px;
-    list-style: none;
-    padding: 0 20px;
-    position: absolute; /* I-set ang position sa absolute */
-    margin-right: calc(20% - 5px);
-}
-  
-    .select1 {
-        padding: 8px;
-        padding-top: 5px;
-        font-size: 21px;
-        border: 4px solid black;
-        border-radius: 15px;
-        font-weight: bold;
-        color: #000;
-        background-color: #fff;
-        cursor: pointer;
-        width: 320px; 
-        position: relative;
-        top: 8px;  
-    }
+.navbar ul.show ~ .close-menu {
+    display: block; /* Show close icon when menu is toggled */
+}/* Circle Container Styles */
 
-    .select2 {
-        padding: 8px;
-        padding-top: 5px;
-        font-size: 21px;
-        border: 4px solid black;
-        border-radius: 15px;
-        font-weight: bold;
-        color: #000;
-        background-color: #fff;
-        cursor: pointer;
-        width: 320px ; 
-        position: relative;
-        top: 187px;  
-    }      
-        
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 300px;
+}
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index : 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Allow scrolling */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal.hide {
+    display: block; /* Ensure the element is still shown to allow the animation to play */
+    animation: fadeOut 0.5s ease;
+}
+
+
+.modal-content {
+    background-color: brown;
+    margin: 15% auto;
+    padding: 20px;
+    border: 4px solid black;
+    border-radius: 15px;
+    width: 90%; /* Adjusted width for smaller devices */
+    color: white;
+    text-align: center;
+    opacity: 1;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #FFD700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar{
+    
+    width: 100%;
+    margin: auto;
+    padding:0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    position : relative;
+} 
+
+
+
+
+.maincon{
+    display : none;
+}
+
+
+.maincon2 {
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
  
-.translator .box,
-.translator .box2{
-    height: 135px; /* Adjust the height as needed */ 
-    position: relative; /* Add relative positioning to .box */
-    width: calc(100% - 5px); /* Each box takes 50% width with 5px spacing */ 
-    justify-content: center; 
+.glassmorphism {
+    width: 85%;
+    box-shadow: 15px 15px 12px #00000035;
+    backdrop-filter: blur(-1px);
+    border-radius: 15px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    top: calc(50% + 58px); 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    padding: 8px;
+    height: calc(60% - -30px);   
+    background: brown;
+    border: 4px solid black; /* Black border */   
 }
 
-.translator .box{ 
-    margin-top: 120px;
+
+
+
+
+
+.select1-2 { 
+    font-size: 20px; 
+    border: 2px solid #333;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer; 
+    margin: 0; /* Remove auto margin */
+    margin-right: auto; /* Push the select element to the left */  
+    color: #000;
+    background-color: #fff;
+    border: 4px solid black; /* Black border */
+    width: 100%;
+    resize: horizontal;
+    padding: 10px;
+}   
+
+.select2-2 {
+    font-size: 20px; 
+    border: 2px solid #333;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer; 
+    margin: 0; /* Remove auto margin */
+    margin-right: auto; /* Push the select element to the left */  
+    color: #000;
+    background-color: #fff;
+    border: 4px solid black; /* Black border */
+    width: 100%;
+    resize: horizontal;
+    padding: 10px;
+    
 }
 
-.translator .box2{ 
-    margin-top: 80px; 
+option{
+    background-color: floralwhite;
+    text-align:center;
+    font-weight: bold;
+    font-size: 22px;
+    resize: horizontal;
+    width : 90%;
 }
+
+.translator .boxnew,
+.translator .box2new {
+    height: 10px;
+    margin-bottom: 0px;
+    position: relative;
+    width: calc(50% - 15px);
+    float: left;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+.translator .box2new {
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+
+.translator .boxnew .messnew,
+.translator .box2new .mess2new {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    color: #ffffff; 
+    resize : none;
+
+}
+
+.translator .boxnew textarea.textmess,
+.translator .box2new textarea.textmess2 {
+    width: calc(100% - 20px);
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    resize: none;
+    padding: 10px;
+    margin: 30px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    background: white;
+    color: black;
+    -webkit-backdrop-filter: blur(11px);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    padding-right: 40px; /* Make space for the icon */
+    position: relative;
+    display: none;
+}
+
+
+ 
+  
+.box2new textarea,
+.boxnew textarea{ 
+    height: 200px;
+}
+
+.glassmorphism{
+    height : fit-content;
+    margin-top: 20px; 
+}
+
 
 
 
 .submit-btn {
     padding: 6px 0;
     text-align: center;
-    margin: 15px 10px;
+    margin:0 auto;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #009688;
     background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    margin-left: 0px;
-    bottom: 8.5px;
-    width: 200px;
-    left: 34%;
-    
-    transform: translateX(0%) translateY(40%);    
+    color: #fff;  
+    width: 50%;
+    position : relative;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
+    margin-top : 16px;
+}
+.submit-btn span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.submit-btn:hover span {
+    width: 100%;
+}
+.submit-btn:hover {
+    border: none;
 }
 
- 
 
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
 
-            .navbar ul {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease;
-            }
 
-            .navbar ul.show {
-                left: 0;
-            }
 
-            .navbar ul li {
-                margin: 20px 0;
-            }
-
-             .navbar ul li a{
-                text-decoration: none;
-                color: #fff;
-                text-transform: uppercase;   
-            }
-            .navbar ul li ::after{
-                content: '';
-                height: 3px;
-                width: 0;
-                background: #b4bdbc;
-                position: absolute;
-                left: 0;
-                bottom:-10px;
-                transition: 0.5s;
-            }
-            .navbar ul li a:hover::after{
-                width: 100%;
-            }
-               
-            .navbar ul.show ~ .close-menu {
-                display: block; /* Show close icon when menu is toggled */
-            }/* Circle Container Styles */
-
+}   
 
  
-
-
-            .toggle-menu {
-                display: block; /* Show menu icon on mobile */
-                cursor: pointer;
-                font-size: 24px;
-                color: #fff;
-                margin-left: auto;
-                margin-top: -100px;
-                margin-bottom: 80px;
-            }
-
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .navbar ul {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease;
-            }
-
-            .navbar ul.show {
-                left: 0;
-            }
-
-            .navbar ul li {
-                margin: 20px 0;
-            }
-
-             .navbar ul li a{
-                text-decoration: none;
-                color: #fff;
-                text-transform: uppercase;   
-            }
-            .navbar ul li ::after{
-                content: '';
-                height: 3px;
-                width: 0;
-                background: #b4bdbc;
-                position: absolute;
-                left: 0;
-                bottom:-10px;
-                transition: 0.5s;
-            }
-            .navbar ul li a:hover::after{
-                width: 100%;
-            }
-               
-            .navbar ul.show ~ .close-menu {
-                display: block; /* Show close icon when menu is toggled */
-            }/* Circle Container Styles */
-
-            .circle-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 10px;
-                padding-bottom: 300px;
-            }
-
-
-
-        
-        }   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </style>
 </head>
 <body>
@@ -460,55 +425,109 @@
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
             </ul>
         </div>
+
        <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm">
-    <div class="maincon">
-        <div class="glassmorphism">
-            <h1>Add to Dictionary</h1>
-            <div class="translator">
-                <ul class="item">
-                    <li>
-                        <select class="select1" name="proposed_translation_language">
-                            <option value="Tagalog">Tagalog</option> 
-                        </select>
-                    </li>
-                    <li>
-                        <select class="select2" name="target_translation_language">
-                            <option value="Kapampangan">Kapampangan</option>
-                            <option value="Pangasinense">Pangasinense</option>
-                            <option value="Iloko">Iloko</option>
-                            <option value="Bikol">Bikol</option>
-                            <option value="Cebuano">Cebuano</option>
-                            <option value="Hiligaynon">Hiligaynon</option>
-                            <option value="Waray">Waray</option>
-                            <option value="Tausug">Tausug</option>
-                            <option value="Maguindanaoan">Maguindanaoan</option>
-                            <option value="Maranao">Maranao</option>
-                            <option value="Chabacano">Chavacano</option>   
-                            <option value="Ybanag">Ybanag</option>
-                            <option value="Ivatan">Ivatan</option>
-                            <option value="Surigaonon">Surigaonon</option>
-                            <option value="Sambal">Sambal</option>
-                            <option value="Aklanon">Aklanon</option>
-                        </select>
-                    </li>
-                </ul>
-                <div class="box">
-                    <div class="mess">
-                        <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Write down.."></textarea>
+            <div class="maincon">
+                <div class="glassmorphism">
+                    <h1>Add to Dictionary</h1>
+                    <div class="translator">
+                        <ul class="item">
+                            <li>
+                                <select class="select1" name="proposed_translation_language">
+                                    <option value="Tagalog">Tagalog</option> 
+                                </select>
+                            </li>
+                            <li>
+                                <select class="select2" name="target_translation_language">
+                                    <option value="Kapampangan">Kapampangan</option>
+                                    <option value="Pangasinense">Pangasinense</option>
+                                    <option value="Iloko">Iloko</option>
+                                    <option value="Bikol">Bikol</option>
+                                    <option value="Cebuano">Cebuano</option>
+                                    <option value="Hiligaynon">Hiligaynon</option>
+                                    <option value="Waray">Waray</option>
+                                    <option value="Tausug">Tausug</option>
+                                    <option value="Maguindanaoan">Maguindanaoan</option>
+                                    <option value="Maranao">Maranao</option>
+                                    <option value="Chabacano">Chavacano</option>   
+                                    <option value="Ybanag">Ybanag</option>
+                                    <option value="Ivatan">Ivatan</option>
+                                    <option value="Surigaonon">Surigaonon</option>
+                                    <option value="Sambal">Sambal</option>
+                                    <option value="Aklanon">Aklanon</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <div class="box">
+                            <div class="mess">
+                                <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Write down.."></textarea>
+                            </div>
+                        </div>
+                        <div class="box2">
+                            <div class="mess2">
+                                <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Write down.."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
                     </div>
                 </div>
-                <div class="box2">
-                    <div class="mess2">
-                        <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Write down.."></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
             </div>
-        </div>
-    </div>
-</form>
-<div class="error-message"></div>
-<div class="success-message"></div>
+
+
+
+            <div class="maincon2">
+                <div class="glassmorphism">
+                    <h1>Add to Dictionary</h1> 
+                        <div class="boxnew">
+                            <select class="select1-2" name="proposed_translation_language2">
+                                <option value="Tagalog">Tagalog</option> 
+                            </select>
+                            <div class="messnew">
+                                <textarea maxlength="5000" name="proposed_word2" class="textmess" placeholder="Write down.."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="box2new">
+                            <select class="select2-2" name="target_translation_language2">
+                                <option value="Kapampangan">Kapampangan</option>
+                                <option value="Pangasinense">Pangasinense</option>
+                                <option value="Iloko">Iloko</option>
+                                <option value="Bikol">Bikol</option>
+                                <option value="Cebuano">Cebuano</option>
+                                <option value="Hiligaynon">Hiligaynon</option>
+                                <option value="Waray">Waray</option>
+                                <option value="Tausug">Tausug</option>
+                                <option value="Maguindanaoan">Maguindanaoan</option>
+                                <option value="Maranao">Maranao</option>
+                                <option value="Chabacano">Chavacano</option>   
+                                <option value="Ybanag">Ybanag</option>
+                                <option value="Ivatan">Ivatan</option>
+                                <option value="Surigaonon">Surigaonon</option>
+                                <option value="Sambal">Sambal</option>
+                                <option value="Aklanon">Aklanon</option>
+                            </select>
+                            <div class="mess2new">
+                                <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </form>
+
+
+
+    <div class="error-message"></div>
+    <div class="success-message"></div>
 
 
 
@@ -565,14 +584,20 @@
 function validateForm(event) {
     event.preventDefault();
 
-    const proposeWord = document.querySelector('textarea[name="proposed_word"]').value.trim();
-    const proposeTranslation = document.querySelector('select[name="proposed_translation_language"]').value.trim();
-    const translation = document.querySelector('textarea[name="translated_word"]').value.trim();
-    const translationLanguage = document.querySelector('select[name="target_translation_language"]').value.trim();
+    let proposeWord = document.querySelector('textarea[name="proposed_word"]').value.trim(); 
+    let proposeTranslation = document.querySelector('select[name="proposed_translation_language"]').value.trim();
+    let translation = document.querySelector('textarea[name="translated_word"]').value.trim();
+    let translationLanguage = document.querySelector('select[name="target_translation_language"]').value.trim();
 
     if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {
-        showErrorMessage("All fields are required. Please fill in all fields.");
-        return;
+        proposeWord = document.querySelector('textarea[name="proposed_word2"]').value.trim(); 
+        proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
+        translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
+        translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
+        if (!proposeWord || !proposeTranslation || !translation || !translationLanguage){
+            showErrorMessage("All fields are required. Please fill in all fields.");
+            return; 
+        }
     }
 
     showSuccessMessage("Form has been submitted successfully!");

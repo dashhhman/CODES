@@ -12,6 +12,7 @@ body {
     padding: 0;
     margin: 0;
     text-align: right;
+    height : fit-content;
 }
 
 body::-webkit-scrollbar {
@@ -25,6 +26,7 @@ body::-webkit-scrollbar {
     background-size: cover;
     background-position: center;
 }
+
 
 .navbar {
     width: 95%;
@@ -295,7 +297,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     transform: translateX(-50%);    
     transition: background-color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
 }
-span {
+.submit-btn span {
     background: #009688;
     height: 100%;
     width: 0;

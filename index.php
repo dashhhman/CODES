@@ -72,10 +72,7 @@ if (isset($_POST['transbut'])) {
         }
 
         
-        .maincon-2{
-            display : none;
-        }
-
+        
 
         @media (max-width: 768px) {
 
