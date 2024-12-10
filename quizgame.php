@@ -49,54 +49,6 @@ $conn->close();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz App</title>
   <style>
-     * {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
-            12
-        }
-    
-  </style>
-</head>
-<body>
-<div class="banner">
-<div class="navbar">
-            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
-            <button id="back-button" onclick="location.href='index1.php'">Back to Selection</button>
-            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
-            <ul id="nav-links">
-                <li><a href="index.php"><b>Home</b></a></li>
-                <li><a href="translator.php"><b>Translator</b></a></li>
-                <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
-                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
-            </ul>
-        </div>
-
- <!-- Progress Bar Placement -->
- <div id="progress-bar">
-    <div id="progress-bar-inner"></div>
- </div>
-
- <div class="quiz-container">
-    <h1>FunQuiz</h1>
-    <p class="instruction" id="instruction-1">Pumili ng tamang sagot upang makakuha ng mataas na iskor.</p>
-    <p class="instruction" id="instruction-2">Galingan mo!</p>
-    <div id="score-container">Score: <span id="score">0</span></div>
-    <div id="question-container" style="display: none;">
-      <p id="question-text"></p>
-      <div id="answer-buttons"></div>
-      <p id="question-level"></p> <!-- Ito ang element para sa question level -->
-    </div>
-    <div id="controls-container">
-      <button id="start-button">Start Quiz</button>
-      <div id="timer-container">
-        <span id="timer-text"><span id="timer">0</span></span>
-      </div>
-    </div>
-  </div>
-  
-</div>
-
-  <style>
      .error-message, .success-message {
             display: none;
             margin-top: 15px;
@@ -134,7 +86,32 @@ $conn->close();
             right: 10px;
         }
 
+        
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
+
+
+
             .toggle-menu {
                 display: block; /* Show menu icon on mobile */
                 cursor: pointer;
@@ -195,22 +172,81 @@ $conn->close();
                 display: block; /* Show close icon when menu is toggled */
             }
 
+            
+            @keyframes popUp {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.5) translate(-50%, -500%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1) translate(-50%, -500%);
+                }
+            }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+
             .error-message, .success-message {
             display: none;
-            margin-top: 100px;
+            margin-top: 0;
             padding: 10px;
             border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -500%);
             width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 20%;
-            transform: translateX(-0%);
+            text-align: center;   
             z-index: 1000;
-
+            opacity : 1;
+            animation: popUp 0.5s, fadeOut 2s 2.5s;
             }
+
+
+
+            #question-level {
+                font-size: 1.4em;
+                margin-top: 0;
+                margin-left: 0;
+                color: #e4e6eb;
+                opacity: 0; /* Initial state for fade-in effect */
+                transition: opacity 1s ease-in-out;
+            }
+
+
+            .modal-content { 
+                position: relative;
+                margin: auto; /* Center the modal */
+                padding: 20px; /* Increased padding for better spacing */
+                border-radius: 15px;
+                width: 80%; 
+                color: white;
+                background-color: #800000;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                animation: slideIn 0.5s ease-out;
+            }
+
+
+
+
+
+
+
+
+
+
         }   
 
     @media (max-width: 480px) {
@@ -275,44 +311,57 @@ $conn->close();
                 display: block; /* Show close icon when menu is toggled */
             }
 
-            .error-message, .success-message {
-            display: none;
-            margin-top: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 5%;
-            transform: translateX(-0%);
-            z-index: 1000;
-
+            @keyframes popUp {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.5) translate(-50%, -500%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1) translate(-50%, -500%);
+                }
             }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+
+            .error-message, .success-message {
+                display: none;
+                margin-top: 0;
+                padding: 10px;
+                border-radius: 5px;
+                position: fixed; 
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -500%);
+                width: calc(100% - 30px);
+                text-align: center;   
+                z-index: 1000;
+                opacity : 1;
+                animation: popUp 0.5s, fadeOut 2s 2.5s;
+            }
+
+
+            #question-level {
+                font-size: 1.4em;
+                margin-top: 0;
+                margin-left: 0;
+                color: #e4e6eb;
+                opacity: 0; /* Initial state for fade-in effect */
+                transition: opacity 1s ease-in-out;
+            }
+
+
+
         }   
 
-        @keyframes popUp {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                display: none;
-            }
-        }
 
     #back-button {
     position: absolute;
@@ -333,11 +382,52 @@ $conn->close();
 #back-button:hover {
     background-color: #DAA520;
     transform: translateY(-2px);
-}
-sa
+} 
 
 
 </style>
+</head>
+<body>
+<div class="banner">
+<div class="navbar">
+            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
+            <button id="back-button" onclick="location.href='index1.php'">Back to Selection</button>
+            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+            <ul id="nav-links">
+                <li><a href="index.php"><b>Home</b></a></li>
+                <li><a href="translator.php"><b>Translator</b></a></li>
+                <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
+                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
+            </ul>
+        </div>
+
+ <!-- Progress Bar Placement -->
+ <div id="progress-bar">
+    <div id="progress-bar-inner"></div>
+ </div>
+
+ <div class="quiz-container">
+    <h1>FunQuiz</h1>
+    <p class="instruction" id="instruction-1">Pumili ng tamang sagot upang makakuha ng mataas na iskor.</p>
+    <p class="instruction" id="instruction-2">Galingan mo!</p>
+    <div id="score-container">Score: <span id="score">0</span></div>
+    <div id="question-container" style="display: none;">
+      <p id="question-text"></p>
+      <div id="answer-buttons"></div>
+      <p id="question-level"></p> <!-- Ito ang element para sa question level -->
+    </div>
+    <div id="controls-container">
+      <button id="start-button">Start Quiz</button>
+      <div id="timer-container">
+        <span id="timer-text"><span id="timer">0</span></span>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
 
 <div class="error-message"></div>
 <div class="success-message"></div>
@@ -371,14 +461,14 @@ let questions = [];
 
 const easyQuestions = <?php echo json_encode($questions['Easy']); ?>;
 const mediumQuestions = <?php echo json_encode($questions['Medium']); ?>;
-const hardQuestions = <?php echo json_encode($questions['Hard']); ?>;
+const hardQuestions = <?php echo json_encode($questions['Hard']); ?>; 
 
 const modal = document.getElementById("usernameModal");
 const span = document.getElementsByClassName("close")[0];
 const submitScoreButton = document.getElementById("submit-score");
 const usernameInput = document.getElementById("username");
 
-questions = [...easyQuestions, ...mediumQuestions, ...hardQuestions];
+questions = [...easyQuestions, ...mediumQuestions, ...hardQuestions ];
 
 startButton.addEventListener('click', startQuiz);
 
@@ -406,6 +496,8 @@ function updateProgressBar() {
 }
 
 function showQuestion() {
+    console.log(questions);
+    console.log( questions[currentQuestionIndex]);
     const currentQuestion = questions[currentQuestionIndex];
     console.log("Showing Question:", currentQuestion);
     questionText.innerText = currentQuestion.question;
