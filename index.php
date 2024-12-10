@@ -150,10 +150,219 @@ if (isset($_POST['transbut'])) {
             }
 
 
+.select1-2 { 
+    font-size: 20px; 
+    border: 2px solid #333;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer; 
+    margin: 0; /* Remove auto margin */
+    margin-right: auto; /* Push the select element to the left */  
+    color: #000;
+    background-color: #fff;
+    border: 4px solid black; /* Black border */
+    width: 100%;
+    resize: horizontal;
+    padding: 10px;
+}   
+
+.select2-2 {
+    font-size: 20px; 
+    border: 2px solid #333;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer; 
+    margin: 0; /* Remove auto margin */
+    margin-right: auto; /* Push the select element to the left */  
+    color: #000;
+    background-color: #fff;
+    border: 4px solid black; /* Black border */
+    width: 100%;
+    resize: horizontal;
+    padding: 10px;
+    
+}
+
+option{
+    background-color: floralwhite;
+    text-align:center;
+    font-weight: bold;
+    font-size: 22px;
+    resize: horizontal;
+    width : 90%;
+}
+
+.translator .boxnew,
+.translator .box2new {
+    height: 10px;
+    margin-bottom: 0px;
+    position: relative;
+    width: calc(50% - 15px);
+    float: left;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+.translator .box2new {
+    margin-left: 10px;
+    margin-top: 25px;
+}
 
 
+.translator .boxnew .messnew,
+.translator .box2new .mess2new {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    color: #ffffff; 
+    resize : none;
+
+}
+
+.translator .boxnew textarea.textmess,
+.translator .box2new textarea.textmess2 {
+    width: calc(100% - 20px);
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    resize: none;
+    padding: 10px;
+    margin: 30px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    background: white;
+    color: black;
+    -webkit-backdrop-filter: blur(11px);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    padding-right: 40px; /* Make space for the icon */
+    position: relative;
+    display: none;
+}
 
 
+ 
+ 
+.box2new textarea,
+.contranslated textarea {
+    pointer-events: none;
+}
+.box2new textarea,
+.boxnew textarea{ 
+    height: 200px;
+}
+
+.glassmorphism{
+    height : fit-content;
+}
+
+
+.icons-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width : 100%;
+    resize : horizontal;
+    height : 40px;
+    column-gap: 20%;
+}
+ 
+
+
+.box2new .icon3new,
+.box2new .icon4new {
+    font-size: 25px;
+    color: rgb(45, 43, 43);
+    cursor: pointer; 
+    width: 30px;
+    height: 30px;
+    position: relative;
+    padding : 5px; 
+    right:auto;
+    top:auto;
+    margin-bottom: 10px;
+} 
+
+
+.list-actions-buttons{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width : 100%;
+    resize : horizontal;
+    height : fit-content; 
+    margin-top: 24px;
+    padding: 10px;
+    row-gap: 10px;
+}
+
+.submit-btn-new {
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 3px solid #009688;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    position : relative;
+    margin: 0;
+}
+
+.submit-btn-new:hover span {
+    width: 100%;
+}
+
+.submit-btn-new:hover {
+    border: none;
+}
+
+.clear-btn-new {
+    padding: 6px 0;
+    text-align: center; 
+    border-radius: 25px;
+    font-weight: bold;
+    border: 3px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    position : relative;
+    margin: 0;
+}
+.clear-btn-new:hover span {
+    width: 100%;
+}
+
+.clear-btn-new:hover {
+    border: none;
+}
+
+.Feedback-new {
+    padding: 6px 0;
+    text-align: center; 
+    border-radius: 25px;
+    font-weight: bold;
+    border: 3px solid #009688;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    position : relative;
+    margin: 0;
+}
+
+.Feedback-new:hover span {
+    width: 100%;
+}
+
+.Feedback-new:hover {
+    border: none;
+}
 
 
 
@@ -252,19 +461,19 @@ if (isset($_POST['transbut'])) {
                         
 
 
-                        <div class="box">
-                            <select class="select1" id="lang1" name="lang1">
+                        <div class="boxnew">
+                            <select class="select1-2" id="lang1" name="lang1">
                                 <option value="tagalog" <?php if (isset($_POST['lang1']) && $_POST['lang1'] == "Tagalog") echo "selected"; ?>>Tagalog</option>
                             </select>  
-                            <div class="mess">
+                            <div class="messnew">
                                 <textarea maxlength="5000" name="wordhey" id="wordhey" class="textmess" placeholder="Write down.."><?php if (isset($Word)) echo htmlspecialchars($Word); ?></textarea>
-                                <!-- Copy icon -->
+ 
                             </div>
                         </div>
 
-                        <div class="box2">
+                        <div class="box2new">
 
-                            <select class="select2" id="lang2" name="lang2">
+                            <select class="select2-2" id="lang2" name="lang2">
                                 <option value="cebuano" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Cebuano") echo "selected"; ?>>Cebuano</option>
                                 <option value="kapampangan" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Kapampangan") echo "selected"; ?>>Kapampangan</option>
                                 <option value="pangasinense" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Pangasinense") echo "selected"; ?>>Pangasinense</option>
@@ -285,21 +494,26 @@ if (isset($_POST['transbut'])) {
                                 <option value="aklanon" <?php if (isset($_POST['lang2']) && $_POST['lang2'] == "Aklanon") echo "selected"; ?>>Aklanon</option>
                             </select> 
                             
-                            <div class="mess2">
+                            <div class="mess2new">
                                 <textarea maxlength="5000" name="translatedhey" id="translatedhey" class="textmess2" placeholder=""><?php if (isset($translatedText)) echo htmlspecialchars($translatedText); ?></textarea>
                                 
-                                <div class="icon3">
-                                    <span class="copy3"><i  id="voice-but" class='bx bxs-volume-full' type="solid"></i></span>
-                                </div>
-                                <div class="icon4">
-                                    <span class="copy4"><i id="copy-but" onclick="copyTextareaContent()" class='bx bxs-copy-alt' type="solid"></i></span>
+                                <div class="icons-buttons">
+                                    <div class="icon3new">
+                                        <span class="icon3new"><i  id="voice-but" class='bx bxs-volume-full' type="solid"></i></span>
+                                    </div>
+                                    <div class="icon4new">
+                                        <span class="icon4new"><i id="copy-but" onclick="copyTextareaContent()" class='bx bxs-copy-alt' type="solid"></i></span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                         
-                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Translate</button>
-                        <button onclick="clear()" id="clear-but" class="clear-btn"><span></span>Clear</button>
-                        <button onclick="window.location.href='feedback.php';" class="Feedback"><span></span>Feedback</button>
+                        <div class="list-actions-buttons">
+                            <button type="submit" class="submit-btn-new" id="transbut" name="transbut"><span></span>Translate</button>
+                            <button onclick="clear()" id="clear-but" class="clear-btn-new"><span></span>Clear</button>
+                            <button onclick="window.location.href='feedback.php';" class="Feedback-new"><span></span>Feedback</button> 
+                        </div>
                     </div>
                 
         
