@@ -603,7 +603,7 @@ body {
                                 
                                 <div class="icons-buttons">
                                     <div class="icon3new">
-                                        <span class="icon3new"><i  id="voice-but" class='bx bxs-volume-full' type="solid"></i></span>
+                                        <span class="icon3new"><i  id="voice-but-2" class='bx bxs-volume-full' type="solid"></i></span>
                                     </div>
                                     <div class="icon4new">
                                         <span class="icon4new"><i id="copy-but" onclick="copyTextareaContent()" class='bx bxs-copy-alt' type="solid"></i></span>
@@ -644,7 +644,34 @@ body {
         speech.pitch = 1.2; // Adjust the pitch, range is from 0 (lowest) to 2 (highest)
         speech.rate = 1; // Adjust the rate, range is from 0.1 (lowest) to 10 (highest)
 
+        let is_fetching_data = false; // Flag to track if data is being fetched
+
         let voices = []; 
+
+        setInterval(()=>{
+            if (is_fetching_data){
+                let current_text_1 = speech.text = document.getElementById("translatedhey").value;
+                if (current_text_1 == "Translating"){
+                    document.getElementById("translatedhey").value = "Translating .";
+                    document.getElementById("translatedhey-1").value = "Translating .";
+                } else if (current_text_1 == "Translating ."){
+                    document.getElementById("translatedhey").value = "Translating ..";
+                    document.getElementById("translatedhey-1").value = "Translating ..";
+                } else if (current_text_1 == "Translating .."){
+                    document.getElementById("translatedhey").value = "Translating ...";
+                    document.getElementById("translatedhey-1").value = "Translating ...";
+                } else if (current_text_1 == "Translating ..."){
+                    document.getElementById("translatedhey").value = "Translating";
+                    document.getElementById("translatedhey-1").value = "Translating"; 
+                } else {
+                    document.getElementById("translatedhey").value = "Translating";
+                    document.getElementById("translatedhey-1").value = "Translating";
+                }
+                
+            }
+        }, 500)
+
+
 
         window.speechSynthesis.onvoiceschanged = () => {
             voices = window.speechSynthesis.getVoices();
@@ -664,12 +691,13 @@ body {
 
         const voice_but = document.getElementById('voice-but');
         voice_but.addEventListener("click", () => { 
-            if  (document.getElementById("translatedhey").value != ""){
+            console.log("is fetching data: ", is_fetching_data);
+            if (!is_fetching_data){
                 speech.text = document.getElementById("translatedhey").value;
-            } else {
-                speech.text = document.getElementById("translatedhey-1").value; 
+                
+                window.speechSynthesis.speak(speech);
+
             }
-            window.speechSynthesis.speak(speech);
         });
 
 
@@ -697,6 +725,7 @@ body {
 
             if (!sentence) return;
 
+            is_fetching_data = true;
 
             fetch(url, {
                     method: 'POST',
@@ -711,9 +740,14 @@ body {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    is_fetching_data = false;
                     document.getElementById('translatedhey').value = data.translated_sentence;
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                            
+                    is_fetching_data = false;
+                    console.error('Error:', error);
+                });
 
         });
 
@@ -733,6 +767,7 @@ body {
             const targetLanguage = document.getElementById('lang2').value;
 
             if (!sentence) return;
+            is_fetching_data = true;
  
             fetch( url , {
                     method: 'POST',
@@ -747,8 +782,13 @@ body {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    is_fetching_data = false;
                     document.getElementById('translatedhey').value =data.translated_sentence;
-                }).catch(error => console.error('Error:', error));
+                }).catch(error => {
+                            
+                    is_fetching_data = false;
+                    console.error('Error:', error);
+                });
         };
 
 
@@ -757,13 +797,20 @@ body {
         const wordhey = document.getElementById('wordhey');
         wordhey.addEventListener('keyup', debouncedTranslateText);
 
-
-
-
-
-
+ 
 
         // Mobile view scripts
+
+        
+        const voice_but2 = document.getElementById('voice-but-2');
+        voice_but2.addEventListener("click", () => { 
+            console.log("is fetching data: ", is_fetching_data);
+            if (!is_fetching_data){
+                speech.text = document.getElementById("translatedhey-1").value;
+                
+                window.speechSynthesis.speak(speech);
+            }
+        });
 
         const clear_but1 = document.getElementById('clear-but-1');
         clear_but1.addEventListener('click', () => {
@@ -780,6 +827,7 @@ body {
             const targetLanguage = document.getElementById('lang2-1').value;
 
             if (!sentence) return;
+            is_fetching_data = true;
 
 
             fetch(url, {
@@ -795,11 +843,65 @@ body {
                 })
                 .then(response => response.json())
                 .then(data => {
+                    is_fetching_data = false;
                     document.getElementById('translatedhey-1').value = data.translated_sentence;
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                            
+                            is_fetching_data = false;
+                            console.error('Error:', error);
+                        });
 
         });
+
+
+
+
+        const translateText2 = () => {
+            console.log("Keyboard pressed");
+            const sentence = document.getElementById('wordhey-1').value;
+            const sourceLanguage = document.getElementById('lang1-1').value;
+            const targetLanguage = document.getElementById('lang2-1').value;
+
+            if (!sentence) return;
+            is_fetching_data = true;
+ 
+            fetch( url , {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body:JSON.stringify({
+                        sentence,
+                        sourceLanguage,
+                        targetLanguage
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    is_fetching_data = false;
+                    document.getElementById('translatedhey-1').value =data.translated_sentence;
+                }).catch(error => {
+                            
+                    is_fetching_data = false;
+                    console.error('Error:', error);
+                });
+        };
+
+
+        const debouncedTranslateText2 = debounce(translateText2, 900); // 1000 ms = 1 second
+
+        const wordhey1 = document.getElementById('wordhey-1');
+        wordhey1.addEventListener('keyup', debouncedTranslateText2);
+
+
+
+
+
+
+
+
+
  
         function copyTextareaContent() {
             var textarea = document.getElementById("translatedhey-1");
