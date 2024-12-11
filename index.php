@@ -485,7 +485,7 @@ body {
                 <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
                 <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
                 <ul id="nav-links">
-                    <li><a href="homepage.php"><b>Home</b></a></li>
+                    <li><a href="index.php"><b>Home</b></a></li>
                     <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                     <li><a href="index1.php"><b>Fun Quiz</b></a></li>
                     <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>  
@@ -637,7 +637,7 @@ body {
 
     <script>
     
-        const url = 'http://127.0.0.1:5000/translate';
+        const url = 'http://speech.pythonanywhere.com/translate';
 
         let speech = new SpeechSynthesisUtterance();
         speech.volume = 5; // Set the volume to maximum

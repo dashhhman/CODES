@@ -346,7 +346,7 @@
                     <option value="Tausug">Tausug</option>
                     <option value="Maguindanaoan">Maguindanaoan</option>
                     <option value="Maranao">Maranao</option>
-                    <option value="Chavacano">Chavacano</option>
+                    <option value="Chabacano">Chabacano</option>
                     <option value="Ybanag">Ybanag</option>
                     <option value="Ivatan">Ivatan</option>
                     <option value="Sambal">Sambal</option>
@@ -407,7 +407,7 @@
                         <option value="Tausug">Tausug</option>
                         <option value="Maguindanaoan">Maguindanaoan</option>
                         <option value="Maranao">Maranao</option>
-                        <option value="Chavacano">Chavacano</option>
+                        <option value="Chabacano">Chabacano</option>
                         <option value="Ybanag">Ybanag</option>
                         <option value="Ivatan">Ivatan</option>
                         <option value="Sambal">Sambal</option>

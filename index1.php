@@ -130,7 +130,7 @@
                     </div>
                     <div class="circle-row">
                         <a href="#triviaModal10" class="circle"><p>Maranao</p></a>
-                        <a href="#triviaModal11" class="circle"><p>Chavacano</p></a>
+                        <a href="#triviaModal11" class="circle"><p>Chabacano</p></a>
                         <a href="#triviaModal12" class="circle"><p>Ybanag</p></a>
                         <a href="#triviaModal13" class="circle"><p>Ivatan</p></a>
                         <a href="#triviaModal14" class="circle"><p>Sambal</p></a>
@@ -304,7 +304,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/320px-Flag_of_the_Philippines.svg.png" alt="Philippine Flag" class="flag-image">
             </div>
             <p class="trivia-text">
-             Alam mo ba? Ang Chavacano ay isang natatanging creole language sa Pilipinas na pangunahing sinasalita sa Zamboanga City. Ang Chavacano ay may malakas na impluwensya ng Espanyol, na hinaluan ng mga salitang mula sa iba't ibang wika sa Pilipinas, tulad ng Cebuano, Ilonggo, at Tagalog. Ang wika na ito ay nagmula noong panahon ng mga Kastila, at hanggang ngayon ay ginagamit pa rin sa pang-araw-araw na komunikasyon. Ipinagmamalaki ng mga Zamboangueño ang kanilang wika dahil ito ay simbolo ng kanilang makulay na kasaysayan at kultura.
+             Alam mo ba? Ang Chabacano ay isang natatanging creole language sa Pilipinas na pangunahing sinasalita sa Zamboanga City. Ang Chavacano ay may malakas na impluwensya ng Espanyol, na hinaluan ng mga salitang mula sa iba't ibang wika sa Pilipinas, tulad ng Cebuano, Ilonggo, at Tagalog. Ang wika na ito ay nagmula noong panahon ng mga Kastila, at hanggang ngayon ay ginagamit pa rin sa pang-araw-araw na komunikasyon. Ipinagmamalaki ng mga Zamboangueño ang kanilang wika dahil ito ay simbolo ng kanilang makulay na kasaysayan at kultura.
             </p>
         </div>
         <a href="quizgame.php?category=Chavacano" class="next-btn">Take a Quiz</a>

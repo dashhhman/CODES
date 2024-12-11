@@ -5,7 +5,13 @@ if (isset($_GET['category'])) {
     $category = $_GET['category'];
 
     if ($category == 'all') {
-        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` ORDER BY `category`, `score` DESC LIMIT 8";
+        $sql = "SELECT `username`, `score`, `category`, `date_play` FROM (
+                    SELECT `username`, `score`, `category`, `date_play`,
+                           ROW_NUMBER() OVER (PARTITION BY `category` ORDER BY `score` DESC) as rank
+                    FROM `tbl_leaderboard`
+                ) as ranked
+                WHERE rank = 1
+                ORDER BY `category`, `score` DESC";
     } else {
         $sql = "SELECT `username`, `score`, `category`, `date_play` FROM `tbl_leaderboard` WHERE `category` = ? ORDER BY `score` DESC LIMIT 8";
     }
@@ -49,7 +55,6 @@ if (isset($_GET['category'])) {
     exit;
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -160,7 +165,7 @@ if (isset($_GET['category'])) {
         <div class="category-container"> 
             <label for="select_category">Category:</label>
             <select id="select_category" name="category" required>
-                <option value="all">All</option> 
+                <option value="all"> All Rank #1</option> 
                 <option value="Kapampangan">Kapampangan</option>
                 <option value="Pangasinense">Pangasinense</option>
                 <option value="Iloko">Iloko</option>
@@ -171,13 +176,12 @@ if (isset($_GET['category'])) {
                 <option value="Tausug">Tausug</option>
                 <option value="Maguindanaoan">Maguindanaoan</option>
                 <option value="Maranao">Maranao</option>
-                <option value="Chabacano">Chavacano</option>   
+                <option value="Chabacano">Chabacano</option>   
                 <option value="Ybanag">Ybanag</option>
                 <option value="Ivatan">Ivatan</option>
                 <option value="Surigaonon">Surigaonon</option>
                 <option value="Sambal">Sambal</option>
                 <option value="Aklanon">Aklanon</option>
-
             </select>
         </div>
 
@@ -233,8 +237,7 @@ if (isset($_GET['category'])) {
                 closeMenu.style.display = "none";
             }
         });
- 
-    $(document).ready(function() {
+        $(document).ready(function() {
         function loadLeaderboard(category) {
             $.ajax({
                 url: 'leaderboard.php',

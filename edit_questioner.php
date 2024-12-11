@@ -204,16 +204,16 @@ if (isset($_GET['question_id'])) {
                         <option value="Tausug" <?php if ($category === 'Tausug') echo 'selected'; ?>>Tausug</option>
                         <option value="Maguindanaoan" <?php if ($category === 'Maguindanaoan') echo 'selected'; ?>>Maguindanaoan</option>
                         <option value="Maranao" <?php if ($category === 'Maranao') echo 'selected'; ?>>Maranao</option>
-                        <option value="Chavacano" <?php if ($category === 'Chavacano') echo 'selected'; ?>>Chavacano</option>
+                        <option value="Chabacano" <?php if ($category === 'Chabacano') echo 'selected'; ?>>Chabacano</option>
                         <option value="Ybanag" <?php if ($category === 'Ybanag') echo 'selected'; ?>>Ybanag</option>
                         <option value="Ibanag" <?php if ($category === 'Ibanag') echo 'selected'; ?>>Ibanag</option>
                     </select>
 
                     <label for="edit_question_level">Level:</label>
                     <select id="edit_question_level" name="question_level" required>
-                        <option value="easy" <?php if ($questionLevel === 'easy') echo 'selected'; ?>>Easy</option>
-                        <option value="medium" <?php if ($questionLevel === 'medium') echo 'selected'; ?>>Medium</option>
-                        <option value="hard" <?php if ($questionLevel === 'hard') echo 'selected'; ?>>Hard</option>
+                        <option value="Easy" <?php if ($questionLevel === 'Easy') echo 'selected'; ?>>Easy</option>
+                        <option value="Medium" <?php if ($questionLevel === 'Medium') echo 'selected'; ?>>Medium</option>
+                        <option value="Hard" <?php if ($questionLevel === 'Hard') echo 'selected'; ?>>Hard</option>
                     </select>
 
                 

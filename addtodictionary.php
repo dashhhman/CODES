@@ -233,7 +233,7 @@
 
 
 .maincon2 {
-    height: 100vh;
+    height: 150vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -366,7 +366,7 @@ option{
 
 .glassmorphism{
     height : fit-content;
-    margin-top: 20px; 
+    margin-top: 75px; 
 }
 
 
@@ -735,15 +735,6 @@ function validateForm2(event) {
     })
     .catch(error => showErrorMessage("An error occurred: " + error));
 }
-
-
-
-
-
-
-
-
-
     </script>
 </body>
 </html>
