@@ -89,11 +89,57 @@
         }
 
 
-
+.verifications{
+    display: flex;
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 1000;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display : none;
+}
 
 
 
 @media (max-width: 768px) { 
+.error-message {
+    display: flex;
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 2000;
+    width : 100%;
+    height : 130svh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center; 
+}
+.success-message {
+    display : none;
+}
+
+
+.verifications{
+    display: flex;
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 1000;
+    width : 100%;
+    height : 130svh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display : none;
+}
+
 
 
 .toggle-menu {
@@ -233,7 +279,7 @@
 
 
 .maincon2 {
-    height: 150vh;
+    height: 110vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -430,41 +476,131 @@ option{
         display: none;
     }
 }
-.error-message, .success-message {
-    display: none;
-    margin-top: 0;
-    padding: 10px;
-    border-radius: 5px;
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -300%);
-    width: calc(100% - 30px);
-    text-align: center;   
-    z-index: 1000;
-    opacity : 1;
-    animation: popUp 0.5s, fadeOut 2s 2.5s;
-}
-
-.error-message {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-.success-message {
-    background-color: #d4edda;
-    color: #155724;
-}       
-
 
 
 }   
+
+
+
+
+
+
+
+.verifications-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8d7da;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    height: 300px; 
+    row-gap: 16px; 
+    padding-top : 50px;
+    padding-bottom : 50px;
+}
+
+.verifications-content img{
+    width : 80px;
+    height : 80px;
+
+}
+
+.verifications-content h3,
+.verifications-content p{ 
+    margin: 0;
+    padding : 0;
+    text-align: center;
+}
+
+.yes-no-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    resize : horizontal;
+    height : fit-content;
+    flex-direction : row;
+}
+.yes-no-buttons button{ 
+    width : 100px;
+    height : 40px;
+    border-radius : 15px;
+    border : none;
+    font-size : 20px;
+}
+
+.yes-btn-verification{
+    background-color: #28a745;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.yes-btn-verification:hover{
+    background-color: #218838;
+}
+
+.no-btn-verification{
+    background-color: #dc3545;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.no-btn-verification:hover{
+    background-color: #c82333;
+}
+
 
  
     </style>
 </head>
 <body>
+
+
+
+
+
+
     <div class="banner">
+
+     
+
+    <div class="error-message">
+        <div class="verifications-content">
+                <img src="images/success.svg" alt="">
+                <h3>Are you sure?</h3>
+                <p>By clicking "Yes", you agree to add this word to the dictionary.</p> 
+            </div>
+    </div>
+
+    <div class="success-message">
+        
+    </div>
+
+
+
+    <div class="verifications" id="verifications">
+        <div class="verifications-content">
+            <img src="images/alert.svg" alt="">
+            <h3>Are you sure?</h3>
+            <p>By clicking "Yes", you agree to add this word to the dictionary.</p>
+            <div class="yes-no-buttons">
+                <button class="yes-btn-verification" id="yes-btn-verification">Yes</button>
+                <button class="no-btn-verification" id="no-btn-verification">No</button>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("no-btn-verification").addEventListener("click", function() {
+            document.getElementById("verifications").style.display = "none";
+        })
+    </script>
+
+
         <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
@@ -564,10 +700,6 @@ option{
                         <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
                 </div>
             </div>
- 
-
-    <div class="error-message"></div>
-    <div class="success-message"></div>
 
 
 
@@ -621,7 +753,11 @@ option{
         });
 
         const submitBtn2 = document.getElementById("transbut2");
-        submitBtn2.addEventListener("click", validateForm2);
+        // submitBtn2.addEventListener("click", validateForm2);
+        submitBtn2.addEventListener("click", ()=>{
+            document.getElementById("verifications").style.display = "flex";
+            document.getElementById("yes-btn-verification").onclick = validateForm2;
+        });
 
 
     });
@@ -669,7 +805,7 @@ function validateForm(event) {
 function showErrorMessage(message) {
     const errorDiv = document.querySelector('.error-message');
     errorDiv.textContent = message;
-    errorDiv.style.display = 'block';
+    errorDiv.style.display = 'flex';
     errorDiv.style.opacity = '1';
     setTimeout(() => {
         errorDiv.style.opacity = '0';
@@ -682,7 +818,7 @@ function showErrorMessage(message) {
 function showSuccessMessage(message) {
     const successDiv = document.querySelector('.success-message');
     successDiv.textContent = message;
-    successDiv.style.display = 'block';
+    successDiv.style.display = 'flex';
     successDiv.style.opacity = '1';
     setTimeout(() => {
         successDiv.style.opacity = '0';
