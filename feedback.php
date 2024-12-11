@@ -332,7 +332,7 @@
         <div class="verifications-content">
             <img src="images/success.svg" alt="">
             <h3>Successful!</h3>
-            <p>The word has been added to the dictionary.</p> 
+            <p>Thank you for your feedback.</p> 
         </div>
     </div>
 
@@ -342,7 +342,7 @@
         <div class="verifications-content">
             <img src="images/alert.svg" alt="">
             <h3>Are you sure?</h3>
-            <p>By clicking "Yes", you agree to add this word to the dictionary.</p>
+            <p>By clicking "Yes", you will submit your feedback.</p>
             <div class="yes-no-buttons">
                 <button class="yes-btn-verification" id="yes-btn-verification">Yes</button>
                 <button class="no-btn-verification" id="no-btn-verification">No</button>
