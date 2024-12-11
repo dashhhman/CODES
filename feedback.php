@@ -8,32 +8,29 @@
     <link rel="stylesheet" href="css/feedback.css">
     <title>Feedback</title>
     <style>
-        .error-message, .success-message {
-            display: none;
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 100px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 35%;
-            transform: translateX(-0%);
-            z-index: 1000;
+        .error-message, .success-message { 
+            position : absolute; 
+            top : 50%;
+            left : 50%;
+            transform : translate(-50%, -50%);
+            z-index : 2000;
+            width : 100%;
+            height : 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
             align-items: center;
+            display : none;
         }
 
+
         .error-message {
-            background-color: #f8d7da;
             color: #721c24;
         }
 
         .success-message {
-            background-color: #d4edda;
             color: #155724;
         }
+
 
         .close-menu {
             display: none; /* Hidden by default */
@@ -44,8 +41,53 @@
             top: 10px;
             right: 10px;
         }
+ .verifications{ 
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 1000;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display : none;
+}
 
         @media (max-width: 768px) {
+
+.error-message , .success-message {
+    display: none;
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 2000;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center; 
+} 
+
+
+.verifications{
+    display: flex;
+    position : absolute; 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 1000;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display : none;
+}
+
+
             .toggle-menu {
                 display: block; /* Show menu icon on mobile */
                 cursor: pointer;
@@ -106,22 +148,7 @@
                 display: block; /* Show close icon when menu is toggled */
             }
 
-            .error-message, .success-message {
-            display: none;
-            margin-top: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 20%;
-            transform: translateX(-0%);
-            z-index: 1000;
-
-            }
+ 
         }   
 
     @media (max-width: 480px) {
@@ -184,23 +211,7 @@
             .navbar ul.show ~ .close-menu {
                 display: block; /* Show close icon when menu is toggled */
             }
-
-            .error-message, .success-message {
-            display: none;
-            margin-top: 100px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 200px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 5%;
-            transform: translateX(-0%);
-            z-index: 1000;
-
-            }
+ 
         }   
 
         @keyframes popUp {
@@ -223,10 +234,131 @@
                 display: none;
             }
         }
+
+
+
+
+.verifications-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8d7da;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    height: 300px; 
+    row-gap: 16px; 
+    padding-top : 50px;
+    padding-bottom : 50px;
+}
+
+.verifications-content img{
+    width : 80px;
+    height : 80px;
+
+}
+
+.verifications-content h3,
+.verifications-content p{ 
+    margin: 0;
+    padding : 0;
+    text-align: center;
+}
+
+.yes-no-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    resize : horizontal;
+    height : fit-content;
+    flex-direction : row;
+}
+.yes-no-buttons button{ 
+    width : 100px;
+    height : 40px;
+    border-radius : 15px;
+    border : none;
+    font-size : 20px;
+}
+
+.yes-btn-verification{
+    background-color: #28a745;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.yes-btn-verification:hover{
+    background-color: #218838;
+}
+
+.no-btn-verification{
+    background-color: #dc3545;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.no-btn-verification:hover{
+    background-color: #c82333;
+}
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
+
     <div class="banner">
+
+
+
+    <div class="error-message">
+        <div class="verifications-content">
+            <img src="images/error.svg" alt="">
+            <h3>You forgot something!</h3>
+            <p id="error-message-text">Please fill in all the required fields.</p> 
+        </div>
+    </div>
+
+    <div class="success-message">
+        <div class="verifications-content">
+            <img src="images/success.svg" alt="">
+            <h3>Successful!</h3>
+            <p>The word has been added to the dictionary.</p> 
+        </div>
+    </div>
+
+
+
+    <div class="verifications" id="verifications">
+        <div class="verifications-content">
+            <img src="images/alert.svg" alt="">
+            <h3>Are you sure?</h3>
+            <p>By clicking "Yes", you agree to add this word to the dictionary.</p>
+            <div class="yes-no-buttons">
+                <button class="yes-btn-verification" id="yes-btn-verification">Yes</button>
+                <button class="no-btn-verification" id="no-btn-verification">No</button>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("no-btn-verification").addEventListener("click", function() {
+            document.getElementById("verifications").style.display = "none";
+        })
+    </script>
+
+
+
+
     <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
@@ -239,7 +371,7 @@
             </ul>
         </div>
 
-        <form action="feedadd.php" method="post" class="fd" id="feedbackForm">
+        <!-- <form action="feedadd.php" method="post" class="fd" id="feedbackForm"> -->
             <div class="maincon">
                 <div class="glassmorphism">
                     <h1>Send us your Feedback</h1>
@@ -266,9 +398,7 @@
                     </div>
                 </div>
             </div>
-        </form>
-        <div class="error-message"></div>
-        <div class="success-message"></div>
+        <!-- </form> -->
     </div>
     <script>
         
@@ -312,13 +442,16 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         const submitBtn = document.querySelector(".submit-btn");
-        submitBtn.addEventListener("click", validateForm);
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === 'Enter') {
-                validateForm(event);
-            }
+        submitBtn.addEventListener("click", ()=>{
+            document.getElementById("verifications").style.display = "flex";
+            document.getElementById("yes-btn-verification").onclick = validateForm; 
         });
+
+        // document.addEventListener("keydown", function(event) {
+        //     if (event.key === 'Enter') {
+        //         validateForm(event);
+        //     }
+        // });
     });
 
     function validateForm(event) {
@@ -364,31 +497,32 @@
         .catch(error => showErrorMessage("An error occurred: " + error));
     }
 
-    function showErrorMessage(message) {
-        const errorDiv = document.querySelector('.error-message');
-        errorDiv.textContent = message;
-        errorDiv.style.display = 'block';
-        errorDiv.style.opacity = '1';
-        setTimeout(() => {
-            errorDiv.style.opacity = '0';
-        }, 1000); // Reduced delay for faster response
-        setTimeout(() => {
-            errorDiv.style.display = 'none';
-        }, 2000); // Match with the fade out animation
-    }
 
-    function showSuccessMessage(message) {
-        const successDiv = document.querySelector('.success-message');
-        successDiv.textContent = message;
-        successDiv.style.display = 'block';
-        successDiv.style.opacity = '1';
-        setTimeout(() => {
-            successDiv.style.opacity = '0';
-        }, 1000); // Reduced delay for faster response
-        setTimeout(() => {
-            successDiv.style.display = 'none';
-        }, 2000); // Match with the fade out animation
-    }
+function showErrorMessage(message) {
+    const errorDiv = document.querySelector('.error-message');
+    errorDiv.style.display = 'flex';
+    document.getElementById("error-message-text").innerHTML = message;
+    errorDiv.style.opacity = '1';
+    setTimeout(() => {
+        errorDiv.style.opacity = '0';
+    }, 1000); // Reduced delay for faster response
+    setTimeout(() => {
+        errorDiv.style.display = 'none';
+    }, 3000); // Match with the fade out animation
+}
+
+function showSuccessMessage(message) {
+    const successDiv = document.querySelector('.success-message'); 
+    successDiv.style.display = 'flex'; 
+    setTimeout(() => {
+        successDiv.style.opacity = '0';
+    }, 1000); // Reduced delay for faster response
+    setTimeout(() => {
+        document.getElementById("verifications").style.display = "none";
+        successDiv.style.display = 'none';
+    }, 3000); // Match with the fade out animation
+}
+
     </script>
 </body>
 </html>
