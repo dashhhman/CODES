@@ -9,30 +9,25 @@
     <title>Add to Dictionary</title>
     <style>
         
-        .error-message, .success-message {
-            display: none;
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            animation: popUp 0.5s, fadeOut 2s 2.5s;
-            position: fixed;
-            top: 100px;
-            width: calc(100% - 30px);
-            text-align: center;
-            max-width: 450px;
-            left: 35%;
-            transform: translateX(-0%);
-            z-index: 1000;
+        .error-message, .success-message { 
+            position : absolute; 
+            top : 50%;
+            left : 50%;
+            transform : translate(-50%, -50%);
+            z-index : 2000;
+            width : 100%;
+            height : 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
             align-items: center;
+            display : none;
         }
 
         .error-message {
-            background-color: #f8d7da;
             color: #721c24;
         }
 
         .success-message {
-            background-color: #d4edda;
             color: #155724;
         }
 
@@ -89,8 +84,7 @@
         }
 
 
-.verifications{
-    display: flex;
+.verifications{ 
     position : absolute; 
     top : 50%;
     left : 50%;
@@ -107,8 +101,8 @@
 
 
 @media (max-width: 768px) { 
-.error-message {
-    display: flex;
+.error-message , .success-message {
+    display: none;
     position : absolute; 
     top : 50%;
     left : 50%;
@@ -119,10 +113,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center; 
-}
-.success-message {
-    display : none;
-}
+} 
 
 
 .verifications{
@@ -570,14 +561,18 @@ option{
 
     <div class="error-message">
         <div class="verifications-content">
-                <img src="images/success.svg" alt="">
-                <h3>Are you sure?</h3>
-                <p>By clicking "Yes", you agree to add this word to the dictionary.</p> 
-            </div>
+            <img src="images/error.svg" alt="">
+            <h3>You forgot something!</h3>
+            <p>Please fill in all the required fields.</p> 
+        </div>
     </div>
 
     <div class="success-message">
-        
+        <div class="verifications-content">
+            <img src="images/success.svg" alt="">
+            <h3>Successful!</h3>
+            <p>The word has been added to the dictionary.</p> 
+        </div>
     </div>
 
 
@@ -612,7 +607,7 @@ option{
             </ul>
         </div>
 
-       <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm">
+       <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm"> -->
             <div class="maincon">
                 <div class="glassmorphism">
                     <h1>Add to Dictionary</h1>
@@ -660,7 +655,7 @@ option{
             </div>
 
 
-        </form>
+        <!-- </form> -->
  
             <div class="maincon2">
                 <div class="glassmorphism">
@@ -744,13 +739,17 @@ option{
  
     document.addEventListener("DOMContentLoaded", function() {
         const submitBtn = document.querySelector(".submit-btn");
-        submitBtn.addEventListener("click", validateForm);
+        submitBtn.addEventListener("click", ()=>{
+            document.getElementById("verifications").style.display = "flex";
+            document.getElementById("yes-btn-verification").onclick = validateForm;
 
-        document.addEventListener("keydown", function(event) {
-            if (event.key === 'Enter') {
-                validateForm(event);
-            }
         });
+
+        // document.addEventListener("keydown", function(event) {
+        //     if (event.key === 'Enter') {
+        //         validateForm(event);
+        //     }
+        // });
 
         const submitBtn2 = document.getElementById("transbut2");
         // submitBtn2.addEventListener("click", validateForm2);
@@ -804,7 +803,6 @@ function validateForm(event) {
 
 function showErrorMessage(message) {
     const errorDiv = document.querySelector('.error-message');
-    errorDiv.textContent = message;
     errorDiv.style.display = 'flex';
     errorDiv.style.opacity = '1';
     setTimeout(() => {
@@ -812,20 +810,19 @@ function showErrorMessage(message) {
     }, 1000); // Reduced delay for faster response
     setTimeout(() => {
         errorDiv.style.display = 'none';
-    }, 2000); // Match with the fade out animation
+    }, 3000); // Match with the fade out animation
 }
 
 function showSuccessMessage(message) {
-    const successDiv = document.querySelector('.success-message');
-    successDiv.textContent = message;
-    successDiv.style.display = 'flex';
-    successDiv.style.opacity = '1';
+    const successDiv = document.querySelector('.success-message'); 
+    successDiv.style.display = 'flex'; 
     setTimeout(() => {
         successDiv.style.opacity = '0';
     }, 1000); // Reduced delay for faster response
     setTimeout(() => {
+        document.getElementById("verifications").style.display = "none";
         successDiv.style.display = 'none';
-    }, 2000); // Match with the fade out animation
+    }, 3000); // Match with the fade out animation
 }
 
 
@@ -840,6 +837,10 @@ function validateForm2(event) {
     let proposeTranslation = document.querySelector('select[name="proposed_translation_language2"]').value.trim();
     let translation = document.querySelector('textarea[name="translated_word2"]').value.trim();
     let translationLanguage = document.querySelector('select[name="target_translation_language2"]').value.trim();
+    console.log("proposed word: ", proposeWord);
+    console.log("proposed translation: ", proposeTranslation);
+    console.log("translated word: ", translation);
+    console.log("target translation: ", translationLanguage);
 
     if (!proposeWord || !proposeTranslation || !translation || !translationLanguage) {  
             showErrorMessage("All fields are required. Please fill in all fields.");  
