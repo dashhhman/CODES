@@ -124,7 +124,7 @@
     transform : translate(-50%, -50%);
     z-index : 1000;
     width : 100%;
-    height : 130svh;
+    height : 140svh;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
@@ -190,13 +190,6 @@
     display: block; /* Show close icon when menu is toggled */
 }/* Circle Container Styles */
 
-.circle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    padding-bottom: 300px;
-}
 
 
 
@@ -269,8 +262,7 @@
 }
 
 
-.maincon2 {
-    height: 110vh;
+.maincon2 { 
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -469,6 +461,17 @@ option{
 }
 
 
+.banner {
+    width: 100%;
+    height: 120svh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/School.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
 }   
 
 
@@ -596,81 +599,30 @@ option{
     </script>
 
 
-        <div class="navbar">
-            <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
-            <ul id="nav-links">
-                <li><a href="homepage.php"><b>Home</b></a></li>
-                <li><a href="index.php"><b>Translator</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
-                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
-            </ul>
-        </div>
+    <div class="navbar">
+        <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
+        <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+        <ul id="nav-links">
+            <li><a href="homepage.php"><b>Home</b></a></li>
+            <li><a href="index.php"><b>Translator</b></a></li>
+            <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+            <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
+        </ul>
+    </div>
 
-       <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm"> -->
-            <div class="maincon">
-                <div class="glassmorphism">
-                    <h1>Add to Dictionary</h1>
-                    <div class="translator">
-                        <ul class="item">
-                            <li>
-                                <select class="select1" name="proposed_translation_language">
-                                    <option value="Tagalog">Tagalog</option> 
-                                </select>
-                            </li>
-                            <li>
-                                <select class="select2" name="target_translation_language">
-                                    <option value="Kapampangan">Kapampangan</option>
-                                    <option value="Pangasinense">Pangasinense</option>
-                                    <option value="Iloko">Iloko</option>
-                                    <option value="Bikol">Bikol</option>
-                                    <option value="Cebuano">Cebuano</option>
-                                    <option value="Hiligaynon">Hiligaynon</option>
-                                    <option value="Waray">Waray</option>
-                                    <option value="Tausug">Tausug</option>
-                                    <option value="Maguindanaoan">Maguindanaoan</option>
-                                    <option value="Maranao">Maranao</option>
-                                    <option value="Chabacano">Chavacano</option>   
-                                    <option value="Ybanag">Ybanag</option>
-                                    <option value="Ivatan">Ivatan</option>
-                                    <option value="Surigaonon">Surigaonon</option>
-                                    <option value="Sambal">Sambal</option>
-                                    <option value="Aklanon">Aklanon</option>
-                                </select>
-                            </li>
-                        </ul>
-                        <div class="box">
-                            <div class="mess">
-                                <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Write down.."></textarea>
-                            </div>
-                        </div>
-                        <div class="box2">
-                            <div class="mess2">
-                                <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Write down.."></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
-                    </div>
-                </div>
-            </div>
-
-
-        <!-- </form> -->
- 
-            <div class="maincon2">
-                <div class="glassmorphism">
-                    <h1>Add to Dictionary</h1> 
-                        <div class="boxnew">
-                            <select class="select1-2" name="proposed_translation_language2">
+        <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm"> -->
+        <div class="maincon">
+            <div class="glassmorphism">
+                <h1>Add to Dictionary</h1>
+                <div class="translator">
+                    <ul class="item">
+                        <li>
+                            <select class="select1" name="proposed_translation_language">
                                 <option value="Tagalog">Tagalog</option> 
                             </select>
-                            <div class="messnew">
-                                <textarea maxlength="5000" name="proposed_word2" class="textmess" placeholder="Write down.."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="box2new">
-                            <select class="select2-2" name="target_translation_language2">
+                        </li>
+                        <li>
+                            <select class="select2" name="target_translation_language">
                                 <option value="Kapampangan">Kapampangan</option>
                                 <option value="Pangasinense">Pangasinense</option>
                                 <option value="Iloko">Iloko</option>
@@ -688,15 +640,66 @@ option{
                                 <option value="Sambal">Sambal</option>
                                 <option value="Aklanon">Aklanon</option>
                             </select>
-                            <div class="mess2new">
-                                <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
-                            </div>
+                        </li>
+                    </ul>
+                    <div class="box">
+                        <div class="mess">
+                            <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Write down.."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
+                    </div>
+                    <div class="box2">
+                        <div class="mess2">
+                            <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Write down.."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
                 </div>
             </div>
+        </div>
 
 
+        <!-- </form> -->
+
+        <div class="maincon2">
+            <div class="glassmorphism">
+                <h1>Add to Dictionary</h1> 
+                    <div class="boxnew">
+                        <select class="select1-2" name="proposed_translation_language2">
+                            <option value="Tagalog">Tagalog</option> 
+                        </select>
+                        <div class="messnew">
+                            <textarea maxlength="5000" name="proposed_word2" class="textmess" placeholder="Write down.."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="box2new">
+                        <select class="select2-2" name="target_translation_language2">
+                            <option value="Kapampangan">Kapampangan</option>
+                            <option value="Pangasinense">Pangasinense</option>
+                            <option value="Iloko">Iloko</option>
+                            <option value="Bikol">Bikol</option>
+                            <option value="Cebuano">Cebuano</option>
+                            <option value="Hiligaynon">Hiligaynon</option>
+                            <option value="Waray">Waray</option>
+                            <option value="Tausug">Tausug</option>
+                            <option value="Maguindanaoan">Maguindanaoan</option>
+                            <option value="Maranao">Maranao</option>
+                            <option value="Chabacano">Chavacano</option>   
+                            <option value="Ybanag">Ybanag</option>
+                            <option value="Ivatan">Ivatan</option>
+                            <option value="Surigaonon">Surigaonon</option>
+                            <option value="Sambal">Sambal</option>
+                            <option value="Aklanon">Aklanon</option>
+                        </select>
+                        <div class="mess2new">
+                            <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
+            </div>
+        </div>
+
+    </div>
 
     <script>
               
