@@ -48,16 +48,30 @@ body::-webkit-scrollbar {
 .navbar {
     width: 95%;
     margin: auto;
-    padding: 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1000;
 }
 
 .logo {
     padding-left: 10px;
     width: 190px;
     cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar ul li {
@@ -87,6 +101,21 @@ body::-webkit-scrollbar {
 .navbar ul li a:hover::after {
     width: 100%;
 }
+.toggle-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 40px;
+    color: #ffffff;
+    float: left;
+}
+
 
 .navbar {
     width: 95%;
@@ -367,5 +396,14 @@ body::-webkit-scrollbar {
         flex-direction: column;
         padding-bottom: 100px; 
         height: fit-content;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent;
+        z-index: 1000;
     }
 }

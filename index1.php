@@ -146,7 +146,22 @@
             </div>
         </div>
     </div>
-    </section>   
+    </section>  
+    <div id="triviaModal5" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="#triviaModal5">&times;</span>
+        <h2>Trivia Time: Cebuano!</h2>
+        <div class="trivia-content">
+            <div class="trivia-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/320px-Flag_of_the_Philippines.svg.png" alt="Philippine Flag" class="flag-image">
+            </div>
+            <p class="trivia-text">
+                Alam mo ba? Ang Pampanga ay kilala bilang Culinary Capital ng Pilipinas. Ang Pampanga ay kilala sa kanilang masasarap na pagkain tulad ng sisig, tocino, at iba pa. Maraming turista ang pumupunta dito upang tikman ang kanilang mga espesyal na putahe. Bukod dito, ang Pampanga ay mayroon ding makulay na kultura at tradisyon na ipinagmamalaki ng mga Kapampangan.
+            </p>
+        </div>
+        <a href="quizgame.php?category=Cebuano" class="next-btn"><span></span>Take a Quiz</a>
+    </div>
+</div> 
     <script src="js/script.js"></script>
 </body>
 </html>
