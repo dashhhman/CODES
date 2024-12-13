@@ -557,10 +557,10 @@ $conn->close();
 <div id="usernameModal" class="modal">
     <div class="modal-content">
      
-        <p>Here is the result of the quiz!</p>
-        <h3>Score : <span id="scoreHere"></span></h3>
-        <h3>Number Of Correct : <span id="correctHere"></span></h3>
-        <h3>Time Taken : <span id="timerHere"></span></h3>
+        <h1>Here is the result!</h1>
+        <h3  id="scoreHere"></h3>
+        <h3 id="timerHere"></h3>
+        <h3 id="correctHere"></h3>
         <input type="text" id="username" placeholder="Username">
         <button id="submit-score">Submit Your Score</button>
     </div>
@@ -749,9 +749,9 @@ function updateTimer() {
 
 function showModal() {
     modal.style.display = "block"; 
-    document.getElementById("scoreHere").innerHTML = score;
-    document.getElementById("correctHere").innerHTML = correctResult;
-    document.getElementById("timerHere").innerHTML = timeLeft + `${timeLeft > 1 ? 'seconds' : ' second'}`;
+    document.getElementById("scoreHere").innerHTML = `${score} the total score`;
+    document.getElementById("correctHere").innerHTML = `${correctResult} out of ${questions.length}`;
+    document.getElementById("timerHere").innerHTML = timeLeft + `${timeLeft > 1 ? ' seconds' : ' second'}` + ` left`;
 }
 
 
