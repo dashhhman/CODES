@@ -243,7 +243,7 @@
                     </p>
                 </div>
                 <div class="image-container">
-                    <img src="images/School.png" alt="kapangpangan">
+                    <img src="images/kapampangan.png" alt="kapangpangan">
                 </div>
             </div>
 
