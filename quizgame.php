@@ -557,9 +557,12 @@ $conn->close();
 <div id="usernameModal" class="modal">
     <div class="modal-content">
      
-        <p>Enter your username to submit your score:</p>
+        <p>Here is the result of the quiz!</p>
+        <h3>Score : <span id="scoreHere"></span></h3>
+        <h3>Number Of Correct : <span id="correctHere"></span></h3>
+        <h3>Time Taken : <span id="timerHere"></span></h3>
         <input type="text" id="username" placeholder="Username">
-        <button id="submit-score">Submit</button>
+        <button id="submit-score">Submit Your Score</button>
     </div>
 </div>
 
@@ -585,7 +588,8 @@ const usernameInput = document.getElementById("username");
 let currentQuestionIndex = 0;
 let timeLeft = 0; 
 let timer;
-let score = 0;
+let score = 0; 
+let correctResult = 0;
 let questions = [];
 
 const easyQuestions = <?php echo json_encode($questions['Easy']); ?>;
@@ -683,7 +687,7 @@ function selectAnswer(button, answer) {
     buttons.forEach(btn => {
         btn.disabled = true;
     });
-
+ 
     if (correct) {
         button.style.backgroundColor = 'green';
         playCorrectSound();
@@ -703,6 +707,7 @@ function selectAnswer(button, answer) {
                 points = 0; 
         }
         score += points; 
+        correctResult += 1;
         scoreDisplay.innerText = `Score: ${score}`; 
     } else {
         button.style.backgroundColor = 'red';
@@ -744,6 +749,9 @@ function updateTimer() {
 
 function showModal() {
     modal.style.display = "block"; 
+    document.getElementById("scoreHere").innerHTML = score;
+    document.getElementById("correctHere").innerHTML = correctResult;
+    document.getElementById("timerHere").innerHTML = timeLeft + `${timeLeft > 1 ? 'seconds' : ' second'}`;
 }
 
 
