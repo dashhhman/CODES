@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Book Effect</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .book {
+            perspective: 1000px;
+        }
+
+        .page {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ccc;
+            position: absolute;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            transform-origin: left center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        #page2 {
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page" id="page1">Page 1 Content</div>
+        <div class="page" id="page2">Page 2 Content</div>
+    </div>
+    <script>
+        document.getElementById('page1').addEventListener('click', () => {
+            document.getElementById('page1').style.transform = 'rotateY(-180deg)';
+            setTimeout(() => {
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.transform = 'rotateY(0deg)';
+            }, 600);
+        });
+    </script>
+</body>
+</html>

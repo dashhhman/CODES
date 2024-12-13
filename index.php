@@ -214,13 +214,13 @@ if (isset($_POST['transbut'])) {
     font-size: 20px; 
     border: 2px solid #333;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 25px;
     cursor: pointer; 
     margin: 0; /* Remove auto margin */
     margin-right: auto; /* Push the select element to the left */  
     color: #000;
-    background-color: #fff;
-    border: 4px solid black; /* Black border */
+    background: #fef2f2d1;
+    border: 1px solid black; /* Black border */
     width: 100%;
     resize: horizontal;
     padding: 10px;
@@ -230,13 +230,13 @@ if (isset($_POST['transbut'])) {
     font-size: 20px; 
     border: 2px solid #333;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 25px;
     cursor: pointer; 
     margin: 0; /* Remove auto margin */
     margin-right: auto; /* Push the select element to the left */  
     color: #000;
-    background-color: #fff;
-    border: 4px solid black; /* Black border */
+    background: #fef2f2d1;
+    border: 1px solid black; /* Black border */
     width: 100%;
     resize: horizontal;
     padding: 10px;
@@ -276,6 +276,8 @@ option{
     align-items: left;
     color: #ffffff; 
     resize : none;
+    background: #fef2f2d1;
+    background: #fef2f2d1;
 
 }
 
@@ -289,6 +291,7 @@ option{
     font-weight: bold;
     resize: none;
     padding: 10px;
+    background: #fef2f2d1   ;
     margin: 30px;
     margin-top: 0px;
     margin-bottom: 80px;
@@ -312,6 +315,7 @@ option{
 .box2new textarea,
 .boxnew textarea{ 
     height: 200px;
+    background: #fef2f2d1;
 }
 
 .glassmorphism{
@@ -467,11 +471,6 @@ body {
         }   
 
 
-
-
-
-
-
 </style>
 
 
@@ -485,17 +484,19 @@ body {
                 <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
                 <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
                 <ul id="nav-links">
-                    <li><a href="index.php"><b>Home</b></a></li>
+                    <li><a href="homepage.php"><b>Home</b></a></li>
                     <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
                     <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                    <li><a href="feedback.php"><b>Feedback</b></a></li>
                     <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>  
                 </ul>
             </div>
  
 
 
-            <div class="maincon">
+            <div class="maincon">            
                 <div class="glassmorphism" >
+                <div class="center-line"></div>
                     <div class="translator">
                         <ul class="item">
                             <li>
@@ -551,7 +552,6 @@ body {
                         
                         <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Translate</button>
                         <button id="clear-but" class="clear-btn"><span></span>Clear</button>
-                        <button onclick="window.location.href='feedback.php';" class="Feedback"><span></span>Feedback</button>
                     </div>
                 
 
@@ -616,7 +616,7 @@ body {
                         <div class="list-actions-buttons">
                             <button type="submit" class="submit-btn-new" id="transbut-1" name="transbut"><span></span>Translate</button>
                             <button   id="clear-but-1" class="clear-btn-new"><span></span>Clear</button>
-                            <button onclick="window.location.href='feedback.php';" class="Feedback-new"><span></span>Feedback</button> 
+                          
                         </div>
                     </div>
                 

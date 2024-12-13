@@ -95,15 +95,16 @@
 
 </style>
 <body>
+    <section>
     <div class="banner">
         <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
             <ul id="nav-links">
-                <li><a href="index.php"><b>Home</b></a></li>
+                <li><a href="homepage.php"><b>Home</b></a></li>
                 <li><a href="index.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
+                <li><a href="feedback.php"><b>Feedback</b></a></li>
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span> 
             </ul>
         </div>
@@ -145,6 +146,7 @@
             </div>
         </div>
     </div>
+    </section>
 <div id="triviaModal1" class="modal">
     <div class="modal-content">
         <span class="close" data-modal="#triviaModal1">&times;</span>
@@ -157,7 +159,7 @@
             Alam mo ba? Ang Kapampangan ay isa sa mga pangunahing wika ng mga naninirahan sa probinsya ng Pampanga at ilang bahagi ng Central Luzon. Kilala rin ito sa tawag na Pampango. Ang Kapampangan ay bahagi ng malaking pamilya ng mga Austronesian languages. Ang wika na ito ay puno ng kasaysayan at kultura ng mga Kapampangan. Ginagamit ito sa pang-araw-araw na komunikasyon, panitikan, at mga tradisyonal na seremonya. Ipinagmamalaki ng mga Kapampangan ang kanilang wika dahil ito'y bahagi ng kanilang identidad at kasaysayan.
             </p>
         </div>
-        <a href="quizgame.php?category=Kapampangan" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Kapampangan" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal2" class="modal">
@@ -172,7 +174,7 @@
             Alam mo ba? Ang Pangasinense ay isa sa mga pangunahing wika ng Pangasinan at ng Ilocos Region. Ang wika na ito ay bahagi ng malaking pamilya ng Austronesian languages. Bukod sa pagiging isang wika ng komunikasyon, ang Pangasinense ay punong-puno rin ng kasaysayan at kultura. Ang kanilang mga salita ay nagbibigay-buhay sa mga kwento ng kanilang mga ninuno at nagsisilbing tanda ng kanilang matatag na identidad. Ang mga Pangasinense ay ipinagmamalaki ang kanilang wika at patuloy na ginagamit ito sa araw-araw na pamumuhay.
             </p>
         </div>
-        <a href="quizgame.php?category=Pangasinense" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Pangasinense" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal3" class="modal">
@@ -187,7 +189,7 @@
             Alam mo ba? Ang Iloko, kilala rin bilang Ilocano, ay isa sa mga pangunahing wika ng Hilagang Luzon, partikular sa mga rehiyon ng Ilocos at mga karatig na probinsya. Ang wika na ito ay bahagi ng malawak na Austronesian language family. Ang Iloko ay puno ng kasaysayan at kultura ng mga Ilokano. Ginagamit ito sa pang-araw-araw na komunikasyon, mga panitikan, at sa iba't ibang mga tradisyon at seremonya. Ang mga Ilokano ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang pagkakakilanlan at makulay na kasaysayan.
             </p>
         </div>
-        <a href="quizgame.php?category=Iloko" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Iloko" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal4" class="modal">
@@ -202,7 +204,7 @@
             Alam mo ba? Ang Bikol ay isa sa mga pangunahing wika ng Bicol Region, na matatagpuan sa timog-silangang bahagi ng Luzon. Ang wika na ito ay bahagi ng malaking Austronesian language family. Ang Bikol ay may iba't ibang dialekto, ngunit lahat ng ito ay nagkakaisa sa pagpapahayag ng mayamang kultura at kasaysayan ng mga Bicolano. Ang mga salitang Bikolano ay ginagamit sa pang-araw-araw na komunikasyon, sa mga tradisyunal na seremonya, at sa sining. Ipinagmamalaki ng mga Bicolano ang kanilang wika dahil ito ay sumasalamin sa kanilang pagkakakilanlan at makulay na kasaysayan.
             </p>
         </div>
-        <a href="quizgame.php?category=Bikol" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Bikol" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal5" class="modal">
@@ -217,7 +219,7 @@
                 Alam mo ba? Ang Pampanga ay kilala bilang Culinary Capital ng Pilipinas. Ang Pampanga ay kilala sa kanilang masasarap na pagkain tulad ng sisig, tocino, at iba pa. Maraming turista ang pumupunta dito upang tikman ang kanilang mga espesyal na putahe. Bukod dito, ang Pampanga ay mayroon ding makulay na kultura at tradisyon na ipinagmamalaki ng mga Kapampangan.
             </p>
         </div>
-        <a href="quizgame.php?category=Cebuano" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Cebuano" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal6" class="modal">
@@ -232,7 +234,7 @@
              Alam mo ba? Ang Hiligaynon, na kilala rin bilang Ilonggo, ay isa sa mga pangunahing wika ng Western Visayas, partikular sa mga probinsya ng Iloilo at Negros Occidental. Bahagi ito ng malaking Austronesian language family. Ang Hiligaynon ay kilala sa malumanay at musikang himig ng kanilang pagsasalita, kaya't madalas ay tinatawag itong "language of love" sa Pilipinas. Ang wika na ito ay ginagamit sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya. Ang mga Ilonggo ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kultura at kasaysayan.
              </p>
         </div>
-        <a href="quizgame.php?category=Hiligaynon" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Hiligaynon" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal7" class="modal">
@@ -247,7 +249,7 @@
                 Alam mo ba? Ang Waray ay isa sa mga pangunahing wika ng Eastern Visayas, partikular sa mga probinsya ng Samar at Leyte. Ang Waray ay bahagi ng malaking Austronesian language family. Ang mga salitang Waray ay ginagamit sa pang-araw-araw na komunikasyon, panitikan, at mga tradisyonal na seremonya. Kilala ang Waray sa kanilang matapang at malakas na paraan ng pagsasalita, na sumasalamin sa matatag at matapang na karakter ng mga Waraynon. Ang mga Waraynon ay ipinagmamalaki ang kanilang wika at patuloy itong ginagamit sa iba't ibang aspeto ng kanilang buhay upang mapanatili ang kanilang makulay na kultura at kasaysayan.
            </p>
         </div>
-        <a href="quizgame.php?category=Waray" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Waray" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal8" class="modal">
@@ -262,7 +264,7 @@
                 Alam mo ba? Ang Pampanga ay kilala bilang Culinary Capital ng Pilipinas. Ang Pampanga ay kilala sa kanilang masasarap na pagkain tulad ng sisig, tocino, at iba pa. Maraming turista ang pumupunta dito upang tikman ang kanilang mga espesyal na putahe. Bukod dito, ang Pampanga ay mayroon ding makulay na kultura at tradisyon na ipinagmamalaki ng mga Kapampangan.
             </p>
         </div>
-        <a href="quizgame.php?category=Tausug" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Tausug" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal9" class="modal">
@@ -277,7 +279,7 @@
                 Alam mo ba? Ang Maguindanao ay isa sa mga pangunahing wika ng Maguindanao Province at ilang bahagi ng Cotabato sa Mindanao. Ang wika na ito ay bahagi ng malaking Austronesian language family. Ang Maguindanao ay ginagamit sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya ng mga Maguindanaon. Ang mga Maguindanaon ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura. Ang kanilang wika ay nagpapakita ng kanilang malalim na paggalang sa kanilang mga ninuno at sa kanilang lupang tinubuan.
             </p>
         </div>
-        <a href="quizgame.php?category=Maguindanaoan" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Maguindanaoan" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal10" class="modal">
@@ -292,7 +294,7 @@
                 Alam mo ba? Ang Maranao ay isa sa mga pangunahing wika ng Lanao del Sur sa Mindanao. Ang wika na ito ay bahagi ng malaking Austronesian language family. Ang Maranao ay ginagamit sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya ng mga Maranao. Ang mga Maranao ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura. Ang kanilang wika ay nagpapakita ng kanilang malalim na paggalang sa kanilang mga ninuno at sa kanilang lupang tinubuan. Ang Maranao ay kilala rin sa kanilang mga malikhaing sining tulad ng okir (carving) at malong (tapestry).
             </p>
         </div>
-        <a href="quizgame.php?category=Maranao" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Maranao" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal11" class="modal">
@@ -307,7 +309,7 @@
              Alam mo ba? Ang Chabacano ay isang natatanging creole language sa Pilipinas na pangunahing sinasalita sa Zamboanga City. Ang Chavacano ay may malakas na impluwensya ng Espanyol, na hinaluan ng mga salitang mula sa iba't ibang wika sa Pilipinas, tulad ng Cebuano, Ilonggo, at Tagalog. Ang wika na ito ay nagmula noong panahon ng mga Kastila, at hanggang ngayon ay ginagamit pa rin sa pang-araw-araw na komunikasyon. Ipinagmamalaki ng mga Zamboangueño ang kanilang wika dahil ito ay simbolo ng kanilang makulay na kasaysayan at kultura.
             </p>
         </div>
-        <a href="quizgame.php?category=Chavacano" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Chavacano" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal12" class="modal">
@@ -322,7 +324,7 @@
                  Alam mo ba? Ang Ybanag ay isa sa mga pangunahing wika ng Cagayan Valley, partikular sa mga probinsya ng Cagayan at Isabela. Ang wika na ito ay bahagi ng malaking Austronesian language family. Ang Ybanag ay ginagamit sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya ng mga Ybanag. Kilala ang Ybanag sa kanilang masiglang pamumuhay at makulay na kultura na naipapahayag sa kanilang wika. Ang mga Ybanag ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura.
             </p>
         </div>
-        <a href="quizgame.php?category=Ybanag" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Ybanag" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal13" class="modal">
@@ -337,7 +339,7 @@
              Alam mo ba? Ang Ivatan ay isa sa mga pangunahing wika ng Batanes, ang pinakahilagang probinsya ng Pilipinas. Ang Ivatan ay bahagi ng malaking Austronesian language family. Kilala ang mga Ivatan sa kanilang kakaibang kultura at pamumuhay na nag-aadapt sa matitinding panahon sa kanilang isla. Ang wika na ito ay ginagamit sa pang-araw-araw na komunikasyon, mga panitikan, at sa mga tradisyonal na seremonya. Ang mga Ivatan ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang pagkakakilanlan at kasaysayan. Ang Ivatan ay isang mahalagang bahagi ng kanilang kultura at nagbibigay-buhay sa kanilang mayamang tradisyon.
             </p>
         </div>
-        <a href="quizgame.php?category=Ivatan" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Ivatan" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal14" class="modal">
@@ -352,7 +354,7 @@
             Alam mo ba? Ang Sambal ay isa sa mga pangunahing wika ng Zambales at ilang bahagi ng Pangasinan sa Luzon. Ang Sambal ay bahagi ng malaking Austronesian language family. Ginagamit ito sa pang-araw-araw na komunikasyon, panitikan, at sa iba't ibang tradisyon at seremonya ng mga Sambal. Kilala ang Sambal sa kanilang matatag na pamumuhay at mayamang kultura na naipapahayag sa kanilang wika. Ang mga Sambal ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura.
             </p>
         </div>
-        <a href="quizgame.php?category=Sambal" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Sambal" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal15" class="modal">
@@ -367,7 +369,7 @@
                 Alam mo ba? Ang Aklanon ay isa sa mga pangunahing wika ng Aklan Province sa Panay Island, sa Western Visayas. Ang Aklanon ay bahagi ng malaking Austronesian language family. Ang wika na ito ay kilala sa kanilang natatanging tunog ng "l" sa halip na "r," isang katangian na nagbibigay ng kakaibang himig sa kanilang pagsasalita.Ipinagmamalaki ng mga Aklanon ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura. Ang Aklan ay kilala rin sa kanilang makulay na Ati-Atihan Festival, isang pagdiriwang na nagpapakita ng kanilang malalim na paggalang sa kanilang kasaysayan at tradisyon.
             </p>
         </div>
-        <a href="quizgame.php?category=Aklanon" class="next-btn">Take a Quiz</a>
+        <a href="quizgame.php?category=Aklanon" class="next-btn"><span></span>Take a Quiz</a>
     </div>
 </div>
 <div id="triviaModal16" class="modal">
@@ -382,7 +384,7 @@
             Alam mo ba? Ang Kinaray-a ay isa sa mga pangunahing wika ng Antique Province at ilang bahagi ng Panay Island sa Western Visayas. Ang Kinaray-a ay bahagi ng malaking Austronesian language family. Ang wika na ito ay ginagamit sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya. Ang Kinaray-a ay kilala sa kanilang mayamang kasaysayan at kultura na naipapahayag sa kanilang wika. Ipinagmamalaki ng mga Kinaray-a ang kanilang wika dahil ito ay sumasalamin sa kanilang pagkakakilanlan at makulay na kasaysayan.
             </p>
         </div>
-            <a href="quizgame.php?category=Kinaray-a" class="next-btn">Take a Quiz</a>
+            <a href="quizgame.php?category=Kinaray-a" class="next-btn"><span></span>Take a Quiz</a>
         </div>
     </div>
     <div id="triviaModal17" class="modal">
@@ -397,7 +399,7 @@
             Alam mo ba? Ang Yakan ay isa sa mga pangunahing wika ng Basilan, isang isla sa Mindanao. Ang Yakan ay bahagi ng malaking Austronesian language family. Kilala ang mga Yakan sa kanilang natatanging kultura at mga tradisyon na nag-uugat sa kanilang kasaysayan at relihiyon. Ang wika na ito ay ginagamit sa pang-araw-araw na komunikasyon, panitikan, at sa iba't ibang tradisyon at seremonya. Ang mga Yakan ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang pagkakakilanlan at mayamang kasaysayan. Kilala rin ang mga Yakan sa kanilang masalimuot at makukulay na tradisyonal na habi at kasuotan.
             </p>
         </div>
-            <a href="quizgame.php?category=Yakan" class="next-btn">Take a Quiz</a>
+            <a href="quizgame.php?category=Yakan" class="next-btn"><span></span>Take a Quiz</a>
         </div>
     </div>
     <div id="triviaModal18" class="modal">
@@ -412,7 +414,7 @@
             Alam mo ba? Ang Surigaonon ay isa sa mga pangunahing wika ng Surigao del Norte at Surigao del Sur sa Mindanao. Ang Surigaonon ay bahagi ng malaking Austronesian language family. Ginagamit ito sa pang-araw-araw na komunikasyon, sa mga panitikan, at sa iba't ibang tradisyon at seremonya ng mga Surigaonon. Kilala ang Surigaonon sa kanilang masayahing pamumuhay at mayamang kultura na naipapahayag sa kanilang wika. Ang mga Surigaonon ay ipinagmamalaki ang kanilang wika dahil ito ay sumasalamin sa kanilang mayamang kasaysayan at kultura.
             </p>
         </div>
-            <a href="quizgame.php?category=Surigaonon" class="next-btn">Take Quiz</a>
+            <button href="quizgame.php?category=Surigaonon" class="next-btn"><span></span>Take Quiz</></button>
         </div>
     </div>
     

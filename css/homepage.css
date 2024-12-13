@@ -81,8 +81,8 @@
 }
 
 .content .logo {
-    width: 295px;
-    height: 295px;
+    width: 300px;
+    height: 300px;
     border: 3px solid rgb(87, 117, 141);
     border-radius: 50%;
     object-fit: cover;
@@ -91,7 +91,7 @@
 .content p {
     margin: 20px auto;
     font-weight: 200;
-    font-size: 25px;
+    font-size: 35px;
     line-height: 1.5;
     word-wrap: break-word;
 }

@@ -509,23 +509,15 @@ $conn->close();
         })
     </script>
 
-
-
-
-
-
-
-
-
 <div class="navbar">
             <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
             <button id="back-button" onclick="location.href='index1.php'">Back to Selection</button>
             <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
             <ul id="nav-links">
-                <li><a href="index.php"><b>Home</b></a></li>
-                <li><a href="index1.php"><b>Translator</b></a></li>
+                <li><a href="homepage.php"><b>Home</b></a></li>
+                <li><a href="index.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <li><a href="feedback.php"><b>Feedback</b></a></li>
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
             </ul>
         </div>
@@ -539,7 +531,7 @@ $conn->close();
     <h1>FunQuiz</h1>
     <p class="instruction" id="instruction-1">Pumili ng tamang sagot upang makakuha ng mataas na iskor.</p>
     <p class="instruction" id="instruction-2">Galingan mo!</p>
-    <div id="score-container">Score: <span id="score">0</span></div>
+    <div id="score-container"> <span id="score">0</span></div>
     <div id="question-container" style="display: none;">
       <p id="question-text"></p>
       <div id="answer-buttons"></div>
@@ -555,7 +547,9 @@ $conn->close();
   
 </div>
 
-
+<audio id="background-music" src="music/Background Music.mp3" loop volume="0.1"></audio>
+<audio id="correct-sound" src="music/correct.mp3"></audio>
+<audio id="incorrect-sound" src="music/wrong.mp3"></audio>
 
 <div class="error-message"></div>
 <div class="success-message"></div>
@@ -579,7 +573,14 @@ const timerContainer = document.getElementById('timer-container');
 const instructions = document.querySelectorAll('.instruction'); 
 const scoreDisplay = document.getElementById('score'); 
 const questionLevelDisplay = document.getElementById('question-level');
-const backButton = document.getElementById('back-button'); // Reference to the back button
+const backButton = document.getElementById('back-button');
+const backgroundMusic = document.getElementById('background-music'); // Reference sa background music
+const correctSound = document.getElementById('correct-sound');
+const incorrectSound = document.getElementById('incorrect-sound');
+const modal = document.getElementById("usernameModal");
+const span = document.getElementsByClassName("close")[0];
+const submitScoreButton = document.getElementById("submit-score");
+const usernameInput = document.getElementById("username");
 
 let currentQuestionIndex = 0;
 let timeLeft = 0; 
@@ -591,11 +592,6 @@ const easyQuestions = <?php echo json_encode($questions['Easy']); ?>;
 const mediumQuestions = <?php echo json_encode($questions['Medium']); ?>;
 const hardQuestions = <?php echo json_encode($questions['Hard']); ?>; 
 
-const modal = document.getElementById("usernameModal");
-const span = document.getElementsByClassName("close")[0];
-const submitScoreButton = document.getElementById("submit-score");
-const usernameInput = document.getElementById("username");
-
 questions = [...easyQuestions, ...mediumQuestions, ...hardQuestions ];
 
 startButton.addEventListener('click', startQuiz);
@@ -603,14 +599,16 @@ startButton.addEventListener('click', startQuiz);
 timerContainer.style.display = 'none'; 
 
 function startQuiz() {
-    // Hide the back button when the quiz starts
+    backgroundMusic.volume = 0.1; // Set the volume to a lower level
+    backgroundMusic.play(); // Patugtugin ang background music
+
     backButton.style.display = 'none';
 
     score = 0;
     currentQuestionIndex = 0;
     questionContainer.style.display = 'block';
     startButton.style.display = 'none';
-    scoreDisplay.innerText = score;  
+    scoreDisplay.innerText = `Score: ${score}`;  
     timerText.innerText = timeLeft;  
     instructions.forEach(instruction => instruction.style.display = 'none');
     timerContainer.style.display = 'block'; 
@@ -624,10 +622,7 @@ function updateProgressBar() {
 }
 
 function showQuestion() {
-    console.log(questions);
-    console.log( questions[currentQuestionIndex]);
     const currentQuestion = questions[currentQuestionIndex];
-    console.log("Showing Question:", currentQuestion);
     questionText.innerText = currentQuestion.question;
     questionLevelDisplay.innerText = `Level: ${currentQuestion.level}`;
     answerButtons.innerHTML = '';
@@ -645,27 +640,26 @@ function showQuestion() {
         setTimeout(() => button.classList.remove('fade-in'), 1000);
     });
 
-    // Make the question level blink for all levels
-    if (currentQuestion.level === 'Easy' || currentQuestion.level === 'Medium' || currentQuestion.level === 'Hard') {
+    if (['Easy', 'Medium', 'Hard'].includes(currentQuestion.level)) {
         questionLevelDisplay.classList.add('blink');
     } else {
         questionLevelDisplay.classList.remove('blink');
     }
 
-    updateProgressBar(); // Update the progress bar
+    updateProgressBar();
 
     switch (currentQuestion.level) {
-      case 'Easy':
-        timeLeft = 10;
-        break;
-      case 'Medium':
-        timeLeft = 10;
-        break;
-      case 'Hard':
-        timeLeft = 15;
-        break;
-      default:
-        timeLeft = 0;
+        case 'Easy':
+            timeLeft = 10;
+            break;
+        case 'Medium':
+            timeLeft = 10;
+            break;
+        case 'Hard':
+            timeLeft = 15;
+            break;
+        default:
+            timeLeft = 0;
     }
 
     timerText.innerText = timeLeft;
@@ -673,26 +667,12 @@ function showQuestion() {
     timer = setInterval(updateTimer, 1000);
 }
 
-// Function to play correct sound using triangle wave
 function playCorrectSound() {
-    const context = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = context.createOscillator();
-    oscillator.type = 'triangle';
-    oscillator.frequency.setValueAtTime(660, context.currentTime); // Frequency for E5 note
-    oscillator.connect(context.destination);
-    oscillator.start();
-    setTimeout(() => oscillator.stop(), 500); // Play sound for 500ms
+    correctSound.play();
 }
 
-// Function to play incorrect sound using sawtooth wave
 function playIncorrectSound() {
-    const context = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = context.createOscillator();
-    oscillator.type = 'sawtooth';
-    oscillator.frequency.setValueAtTime(110, context.currentTime); // Frequency for A2 note
-    oscillator.connect(context.destination);
-    oscillator.start();
-    setTimeout(() => oscillator.stop(), 500); // Play sound for 500ms
+    incorrectSound.play();
 }
 
 function selectAnswer(button, answer) {
@@ -700,13 +680,13 @@ function selectAnswer(button, answer) {
     const correct = answer.correct;
     const buttons = answerButtons.querySelectorAll('button');
 
-    console.log("Answer Selected:", answer);
-    console.log("Correct Answer for Current Question:", currentQuestion.correctAnswer);
+    buttons.forEach(btn => {
+        btn.disabled = true;
+    });
 
     if (correct) {
         button.style.backgroundColor = 'green';
         playCorrectSound();
-        console.log("Selected button:", button.innerText, "Color:", button.style.backgroundColor);
 
         let points = 0;
         switch (currentQuestion.level) {
@@ -723,31 +703,28 @@ function selectAnswer(button, answer) {
                 points = 0; 
         }
         score += points; 
-        scoreDisplay.innerText = score; 
+        scoreDisplay.innerText = `Score: ${score}`; 
     } else {
         button.style.backgroundColor = 'red';
         playIncorrectSound();
-        console.log("Selected button:", button.innerText, "Color:", button.style.backgroundColor);
 
-        // Highlight the correct answer
         buttons.forEach(btn => {
             if (btn.innerText === currentQuestion.correctAnswer) {
                 btn.style.backgroundColor = 'green';
-                console.log("Correct Answer button (Green):", btn.innerText, "Color:", btn.style.backgroundColor);
             }
         });
     }
 
-    // Delay before showing next question
     currentQuestionIndex++;
     setTimeout(() => {
         if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
             clearInterval(timer); 
+            backgroundMusic.pause(); // Itigil ang background music kapag tapos na ang quiz
             showModal();
         }
-    }, 2000); // 2 seconds delay to show the colors
+    }, 2000);
 }
 
 function updateTimer() {
@@ -759,6 +736,7 @@ function updateTimer() {
         if (currentQuestionIndex < questions.length) {
             showQuestion(); 
         } else {
+            backgroundMusic.pause(); // Itigil ang background music kapag tapos na ang quiz
             showModal(); 
         }
     }
@@ -767,6 +745,7 @@ function updateTimer() {
 function showModal() {
     modal.style.display = "block"; 
 }
+
 
 
 
@@ -815,7 +794,7 @@ function submitScoreButtonFunc(){
         .then(data => {
             if (data.success) {
                 showSuccessMessage('Score submitted for ' + username);
-                // TODO : LAGYAN MO NG REDIRICTION
+                location.href = 'leaderboard.php';
             } else {
                 showErrorMessage("Error: " + data.message);
             }

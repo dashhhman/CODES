@@ -124,7 +124,7 @@
     transform : translate(-50%, -50%);
     z-index : 1000;
     width : 100%;
-    height : 140svh;
+    height : 130svh;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
@@ -188,11 +188,7 @@
     
 .navbar ul.show ~ .close-menu {
     display: block; /* Show close icon when menu is toggled */
-}/* Circle Container Styles */
-
-
-
-
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -262,7 +258,8 @@
 }
 
 
-.maincon2 { 
+.maincon2 {
+    height: 110vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -274,7 +271,6 @@
     width: 85%;
     box-shadow: 15px 15px 12px #00000035;
     backdrop-filter: blur(-1px);
-    border-radius: 15px;
     overflow: hidden;
     position: absolute;
     height: 50%;
@@ -284,26 +280,20 @@
     text-align: left;
     padding: 8px;
     height: calc(60% - -30px);   
-    background: brown;
-    border: 4px solid black; /* Black border */   
+    background: rgba(176, 155, 155, 0.471);
+    border: 1px solid black; /* Black border */  
 }
-
-
-
-
-
 
 .select1-2 { 
     font-size: 20px; 
     border: 2px solid #333;
-    font-weight: bold;
-    border-radius: 15px;
+    border-radius: 25px;
     cursor: pointer; 
     margin: 0; /* Remove auto margin */
     margin-right: auto; /* Push the select element to the left */  
     color: #000;
-    background-color: #fff;
-    border: 4px solid black; /* Black border */
+    background: #fef2f2d1;
+    border: 1px solid black; /* Black border */
     width: 100%;
     resize: horizontal;
     padding: 10px;
@@ -311,28 +301,23 @@
 
 .select2-2 {
     font-size: 20px; 
-    border: 2px solid #333;
-    font-weight: bold;
-    border-radius: 15px;
+    border: 2px solid #333; 
+    border-radius: 25px;
     cursor: pointer; 
     margin: 0; /* Remove auto margin */
     margin-right: auto; /* Push the select element to the left */  
     color: #000;
-    background-color: #fff;
-    border: 4px solid black; /* Black border */
+    background: #fef2f2d1;
+    border: 1px solid black; /* Black border */
     width: 100%;
     resize: horizontal;
     padding: 10px;
     
 }
-
-option{
-    background-color: floralwhite;
-    text-align:center;
-    font-weight: bold;
-    font-size: 22px;
-    resize: horizontal;
-    width : 90%;
+option {
+    background-color: #888;
+    text-align: center;
+    font-weight: 500;
 }
 
 .translator .boxnew,
@@ -391,6 +376,9 @@ option{
 .box2new textarea,
 .boxnew textarea{ 
     height: 200px;
+    border-radius: 25px;
+    background: #fef2f2d1;
+
 }
 
 .glassmorphism{
@@ -402,8 +390,7 @@ option{
 
 
 .submit-btn2 {
- 
-    left: 46%; 
+    left: 25%; 
     padding: 6px 0;
     text-align: center;
     margin:0 auto;
@@ -461,24 +448,7 @@ option{
 }
 
 
-.banner {
-    width: 100%;
-    height: 120svh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/School.png);
-    background-size: cover;
-    background-position: center;
-}
-
-
-
-
 }   
-
-
-
-
-
-
 
 .verifications-content{
     display: flex;
@@ -599,30 +569,82 @@ option{
     </script>
 
 
-    <div class="navbar">
-        <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
-        <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
-        <ul id="nav-links">
-            <li><a href="homepage.php"><b>Home</b></a></li>
-            <li><a href="index.php"><b>Translator</b></a></li>
-            <li><a href="index1.php"><b>Fun Quiz</b></a></li>
-            <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
-        </ul>
-    </div>
+        <div class="navbar">
+            <img src="images/FINAL WEBLINGUA.png" class="logo" href="homepage.php">
+            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+            <ul id="nav-links">
+                <li><a href="homepage.php"><b>Home</b></a></li>
+                <li><a href="index.php"><b>Translator</b></a></li>
+                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <li><a href="feedback.php"><b>Feedback</b></a></li>
+                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
+            </ul>
+        </div>
 
-        <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm"> -->
-        <div class="maincon">
-            <div class="glassmorphism">
-                <h1>Add to Dictionary</h1>
-                <div class="translator">
-                    <ul class="item">
-                        <li>
-                            <select class="select1" name="proposed_translation_language">
+       <!-- <form action="addtodicfunction.php" method="post" class="dict" id="dictionaryForm"> -->
+            <div class="maincon">
+                <div class="glassmorphism">
+                    <h1>Add to Dictionary</h1>
+                    <div class="translator">
+                        <ul class="item">
+                            <li>
+                                <select class="select1" name="proposed_translation_language">
+                                    <option value="Tagalog">Tagalog</option> 
+                                </select>
+                            </li>
+                            <li>
+                                <select class="select2" name="target_translation_language">
+                                    <option value="Kapampangan">Kapampangan</option>
+                                    <option value="Pangasinense">Pangasinense</option>
+                                    <option value="Iloko">Iloko</option>
+                                    <option value="Bikol">Bikol</option>
+                                    <option value="Cebuano">Cebuano</option>
+                                    <option value="Hiligaynon">Hiligaynon</option>
+                                    <option value="Waray">Waray</option>
+                                    <option value="Tausug">Tausug</option>
+                                    <option value="Maguindanaoan">Maguindanaoan</option>
+                                    <option value="Maranao">Maranao</option>
+                                    <option value="Chabacano">Chavacano</option>   
+                                    <option value="Ybanag">Ybanag</option>
+                                    <option value="Ivatan">Ivatan</option>
+                                    <option value="Surigaonon">Surigaonon</option>
+                                    <option value="Sambal">Sambal</option>
+                                    <option value="Aklanon">Aklanon</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <div class="box">
+                            <div class="mess">
+                                <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Isulat mo.."></textarea>
+                            </div>
+                        </div>
+                        <div class="box2">
+                            <div class="mess2">
+                                <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Isulat mo.."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- </form> -->
+ 
+            <div class="maincon2">
+                <div class="glassmorphism">
+                    <h1>Add to Dictionary</h1> 
+                        <div class="boxnew">
+                            <select class="select1-2" name="proposed_translation_language2">
                                 <option value="Tagalog">Tagalog</option> 
                             </select>
-                        </li>
-                        <li>
-                            <select class="select2" name="target_translation_language">
+                            <div class="messnew">
+                                <textarea maxlength="5000" name="proposed_word2" class="textmess" placeholder="Write down.."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="box2new">
+                            <select class="select2-2" name="target_translation_language2">
                                 <option value="Kapampangan">Kapampangan</option>
                                 <option value="Pangasinense">Pangasinense</option>
                                 <option value="Iloko">Iloko</option>
@@ -640,66 +662,15 @@ option{
                                 <option value="Sambal">Sambal</option>
                                 <option value="Aklanon">Aklanon</option>
                             </select>
-                        </li>
-                    </ul>
-                    <div class="box">
-                        <div class="mess">
-                            <textarea maxlength="5000" name="proposed_word" class="textmess" placeholder="Write down.."></textarea>
+                            <div class="mess2new">
+                                <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="box2">
-                        <div class="mess2">
-                            <textarea maxlength="5000" name="translated_word" class="textmess2" placeholder="Write down.."></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn" id="transbut" name="transbut"><span></span>Add to Dictionary</button>
+                        <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
                 </div>
             </div>
-        </div>
 
 
-        <!-- </form> -->
-
-        <div class="maincon2">
-            <div class="glassmorphism">
-                <h1>Add to Dictionary</h1> 
-                    <div class="boxnew">
-                        <select class="select1-2" name="proposed_translation_language2">
-                            <option value="Tagalog">Tagalog</option> 
-                        </select>
-                        <div class="messnew">
-                            <textarea maxlength="5000" name="proposed_word2" class="textmess" placeholder="Write down.."></textarea>
-                        </div>
-                    </div>
-
-                    <div class="box2new">
-                        <select class="select2-2" name="target_translation_language2">
-                            <option value="Kapampangan">Kapampangan</option>
-                            <option value="Pangasinense">Pangasinense</option>
-                            <option value="Iloko">Iloko</option>
-                            <option value="Bikol">Bikol</option>
-                            <option value="Cebuano">Cebuano</option>
-                            <option value="Hiligaynon">Hiligaynon</option>
-                            <option value="Waray">Waray</option>
-                            <option value="Tausug">Tausug</option>
-                            <option value="Maguindanaoan">Maguindanaoan</option>
-                            <option value="Maranao">Maranao</option>
-                            <option value="Chabacano">Chavacano</option>   
-                            <option value="Ybanag">Ybanag</option>
-                            <option value="Ivatan">Ivatan</option>
-                            <option value="Surigaonon">Surigaonon</option>
-                            <option value="Sambal">Sambal</option>
-                            <option value="Aklanon">Aklanon</option>
-                        </select>
-                        <div class="mess2new">
-                            <textarea maxlength="5000" name="translated_word2" class="textmess2" placeholder="Write down.."></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn2" id="transbut2" name="transbut"><span></span>Add to Dictionary</button>
-            </div>
-        </div>
-
-    </div>
 
     <script>
               

@@ -12,6 +12,7 @@ body {
     padding: 0;
     margin: 0;
     text-align: right;
+    height : fit-content;
 }
 
 body::-webkit-scrollbar {
@@ -25,6 +26,7 @@ body::-webkit-scrollbar {
     background-size: cover;
     background-position: center;
 }
+
 
 .navbar {
     width: 95%;
@@ -97,7 +99,6 @@ body::-webkit-scrollbar {
     color: #ffffff;
     float: left;
 }
-
 .maincon {
     height: 100vh;
     overflow-y: auto;
@@ -109,34 +110,38 @@ body::-webkit-scrollbar {
 
 .glassmorphism h1 {
     text-align: center;
-    margin-bottom: 1px;
-    color: #ffffff;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    font-size: 18px;
+    margin-bottom: 12px;
+    color: white;
+    letter-spacing: 2px; 
+    line-height: 1.2;
+    text-transform: uppercase; 
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .glassmorphism {
-    width: 70%;
-    box-shadow: 15px 15px 12px #00000035;
-    border-radius: 15px;
+    width: 85%;
     overflow: hidden;
     position: absolute;
-    top: 55%;
+    box-shadow: 15px 15px 12px #00000035;
+    height: 50%;
+    top: calc(53.5% + 51.5px); 
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
-    padding: 16px;
-    background: brown;
-    border: 4px solid black;
+    padding: 8px;
+    height: calc(54% - -120px);   
+    background: rgba(176, 155, 155, 0.471);
+    border: 1px solid black; /* Black border */   
 }
+
 
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
-    border-radius: 5px;
+    border-radius: 20px;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
@@ -196,15 +201,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     width: calc(98% - 30px);
     height: calc(100% - 20px);
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 25px;
     font-size: 18px;
     resize: none;
     margin: 0;
-    background: #ffffff;
-    color: #ffffff;
-    border: 2.5px solid black;
+    background: #fef2f2d1;
+    border: 1px solid black;
     overflow: hidden;
-    font-weight: bold;
     color: #000;
 }
 
@@ -248,6 +251,13 @@ span {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
+    .banner {
+        width: 100%;
+        min-height: 110vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/School.png);
+        background-size: cover;
+        background-position: center;
+    }
     .navbar {
         justify-content: space-between;
         position: fixed;
@@ -260,8 +270,9 @@ span {
 
     .glassmorphism {
         width: 90%;
+        height: 85%;
         padding: 20px;
-        top: 55%;
+        top: 62%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -273,21 +284,11 @@ span {
 }
 
 @media (max-width: 768px) {
-    .logo {
-        margin: auto;
-        width: 150px
-
-    }
-
+   
     .toggle-menu {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
+        
+        top: 37%;
+        right: 32px;
     }
     
 
@@ -330,8 +331,8 @@ span {
     }
 
     .glassmorphism {
-        min-width: auto;
-        padding: 10px;
+        height: fit-content;
+        margin-top: 75px;
     }
 
     .glassmorphism h1 {
@@ -361,37 +362,4 @@ span {
     }
 }
 
-
-@media (min-width: 1280px) {
-    .maincon {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .navbar ul {
-        flex-direction: row;
-    }
-
-    .navbar ul li {
-        margin: 0 20px;
-    }
-
-    .glassmorphism {
-        width: 70%;
-        padding: 30px;
-        position: absolute;
-        top: 60%; /* Adjusted position to move down */
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .submit-btn {
-        width: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        position: relative;
-        
-    }
-}
 
