@@ -248,17 +248,18 @@ body::-webkit-scrollbar {
 
 .exit-button{
     height: 0;   
-    display: none;
+    /* display: none; */
+    width: 5%;
 }
 
 .exit-button-img{
     position: relative; 
     cursor: pointer; 
     left: 16px;
-    top: 26px;
+    top: 35px;
     width: 35px;
     height: 35px;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .summary-text{
@@ -302,7 +303,7 @@ body::-webkit-scrollbar {
     display: flex; 
     justify-content: center;
     align-items: center;
-    width: 50%; 
+    width: 45%; 
     align-items; 
 }
  
