@@ -361,6 +361,7 @@ body::-webkit-scrollbar {
     height: 0;
     position: relative;
     top: -45px;
+    z-index: 9999 !important;
 }
 
 .buttons span{
