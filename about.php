@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="website icon" type="png" href="images/WEBLOGO.png"/>
+    <link rel="website icon" type="png" href="images/FINAL_WEBLINGUA WHITE LOGO.png"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/about.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,7 +109,7 @@
                 <li><a href="homepage.php"><b>Home</b></a></li>
                 <li><a href="index.php"><b>Translator</b></a></li>
                 <li><a href="addtodictionary.php"><b>Add Dictionary</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>  
+                <li><a href="funquiz.php"><b>Fun Quiz</b></a></li>  
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
             </ul>
         </div>

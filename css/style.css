@@ -480,6 +480,185 @@ button span {
     }
     
 }
+@media (max-width: 1490px) {
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent; /* Set desired background color */
+        z-index: 1000;
+    }
+        .glassmorphism {
+            width: 90%;
+            height: 65%;
+            padding: 20px;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .clear-btn {
+            padding: 6px 0;
+            text-align: center;
+            margin: 15px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-left: -105px;
+            bottom: 8.5px;
+            width: 8%;
+            left: 17.5%;
+            transform: translateX(-50%);
+        }
+        .submit-btn {
+            padding: 6px 0;
+            text-align: center;
+            margin: 15px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 134px;
+            bottom: 8.5px;
+            width: 8%;
+            left: 46%;
+            transform: translateX(-50%);
+        }
+        .select1 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 520px;
+            margin: 0;
+            margin-right: auto;
+            margin-left: -90px;
+            margin-top: 20px;
+            color: #000;
+            background: #fef2f2d1;
+            border: 1px solid black;
+        }
+
+        
+        .select2 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            background: #fef2f2d1;
+            cursor: pointer;
+            min-width: 521px; /* Set the width for both select elements */
+            margin: 0; /* Remove auto margin */
+            margin-right: -91px; /* Push the select element to the left */
+            margin-left: auto; /* Push the select element to the right */
+            margin-top: 20px;
+            border: 1px solid black; /* Black border */
+            
+        }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1240px) {
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent; /* Set desired background color */
+        z-index: 1000;
+    }
+        .glassmorphism {
+            width: 90%;
+            height: 80%;
+            padding: 20px;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .clear-btn {
+            padding: 6px 0;
+            text-align: center;
+            margin: 15px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-left: -63px;
+            bottom: 8.5px;
+            width: 8%;
+            left: 17.5%;
+            transform: translateX(-50%);
+        }
+        .submit-btn {
+            padding: 6px 0;
+            text-align: center;
+            margin: 15px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 110px;
+            bottom: 8.5px;
+            width: 8%;
+            left: 46%;
+            transform: translateX(-50%);
+        }
+        .select1 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 373px;
+            margin: 0;
+            margin-right: auto;
+            margin-left: -60px;
+            margin-top: 20px;
+            color: #000;
+            background: #fef2f2d1;
+            border: 1px solid black;
+        }
+
+        
+        .select2 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            background: #fef2f2d1;
+            cursor: pointer;
+            min-width: 375px; /* Set the width for both select elements */
+            margin: 0; /* Remove auto margin */
+            margin-right: -62px; /* Push the select element to the left */
+            margin-left: auto; /* Push the select element to the right */
+            margin-top: 20px;
+            border: 1px solid black; /* Black border */
+            
+        }
+}
 
 
 /* Media Queries for Responsiveness */
@@ -511,16 +690,67 @@ button span {
             color: #fff;
             cursor: pointer;
             position: absolute;
-            margin-left: -125px;
+            margin-left: -63px;
             bottom: 8.5px;
             width: 8%;
             left: 17.5%;
             transform: translateX(-50%);
         }
+        .submit-btn {
+            padding: 6px 0;
+            text-align: center;
+            margin: 15px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 110px;
+            bottom: 8.5px;
+            width: 8%;
+            left: 46%;
+            transform: translateX(-50%);
+        }
+        .select1 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 373px;
+            margin: 0;
+            margin-right: auto;
+            margin-left: -60px;
+            margin-top: 20px;
+            color: #000;
+            background: #fef2f2d1;
+            border: 1px solid black;
+        }
 
+        
+        .select2 {
+            padding: 8px;
+            padding-top: 5px;
+            font-size: 20px;
+            top: 1000px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            background: #fef2f2d1;
+            cursor: pointer;
+            min-width: 375px; /* Set the width for both select elements */
+            margin: 0; /* Remove auto margin */
+            margin-right: -62px; /* Push the select element to the left */
+            margin-left: auto; /* Push the select element to the right */
+            margin-top: 20px;
+            border: 1px solid black; /* Black border */
+            
+        }
 }
 
- 
 @media (max-width: 480px) {
     .navbar ul li {
         margin: 5px 0;

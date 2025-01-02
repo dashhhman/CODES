@@ -9,7 +9,7 @@
     <title>WebLingua</title>
 </head>
 <style>
-     .toggle-menu {
+   .toggle-menu {
             display: none; /* Hidden by default */
         }
 
@@ -124,6 +124,7 @@
                 margin-left: 120px;
                 padding-top: 32px; 
                 width: 100%;
+                color: white;
             }
 
             .summary-text p{
@@ -132,6 +133,7 @@
                 text-align: center;
                 word-wrap:break-word;
                 line-height: 2;
+                color: white;
             }
 
             .image-container{
@@ -151,7 +153,7 @@
                 resize: both ;
                 width: 90%;
                 height: auto; 
-                border: 3px solid black;
+                border: 1px solid black;
                 border-radius: 5% 5% 5% 5% / 0% 5% 5% 5%;
             }
 
@@ -181,12 +183,12 @@
             .maincon{
                 display: flex; 
                 height: fit-content;
-                background-color: #fef2f2d1; 
+                background: rgba(176, 155, 155, 0.471);
                 width: 90%;
                 justify-self: center;
                 align-self: center;
                 flex-direction: column;
-                border: 2px solid #b4bdbc;
+                border: 0.5px solid black;
                 border-radius: 5% 5% 5% 5% / 0% 5% 5% 5%;
             }
 
@@ -233,21 +235,20 @@
                 </div>
                 
                 <div class="summary-text">
-                    <h1>Kapangpangan</h1>
+                    <h1>Kapampangan</h1>
                     <p>
-                        Kapangpangan (Kapampangan, Kalabakan) adalah bahasa yang 
-                        dimanapun, terutama di Kapampangan, Kalabakan, Sumatra Utara, 
-                        Indonesia. Bahasa ini dikembangkan sebagai pengganti 
-                        bahasa Melayu pada masa awal rakyat Indonesia. Bahasa ini dapat 
-                        dilihat sebagai bahasa yang
-                    </p>
+                         <b>Alam mo ba?</b> Sinukwan Festival ay isang makulay at masiglang pagdiriwang na ginaganap taun-taon sa probinsya ng Pampanga bilang pagkilala at pagbibigay-pugay kay Aring Sinukwan bilang simbolo ng lakas, kasaganaan, at kultura ng mga Kapampangan.
+                        <br>
+                         Ang Kapampangan ay isa sa mga pangunahing wika ng mga naninirahan sa probinsya ng Pampanga at ilang bahagi sa Southern Tarlac, northeastern Bataan, Bulacan Nueva Ecija and Zambales. Ang Kapampangan ay bahagi ng malaking pamilya ng mga Austronesian languages. 
+                         Ang estimasyon ng mga nagsasalita ng kapampangan ay 2.4 million.
+                     </p>
                 </div>
                 <div class="image-container">
                     <img src="images/kapampangan.png" alt="kapangpangan">
                 </div>
             </div>
 
-            <div class="buttons">
+            <div class="buttons" onclick="window.location.href='quizgame.php?category=Kapampangan'">
                 <span></span>
                 <button>Start The Quiz!</button>
             </div> 

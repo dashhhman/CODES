@@ -256,10 +256,9 @@ $conn->close();
             position: relative;
             margin: auto; /* Center the modal */
             padding: 20px; /* Increased padding for better spacing */
-            border-radius: 15px;
             width: 80%; 
             color: white;
-            background-color: #800000;
+            background: rgba(176, 155, 155, 0.471);
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;

@@ -249,6 +249,72 @@ span {
 }
 
 
+.verifications-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8d7da;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    height: 300px; 
+    row-gap: 16px; 
+    padding-top : 50px;
+    padding-bottom : 50px;
+}
+
+.verifications-content img{
+    width : 80px;
+    height : 80px;
+
+}
+
+.verifications-content h3,
+.verifications-content p{ 
+    margin: 0;
+    padding : 0;
+    text-align: center;
+}
+
+.yes-no-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    resize : horizontal;
+    height : fit-content;
+    flex-direction : row;
+}
+.yes-no-buttons button{ 
+    width : 100px;
+    height : 40px;
+    border-radius : 15px;
+    border : none;
+    font-size : 20px;
+}
+
+.yes-btn-verification{
+    background-color: #28a745;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.yes-btn-verification:hover{
+    background-color: #218838;
+}
+
+.no-btn-verification{
+    background-color: #dc3545;
+    color : white;
+    transition: background-color 0.3s ease; /* Adding transition for smooth effect */
+    cursor : pointer;
+}
+
+.no-btn-verification:hover{
+    background-color: #c82333;
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
     .banner {
@@ -283,6 +349,145 @@ span {
     }
 }
 
+@media (max-width: 1490px) {
+    .banner {
+        width: 100%;
+        min-height: 110vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/School.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent; /* Set desired background color */
+        z-index: 1000;
+    }
+
+
+    .glassmorphism {
+        width: 90%;
+        height: 85%;
+        padding: 20px;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .submit-btn {
+        width: 20%;
+        margin-top: 40px;
+    }
+}
+@media (max-width: 768px) {
+   
+    .toggle-menu {
+        
+        top: 37%;
+        right: 32px;
+    }
+    
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .glassmorphism {
+        width: 90%;
+        padding: 20px;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+    }
+
+    .submit-btn {
+        width: 20%;
+        margin-top: 40px;
+    }
+
+    .translator .box, .translator .box2, .translator .contranslated {
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .banner {
+        width: 100%;
+        min-height: 110vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/School.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent; /* Set desired background color */
+        z-index: 1000;
+    }
+
+
+    .glassmorphism {
+        width: 90%;
+        height: 85%;
+        padding: 20px;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .submit-btn {
+        width: 20%;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .banner {
+        width: 100%;
+        min-height: 110vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/School.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar {
+        justify-content: space-between;
+        position: fixed;
+        width: auto;
+        height: 120px;
+        background-color: transparent; /* Set desired background color */
+        z-index: 1000;
+    }
+
+
+    .glassmorphism {
+        width: 90%;
+        height: 85%;
+        padding: 20px;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .submit-btn {
+        width: 20%;
+        margin-top: 40px;
+    }
+}
 @media (max-width: 768px) {
    
     .toggle-menu {

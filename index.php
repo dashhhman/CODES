@@ -486,7 +486,7 @@ body {
                 <ul id="nav-links">
                     <li><a href="homepage.php"><b>Home</b></a></li>
                     <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                    <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                    <li><a href="funquiz.php"><b>Fun Quiz</b></a></li>
                     <li><a href="feedback.php"><b>Feedback</b></a></li>
                     <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>  
                 </ul>
@@ -640,9 +640,9 @@ body {
         const url = 'http://speech.pythonanywhere.com/translate';
 
         let speech = new SpeechSynthesisUtterance();
-        speech.volume = 5; // Set the volume to maximum
-        speech.pitch = 1.2; // Adjust the pitch, range is from 0 (lowest) to 2 (highest)
-        speech.rate = 1; // Adjust the rate, range is from 0.1 (lowest) to 10 (highest)
+        speech.volume = 10; // Set the volume to maximum
+        speech.pitch = 0.9; // Adjust the pitch, range is from 0 (lowest) to 2 (highest)
+        speech.rate = 0.9; // Adjust the rate, range is from 0.1 (lowest) to 10 (highest)
 
         let is_fetching_data = false; // Flag to track if data is being fetched
 

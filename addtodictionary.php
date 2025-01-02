@@ -575,7 +575,7 @@ option {
             <ul id="nav-links">
                 <li><a href="homepage.php"><b>Home</b></a></li>
                 <li><a href="index.php"><b>Translator</b></a></li>
-                <li><a href="index1.php"><b>Fun Quiz</b></a></li>
+                <li><a href= "funquiz.php"><b>Fun Quiz</b></a></li>
                 <li><a href="feedback.php"><b>Feedback</b></a></li>
                 <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span>
             </ul>

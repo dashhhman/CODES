@@ -5,11 +5,11 @@
     <link rel="icon" type="image/png" href="images/WEBLOGO.png" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/trivia.css">
+    <link rel="stylesheet" href="css/selections_language.css">
     <title>WebLingua</title>
 </head>
 <style>
-     .toggle-menu {
+        .toggle-menu {
             display: none; /* Hidden by default */
         }
 
@@ -81,87 +81,188 @@
             }
                
             .navbar ul.show ~ .close-menu {
-                display: block; /* Show close icon when menu is toggled */
-            }/* Circle Container Styles */
+                display: block;  
+            } 
 
-            .circle-container {
+            .container{
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 10px;
-                padding-bottom: 300px;
+                flex-direction: row;
+                padding-bottom: 80px; /* Add padding at the bottom of the body */
             }
+
+            .selection-container{
+                display: flex;
+                flex-direction: row; 
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: fit-content;
+                column-gap: 16px;
+                row-gap: 16px;
+            }
+
+            .flag-container{
+                display: none;
+            }
+ 
+            .lang-but {
+                position: relative;
+                width: 200px;
+                height: 100px;
+                cursor: pointer;
+            }
+
+            .lang-but::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(255, 255, 255, 0.75));
+                z-index: 1;
+                border-radius: 8px; /* Match the image's border radius */
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .lang-but img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensure the image covers the container */ 
+                transition: filter 0.3s ease-in-out; /* Smooth transition for the grayscale effect */
+                border-radius: 8px;
+                z-index: 0; /* Place image behind the gradient */
+            }
+
+            .lang-but:hover::before {
+                opacity: 0; /* Remove gradient on hover */
+            }
+
+            .lang-but p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                z-index: 2; /* Ensure text is above the gradient */
+                transition: opacity 0.3s ease-in-out; /* Smooth transition for the text opacity */
+            }
+
+            .lang-but:hover p {
+                opacity: 0; /* Make the text disappear on hover */
+            }
+
+ 
         }   
 
 </style>
 <body>
-    <section>
-    <div class="banner">
-        <div class="navbar">
-            <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
-            <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
-            <ul id="nav-links">
-                <li><a href="homepage.php"><b>Home</b></a></li>
-                <li><a href="index.php"><b>Translator</b></a></li>
-                <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
-                <li><a href="feedback.php"><b>Feedback</b></a></li>
-                <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span> 
-            </ul>
+
+    <div class="navbar">
+        <img src="images/FINAL WEBLINGUA.png" class="logo" alt="Logo">
+        <span class="toggle-menu" id="toggle-menu"><i class='bx bx-menu'></i></span>
+        <ul id="nav-links">
+            <li><a href="homepage.php"><b>Home</b></a></li>
+            <li><a href="index.php"><b>Translator</b></a></li>
+            <li><a href="addtodictionary.php"><b>Add to Dictionary</b></a></li>
+            <li><a href="feedback.php"><b>Feedback</b></a></li>
+            <span class="close-menu" id="close-menu"><i class='bx bx-x'></i></span> 
+        </ul>
+    </div>
+    
+
+    <div class="nav">
+          <a href="leaderboard.php"><i class='bx bxs-trophy bx-tada'></i>Leaderboard</a>
+    </div>
+    
+    <div class="container">
+
+        <div class="selection-container">
+            <div class="lang-but" onclick="window.location.href='kapampangan.php'">
+                <img src="images/kapampangan.png" alt="">
+                <p>Kapampangan</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='pangasinense.php'">
+                <img src="images/pangasinense.jpg" alt="">
+                <p>Pangasinense</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='iloko.php'">
+                <img src="images/iloko.png" alt="">
+                <p>Iloko</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='bikol.php'">
+                <img src="images/bikol.jpg" alt="">
+                <p>Bikol</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='cebuano.php'">
+                <img src="images/cebuano.jpg" alt="">
+                <p>Cebuano</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='hiligaynon.php'">
+                <img src="images/hiligaynon.jpg" alt="">
+                <p>Hiligaynon   </p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='waray.php'">
+                <img src="images/waray.png" alt="">
+                <p>Waray</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='tausug.php'">
+                <img src="images/tausug.png" alt="">
+                <p>Tausug</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='maguindanaoan.php'">
+                <img src="images/maguindanaoan.jpg" alt="">
+                <p>Maguindanaoan</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='maranao.php'">
+                <img src="images/maranao.png" alt="">
+                <p>Maranao</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='chabacano.php'">
+                <img src="images/chabacano.png" alt="">
+                <p>Chabacano</p>
+            </div>  
+            <div class="lang-but" onclick="window.location.href='ibanag.php'">
+                <img src="images/ibanag.png" alt="">
+                <p>Ibanag</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='ivatan.php'">
+                <img src="images/ivatan.png" alt="">
+                <p>Ivatan</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='sambal.php'">
+                <img src="images/sambal.png" alt="">
+                <p>Sambal</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='aklanon.php'">
+                <img src="images/aklanon.jpg" alt="">
+                <p>Aklanon</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='kinaraya.php'">
+                <img src="images/kinaray-a.jpg" alt="">
+                <p>Kinaray-a</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='yakan.php'">
+                <img src="images/yakan.jpg" alt="">
+                <p>Yakan</p>
+            </div>
+            <div class="lang-but"onclick="window.location.href='surigaonon.php'">
+                <img src="images/surigaonon.jpg" alt="">
+                <p>Surigaonon</p>
+            </div>
         </div>
         
-        <div class="maincon">
-            <div class="layout-container">
-                <div class="circle-container">
-                    <div class="nav">
-                        <a href="leaderboard.php"><i class='bx bxs-trophy bx-tada'></i>Leaderboard</a>
-                    </div>
-                    <h1>Try Your Knowledge. Take a Quiz!</h1>
-                    <div class="circle-row">
-                        <a href="#triviaModal1" class="circle"><p>Kapampangan</p></a>
-                        <a href="#triviaModal2" class="circle"><p>Pangasinense</p></a>
-                        <a href="#triviaModal3" class="circle"><p>Iloko</p></a>
-                        <a href="#triviaModal4" class="circle"><p>Bikol</p></a>
-                    </div>
-                    <div class="circle-row">
-                        <a href="#triviaModal5" class="circle"><p>Cebuano</p></a>
-                        <a href="#triviaModal6" class="circle"><p>Hiligaynon</p></a>
-                        <a href="#triviaModal7" class="circle"><p>Waray</p></a>
-                        <a href="#triviaModal8" class="circle"><p>Tausug</p></a>
-                        <a href="#triviaModal9" class="circle"><p>Maguindanaoan</p></a>
-                    </div>
-                    <div class="circle-row">
-                        <a href="#triviaModal10" class="circle"><p>Maranao</p></a>
-                        <a href="#triviaModal11" class="circle"><p>Chabacano</p></a>
-                        <a href="#triviaModal12" class="circle"><p>Ybanag</p></a>
-                        <a href="#triviaModal13" class="circle"><p>Ivatan</p></a>
-                        <a href="#triviaModal14" class="circle"><p>Sambal</p></a>
-                    </div>
-                    <div class="circle-row">
-                        <a href="#triviaModal15" class="circle"><p>Aklanon</p></a>
-                        <a href="#triviaModal16" class="circle"><p>Kinaray-a</p></a>
-                        <a href="#triviaModal17" class="circle"><p>Yakan</p></a>
-                        <a href="#triviaModal18" class="circle"><p>Surigaonon</p></a>
-                    </div>
-                </div>
-            </div>
+        <div class="flag-container">
+            <img src="images/phmap.png" alt="phmap">
         </div>
+        
     </div>
-    </section>  
-    <div id="triviaModal5" class="modal">
-    <div class="modal-content">
-        <span class="close" data-modal="#triviaModal5">&times;</span>
-        <h2>Trivia Time: Cebuano!</h2>
-        <div class="trivia-content">
-            <div class="trivia-left">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/320px-Flag_of_the_Philippines.svg.png" alt="Philippine Flag" class="flag-image">
-            </div>
-            <p class="trivia-text">
-                Alam mo ba? Ang Pampanga ay kilala bilang Culinary Capital ng Pilipinas. Ang Pampanga ay kilala sa kanilang masasarap na pagkain tulad ng sisig, tocino, at iba pa. Maraming turista ang pumupunta dito upang tikman ang kanilang mga espesyal na putahe. Bukod dito, ang Pampanga ay mayroon ding makulay na kultura at tradisyon na ipinagmamalaki ng mga Kapampangan.
-            </p>
-        </div>
-        <a href="quizgame.php?category=Cebuano" class="next-btn"><span></span>Take a Quiz</a>
-    </div>
-</div> 
+
+
     <script src="js/script.js"></script>
 </body>
 </html>

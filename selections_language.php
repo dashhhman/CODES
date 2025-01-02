@@ -174,54 +174,56 @@
         </ul>
     </div>
 
+    <div class="nav">
+          <a href="leaderboard.php"><i class='bx bxs-trophy bx-tada'></i>Leaderboard</a>
+    </div>
 
-    <h2>Did You Know?</h2>
-    <h4>18 local languages</h4>
+
 
     <div class="container">
 
         <div class="selection-container">
-            <div class="lang-but" onclick="window.location.href='selections_language.php'">
+            <div class="lang-but" onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>  
@@ -229,46 +231,45 @@
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div>
-            <div class="lang-but">
+            <div class="lang-but"onclick="window.location.href='kapampangan.php'">
                 <img src="images/kapampangan.png" alt="">
                 <p>Kapampangan</p>
             </div> 
         </div>
         
         <div class="flag-container">
-            <img src="images/Benadera.jpg" alt="">
+            <img src="images/phmap.png    " alt="">
         </div>
         
     </div>
-
 
     <script src="js/script.js"></script>
 </body>
