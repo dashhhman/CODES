@@ -52,19 +52,14 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     background-color: transparent;
     z-index: 1000;
 }
-
-.logo {
-    padding-left: 10px;
-    width: 190px;
-    cursor: pointer;
-}
+ 
 
 .navbar ul {
     list-style: none;
@@ -129,8 +124,11 @@ body::-webkit-scrollbar {
 .logo {
     padding-left: 10px;
     width: 190px;
-    cursor: pointer;
+    /* cursor: pointer; */
+    position: relative;
+    z-index: -9999;
 }
+
 
 .navbar ul {
     display: flex;
@@ -275,12 +273,16 @@ body::-webkit-scrollbar {
     align-items: stretch; 
     background: rgba(176, 155, 155, 0.471);
     border-radius: 5% 5% 5% 5% / 0% 5% 5% 5%;
+    position: relative;
+    z-index: 100;
 }
 
 .exit-button{
     height: 0;   
     /* display: none; */
     width: 5%;
+    cursor: pointer; 
+    position: relative;
 }
 
 .exit-button-img{
@@ -291,6 +293,7 @@ body::-webkit-scrollbar {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    z-index: 99999 !important;
 }
 
 .summary-text{
@@ -306,6 +309,7 @@ body::-webkit-scrollbar {
     height: 100%;
     resize: both;
     width: 50%;
+    z-index: -9999 !important;
 }
 .summary-text h1{
     padding: 0;
@@ -402,7 +406,7 @@ body::-webkit-scrollbar {
 
     .navbar {
         justify-content: space-between;
-        position: fixed;
+        position: absolute;
         width: auto;
         height: 120px;
         background-color: transparent;

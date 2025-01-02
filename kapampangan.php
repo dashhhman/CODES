@@ -91,10 +91,12 @@
                 resize: horizontal;
                 width: 100%;
                 height: fit-content; 
+                position: relative;
+                z-index: 100;
             }
 
             .exit-button{
-                height: 0;   
+                height: 0;    
             }
             
             .exit-button-img{
@@ -116,6 +118,7 @@
                 row-gap: 15px;
                 position: relative;
                 top: -27px;
+                z-index: -9999 !important;
 
             }
             .summary-text h1{
